@@ -1,0 +1,158 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'profiles/freelancer_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+        
+            <!-- end header -->
+    <!-- start section create -->
+    <section id="getting_start">
+    <div class="create_head">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="main_left">
+                        <ul class="main_left_ul">
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'starter' %}"><i class="fas fa-pencil-ruler"></i>Start<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'education' %}"><i class="fas fa-user-graduate"></i>Education <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'employment' %}"><i class="fas fa-briefcase"></i>Employment <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'proficiency' %}"><i class="fas fa-eye"></i>Languages & Skills <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active current">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'location' %}"><i class="fas fa-search-location "></i>Location <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-check"></i>Review <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-9 col-md-12 col-sm-12 main_sign">
+                    <div class="main_sign_info">
+                        <form action="{% url  'profile_wizard:profile_wizard' step %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+
+                        <div class="add_location col-md-12">
+                            <h2> Add your location</h2>
+                            <div class="add_location_info">
+
+
+
+                               
+                                <div class="add_location_address">
+                                    
+
+
+                                    <h3 style="padding-top:30px">City</h3>
+                                    {{ form.city }}
+
+
+
+
+                                    <h3 style="padding-top:30px">Country</h3>
+                                    {{ form.country }}
+
+
+
+                                    <h3 style="padding-top:30px">Phone Number</h3>
+                                    <div class="phone_number">
+                                        <select class="Country_code" id="index">
+                                            <option value="" selected disabled hidden> Ge +995</option>
+                                            <option value=""> Afganistan +93</option>
+                                            <option value=""> Algaria +217</option>
+                                        </select>
+
+                                        <input id="phone_input" class="select_input" type="text" name="Phone Number"
+                                            placeholder="Phone Number">
+
+
+                                    </div>
+                                                                            {{ form.phone}}
+                                     <!--<input style="" onclick="add()" type="button" id="closeBtn" value="Choose Your Language Level"/>-->
+                                     <h3>Address</h3>
+                                     {{ form.address_1 }}
+                                     <!-- {{ form.address_2 }} -->
+                                     {{ form.zip_code }}
+ 
+                                    </div>
+                            <script>
+                            function add(id){
+                                    var tag = ''
+                                    var inputStr = ''
+                                    inputStr = document.getElementById('phone_monitor').value
+                                    var x = document.getElementById("index");
+                                    var index = x.options[x.selectedIndex].text;
+                                    var phone = document.getElementById("phone_input").value;
+                                    var num = index.split('+')
+                                    var full_phone ='+'+ num[1]+phone
+                                    document.getElementById('phone_monitor').value = full_phone
+
+
+
+
+                                    console.log(num[1])
+                                    console.log(full_phone)
+                                    }
+                                </script>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="Review_app">
+                                <p>See what your profile will look like to prospective clients if your application to
+                                    join is approved.</p>
+                                <div class="right_main_getting_footer">
+                                    <button formnovalidate="formnovalidate" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                                                    {{ wizard.management_form }}
+                                        <button onclick="add()" class="Continue" type="submit">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="{% static 'profiles/freelancer_wizard/js/main.js' %}"></script>-->
+</html>
+{% endblock %}

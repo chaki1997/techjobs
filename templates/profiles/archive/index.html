@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="stylesheet" href="{% static 'profiles/css/style.css'%}">
+     <link rel="stylesheet" href="{% static 'profiles/css/btn.css'%}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+
+    <!-- start section create -->
+    <div class="create_head">
+        {% block body_block %}
+        <div class="container">
+            
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign"><h2 style="padding: 20px 0px 20px 20px;">Create your profile</h2>
+
+                <div class="main_sign_info">
+                    <div class="col-md-12 main_sign_info_header">
+                        <p>If your profile is 
+                             it will become the public profile you’ll use to market your freelance business to clients (you can edit it after approval).
+                             for inspiration? <a href="">Check out these tips. </a></p>
+                    </div>
+                </div>
+                <div class="col-md-12 tell_us">
+                    <div class="tell_us_header">
+                    <h2>tell us more about you</h2>
+                    <h3>Please upload a professional portrait that clearly shows your face </h3>
+                    </div>
+                    <form action="{% url 'profile_wizard:test' %}" method="post" enctype= multipart/form-data>
+                        {% csrf_token %}
+                    <div class="avatar col-md-5">
+                        <img src="media/images/profijjjle.jpg" alt="">
+                        <img src="{% static 'images/symbol.png' %}" alt="">
+
+                        <a href="#" class="avatar_add">
+                            <p><div class="upload-btn-wrapper"><button class="btn">Upload a file</button>{{ form.profile_image }}</div></p>
+
+
+
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-12 prof_title">
+                    <h3>Add a professional title </h3>
+                    <span>Try to choose a title that will help you stand out.</span>
+
+                    {{ form.prof_title }}
+                    <h3>Write a professional overview </h3>
+                    <span>Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile.</span>
+
+
+                    {{ form.prof_overview }}
+                    <div class="education">
+                    <h3 class="education">Education  </h3> 
+                     <a href=""><span class="add_span">+</span></a>
+                     <p>Tell us about your education history.</p>
+                    </div>
+                    <div class="education">
+                    <h3 class="education">Employment history  </h3> 
+                     <a href=""><span class="add_span">+</span></a>
+                     <p>Include previous positions and the number of years you've worked, as well as relevant projects.</p>
+                    </div>
+                    <div class="education">
+                    <h3 class="education">What is your English proficiency?  </h3> 
+                    <select class="select_profiction">
+                            <option value="" selected disabled hidden>Select your profesionality</option>
+                            <option value="volvo">Basic: I write in this language decently</option>
+                            <option value="saab">Conversational: I write and speak this language well</option>
+                            <option value="opel">Fluent: I write and speak this language almost perfectly</option>
+                            <option value="audi">Native or Bilingual: I write and speak this language perfectly, including colloquialisms</option>
+                          </select>
+                        {{ form.language_compatancy }}
+
+                          
+                    </div>
+                </div>
+                <div class="hour_rate">
+                    <h2>Set your Hourly Rate</h2>
+
+                    <p>The Upwork Service Fee is 20% when you begin a contract with a new client. Once you bill over $500 with your client, the fee will be 10%.</p>
+                
+                    <input type="submit" value="Review Application">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  end section create -->
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,26 @@
+section#getting_start {
+    margin: 80px 0px 11px 0px;
+    padding: 30px;
+}
+
+.done{
+    display: -ms-grid;
+    display: grid;
+    padding: 50px;
+    text-align: center;;
+}
+.done h2 {
+    padding-bottom: 15px;
+}
+.done h3 {
+    padding-bottom: 15px;
+}
+.done .fa-check-circle:before {
+    color: green;
+    content: "\f058";
+}
+.fa-caret-left:before {
+    content: "\f0d9";
+    vertical-align: middle;
+    position: relative;
+    top: 2px;

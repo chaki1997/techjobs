@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+{% extends 'header/header_footer_in.html' %}
+
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <!--joblist-->
+    <link rel="stylesheet" href='{% static "profiles/freelancerlistview/css/pagination.css" %}'>
+    <link rel="stylesheet" href="{% static 'profiles/joblist/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div>
+    <!--  strat banner-->
+    <section id="jobs_banner">
+        <div class="container">
+            <div class="jobs_banner_content">
+                <div class="jobs_banner_header">
+                    <h1>Find Work</h1>
+                </div>
+                <div class="jobs_banner_content_search">
+                    <form action="{% url 'profile_wizard:search' %}" method="get">
+                        <div class="section_jobs">
+                            <!--<select>-->
+                                <!--<option value="Freelancers">Freelancers</option>-->
+                                <!--<option value="Agencies">Agencies</option>-->
+                            <!--</select>-->
+                            <!-- {{form.status}} -->
+                        </div>
+                        <div class="search_input">
+                            <input name="q" type="text" placeholder="Search by Keyword, skill, or interest">
+                        </div>
+                        <div class="search_location">
+                            <!--<input type="text" placeholder="Search Location">-->
+                            {{form.location}}
+                        </div>
+                        <div class="search_button">
+                            <button>
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  end banner-->
+
+    <!--  start section content -->
+
+    <section id="jobs_content">
+        <div class="container">
+            <div class="jobs_main">
+                <div class="jobs_content">
+                   
+
+                </div>
+                <div class="jobs_left_filter">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 adv">
+                            <img src="{% static 'images/ads.png' %}" alt="" width="100%">
+                        </div>
+                        <div class=" col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                            <div class="vacation_count">
+                                <div class="choose_free" style="display: flex; justify-content: space-around; width: 100%;">
+                                    <div class="choose_full_check">
+                                   <a href="{% url 'profile_wizard:joblist' 'full Time' %}">Full Time </a>
+                                </div>
+                                    <div class="choose_free_check">
+                                     <a href="{% url 'profile_wizard:joblist' 'freelancer' %}">Freelancer </a>
+                                </div>
+                                </div>
+                                <div class="post_job">
+
+                                </div>
+                            </div>
+                            <div class="right_vacantiion">
+                                {% for job in jobs %}
+                                <div class="vacation_content">
+
+
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+
+                                            <div class="col-md-2 vacation_img">
+
+                                                <a href={{job.get_absolute_url}}><img src="{% static 'images/images.png' %}"
+                                                        alt=""></a>
+                                                       
+
+                                            </div>
+
+                                            <div class="col-md-9">
+                                                <div class="vacation_content_icon">
+                                                    <div class="vacation_content_header">
+                                                        <div class="vacantion_header_left">
+
+
+                                                        </div>
+                                                        
+                                                        <div class="save_freelancers">
+                                                            <div class="price_vacantion">
+                                                                <h3>
+                                                                     <span>
+                                                                         <!-- {{ job.budjet }} -->
+                                                                        </span>
+                                                                    </h3>
+                                                            </div>
+                                                            
+
+                                                           
+                                                        </div>
+                                                    </div>
+                                                    <div class="vacation_header_descrition">
+                                                        <h2><a href={{job.get_absolute_url}}> {{ job.job_title }} </a></h2>
+                                                        <h4> <a href={{job.get_absolute_url}}> {{job.user}} </a></h4>
+                                                    </div>
+                                                    <div class="country_freelancers">
+                                                        <p>Country:<span>{{ job.country }}</span></p>
+                                                    </div>
+
+                                                    <div class="vacation_timezone">
+
+                                                        
+                                                       
+                                                    </div>
+                                                    <div class="row">
+                                                   
+                                                      
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+<div class=" col-md-12 freelancers_information">
+                                                        <p> {{job.prof_description}}</p>
+                                                        <div class="read_more col-md-3">
+                                                            <h4> <a href={{job.get_absolute_url}}>Read More</a> </h4>
+                                                        </div>
+                                                    </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    
+                                </div>
+                                {% endfor %}
+
+                                 {% if is_paginated %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li class="prev pagination_page "><a class="num num2 " href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-left"></i></a></li>
+    {% else %}
+      <!--<li class=" disabled pagination_page "><a class="num num2"><i class="fas fa-angle-left"></i></a></li>-->
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="active pagination_page"><a class="num">{{ i }} <span class="sr-only">(current)</span></a></li>
+      {% else %}
+        <!--<li class="pagination_page "><a class="num" href="?page={{ i }}">{{ i }}</a></li>-->
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li class="next pagination_page "><a class="num num3" href="?page={{ page_obj.next_page_number }}"><i class="fas fa-angle-right"></i></a></li>
+    {% else %}
+      <!--<li class="disabled pagination_page  "><a class="num num3"><i class="fas fa-angle-left"></i></a></li>-->
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+</div>
+    <!--end section content -->
+
+</body>
+    </html>
+    {% endblock %}

@@ -1,0 +1,160 @@
+{% extends 'header/header_footer_in.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+
+    <link rel="stylesheet" href="{% static 'home/contest/css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+
+
+    <!-- end header -->
+
+    <!-- start banner -->
+
+    <section class="About_banner">
+
+    </section>
+
+    <!-- end banner -->
+    <!-- start prelog  1-->
+    <section id="prelog_main">
+        <div class="container">
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 about_main">
+                <h2>Are You Ready To Make <span> $1,000? </span> </h2>
+                <h3>Welcome to the most profitable daydreaming session you’ll ever have!
+                </h3>
+                <p>As a part of our mission to create a unique experience for job seekers, we’re extremely interested in
+                    learning what you hope to achieve in life. </p> <p> To earn your chance to win $1,000, you just need to fill
+                    in your information, and we’ll  notify you of the results on the <span
+                        style="font-weight: bold;">27th January 2020</span>. Remember to check that
+                    you’ve correctly filled out all details and information, as the information you enter will be cross-checked
+                    before awarding a winner.
+
+
+
+                </p>
+                <p>
+                    The $1,000 prize will go to the most interesting, compelling, and thoughtful answer… but don’t be
+                    afraid to be funny, and always be yourself! We’ll keep an eye out for authenticity and wit.
+
+                </p>
+                <p style="width: 60%; margin:auto; text-align: center;">So, do you think your dreams are worthy of a
+                    special payday? Well, go ahead to find out!</p>
+
+            </div>
+        </div>
+            <div class="content_form">
+                <div class="container">
+                <h2>Your Registration <span style="color: #3F9BD7;"> Form</span></h2>
+                <form action="">
+                    <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <legend >
+                        What is your dream job, and what do you hope to achieve by it?
+                    </legend>
+                
+                    <textarea name="" id="word_count" required></textarea>
+                    <p style="color: #fff;">
+                     <span id="display_count">0</span> Words. Words left: <span id="word_left">500</span>/500</p>
+                     <p class="aler">Maximum Word Count is 500</p>
+                 </div>  
+                 <div class="content_input">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" style="margin-bottom: 20px;">
+                    <legend>
+                        How did you hear about this contest?
+                    </legend>
+                
+                    <input type="text" class="contest" name="" value="" placeholder="">
+                  </div>  
+                  <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
+                      <legend>
+                        How would you like us to contact you if you win?
+
+                    </legend>
+                    <input type="text" class="" placeholder="" required>
+                    
+                </div>
+                </div>
+                <div class="checkbox_content">
+                <input type="checkbox" value="" id="check_term" required > <label for="check_term">
+                          I agree to <a href="" style="text-decoration: underline; color: #fff!important;"> terms</a>  and <a href="" style="text-decoration: underline; color: #fff!important;"> conditions</a>
+                    </label></div>
+                </div><div class="Send">
+                        <button class="send_button" type="submit">
+                                <a href="">Send</a>
+                            </button>
+                            </form>
+                </form>
+                
+                </div>
+                </div>
+            </div>
+        <script>
+$(document).ready(function() {
+    $("#word_count").on('keyup', function() {
+        var words = this.value.match(/\S+/g).length;
+        if (words > 500) {
+            // Split the string on first 200 words and rejoin on spaces
+            var trimmed = $(this).val().split(/\s+/, 500).join(" ");
+            // Add a space at the end to keep new typing making new words
+            $(this).val(trimmed + " "); 
+            $('textarea').css("border", "2px solid red");        
+            
+            $('.aler').css("display", "block")
+
+        }
+        else {
+            $('#display_count').text(words);
+            $('#word_left').text(500-words);
+            $('textarea').css("border", "none");
+            $('.aler').css("display", "none")
+        }
+    });
+ }); 
+        </script>
+    </section>
+    <!-- end prelog  1-->
+
+    <!-- start carousel -->
+
+    <!--  start footer -->
+
+
+    <!-- end footers -->
+    <script>
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

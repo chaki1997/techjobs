@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    
+    <link rel="stylesheet" href="{% static 'profiles/job_post_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ 
+</head>
+<body>
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="main_left">
+                    <ul class="main_left_ul">
+                        <li class="main_left_li active">
+                            <a href="#"><i class="fas fa-pencil-ruler"></i>Title <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="#"><i class="fas fa-file-prescription"></i>Description <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="#"><i class="fas fa-info" style="padding-left: 5px;"></i>Details <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="#"><i class="fab fa-creative-commons-remix"></i>Expertise <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="#"><i class="fas fa-eye"></i>Visibilite <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="#"><i class="fas fa-search-dollar"></i>Budget <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="#"><i class="fas fa-check"></i>Review <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="right_main_getting_start">
+            <div class="right_main_getting_header">
+                <h2>Budget</h2>
+                <p>Step 6 of 7</p>
+            </div>
+           <div class="right_main_getting_content">
+               <h4>How would you like to pay your freelancer or agency?</h4>
+               <div class="create_job">
+                   <div class="radio_block">
+                 
+                  
+                      <div class="row">
+                      <div class="radio_none_item details_radio_button pay_hour  col-md-4 "   >
+                          <div class="radio_none_content">
+                                <span><i class="fas fa-stopwatch"></i></span>
+                                <h4>Pay by the hour</h4>
+                                <p>Popular for ongoing projects</p>
+
+                          </div>
+                      </div>
+                      <div class="radio_none_item details_radio_button fixed_price col-md-4"checked="checked">
+                          <div class="radio_none_content">
+                                <span><i class="fas fa-hand-holding-usd"></i></span>
+                                <h4>Pay a fixed price</h4>
+                                <p>Popular for one-time projects</p>
+
+                          </div>
+                      </div>
+                     
+                      </div>
+                      <div class="row">
+                      <div class="pay_hour_none active col-md-12">
+                            <h4>What level of experience should your freelancer have?</h4>
+                          <div class="row">
+                        <div class="radio_none_item details_radio_button  col-md-3"   >
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-dollar-sign"></i></span>
+                                  <h4>Entry</h4>
+                                  <p>Less than $16.50/hr</p>
+  
+                            </div>
+                        </div>
+                      
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i></span>
+                                  <h4>Intermediate</h4>
+                                  <p>$16.50 - $35.00/hr</p>
+  
+                            </div>
+                        </div>
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i></span>
+                                  <h4>Expert</h4>
+                                  <p>More than $35.00/hr</p>
+  
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                      </div>
+                      <div class="row">
+                      <div class="pay_hour_none active col-md-12">
+                            <h4> How long do you expect this project to last?</h4>
+                          <div class="row">
+                        <div class="radio_none_item details_radio_button  col-md-3"   >
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-calendar-alt"></i></span>
+                                  <h4>More than 6 months</h4>
+                                 
+                            </div>
+                        </div>
+                      
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-calendar-alt"></i></span>
+                                  <h4>3 to 6 months</h4>
+                                  
+                            </div>
+                        </div>
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-calendar-alt"></i></span>
+                                  <h4>1 to 3 months</h4>
+                                 
+                            </div>
+                        </div>
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="fas fa-calendar-alt"></i></span>
+                                  <h4>Less than 1 month</h4>
+                                  
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                      <div class="pay_hour_none active col-md-12">
+                            <h4>Do you have a time requirement for this project?</h4>
+                          <div class="row">
+                        <div class="radio_none_item details_radio_button  col-md-3"   >
+                            <div class="radio_none_content">
+                                  <span><i class="far fa-clock"></i></span>
+                                  <h4>More than 30 hrs/week</h4>
+                                  
+                            </div>
+                        </div>
+                      
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="far fa-clock"></i></span>
+                                  <h4>Less than 30 hrs/week</h4>
+                                 
+                            </div>
+                        </div>
+                        <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                            <div class="radio_none_content">
+                                  <span><i class="far fa-clock"></i></span>
+                                  <h4>I don't know yet</h4>
+                                  
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                      </div>
+                      <div class="fix_hour_none active">
+                         <div class="special_budget">
+                             <h4>Do you have a specific budget?</h4>
+                             <div class="col-lg-6  col-md-6 input_right">
+                                    <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0">
+                            </div>
+                            <div class="level_exprerience">
+                                                                     
+                             <h4>What level of experience should your freelancer have?</h4>
+                                 <div class="row">
+                                    <div class="radio_none_item details_radio_button  col-md-3"   >
+                                     <div class="radio_none_content">
+                                          <span><i class="fas fa-dollar-sign"></i></span>
+                                             <h4>Entry</h4>
+                                              
+                        
+                                     </div>
+                                    </div>
+                                            
+                                <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                                     <div class="radio_none_content">
+                                         <span><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i></span>
+                                         <h4>Intermediate</h4>
+                                        
+                        
+                                         </div>
+                                     </div>
+                                 <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                                        <div class="radio_none_content">
+                                             <span><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i></span>
+                                              <h4>Expert</h4>
+                                             
+                        
+                                        </div>
+                                     </div>
+                                 </div>
+                                 </div>
+
+                            </div>
+                         </div>
+                         
+                      </div>
+                  </div>
+                 
+                  <hr>
+                  
+                  <div class="right_main_getting_footer">
+                        <form class="fa fa-user" action="{% url  'profile_wizard:job_post_wizard' step %}" method="post">{% csrf_token %}
+                       <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                            {{ wizard.management_form }}
+                          <button class="Continue" type="submit">Continue</button>
+                            </form>
+                    </div>
+               </div>
+           </div>
+            </div>
+           
+            </div>
+        </div>
+    </section>
+    <!-- <input type="radio" name='thing' value='valuable' data-id="bank" />
+    <input type="radio" name='thing' value='valuable' data-id="school" />
+    <hr />
+    <div id="bank" class="none">Bank</div>
+    <div id="school" class="none">School</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(':radio').change(function (event) {
+    var id = $(this).data('id');
+    $('#' + id).addClass('none').siblings().removeClass('none');
+});
+</script>
+     -->
+   
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- clicked -->
+    <script>
+    $(document).on('click', '.radio_none_item',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        
+    } );
+    $(document).ready(function(){
+        $(".fix_hour_none").hide();
+        $(".pay_hour_none").hide();
+        $(".pay_hour").click(function(){
+            $(".pay_hour_none").show();
+            $(".fix_hour_none").hide();
+        })
+        $(".fixed_price").click(function(){
+            $(".fix_hour_none").show();
+            $(".pay_hour_none").hide();
+            
+        })
+    })
+  
+    </script>
+
+</body>
+</html> 

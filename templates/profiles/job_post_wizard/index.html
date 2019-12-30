@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    
+    <link rel="stylesheet" href="{% static 'profiles/job_post_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ 
+</head>
+<body>
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="main_left">
+                    <ul class="main_left_ul">
+                        <li class="main_left_li "> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'index' %}"><i class="fas fa-pencil-ruler"></i>Title <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li"> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'description' %}"><i class="fas fa-file-prescription"></i>Description <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li"> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'detials' %}"><i class="fas fa-info" style="padding-left: 5px;"></i>Details <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li"> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'expertise' %}"><i class="fab fa-creative-commons-remix"></i>Expertise <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li"> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'visibility' %}"><i class="fas fa-eye"></i>Visibilite <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li"> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'budget' %}"><i class="fas fa-search-dollar"></i>Budget <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li"> 
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="right_main_getting_start">
+            <div class="right_main_getting_header">
+                <h2>Getting start</h2>
+            </div>
+           <div class="right_main_getting_content">
+               <h4>What would you like to do?</h4>
+               <div class="create_job">
+                   <div class="radio_block">
+                  <p><input type="radio" name='thing' value='valuable'  data-id="radio_none" >create a news job </p></div>
+                  <div id="radio_none" class="none">
+                      <div class="row">
+                      <div class="radio_none_item col-md-5 active"   >
+                          <div class="radio_none_content">
+                                <span><i class="far fa-clock"></i></span>
+                                <h4>Short-term or part-time work</h4>
+                                <ul>
+                                    <li>Less than 30 hrs/week</li>
+                                    <li>Less than 3 months</li> 
+                                </ul>
+
+                          </div>
+                      </div>
+                      <div class="radio_none_item col-md-5"checked="checked">
+                          <div class="radio_none_content">
+                                <span><i class="far fa-clock"></i></span>
+                                <h4>Short-term or part-time work</h4>
+                                <ul>
+                                    <li>Less than 30 hrs/week</li>
+                                    <li>Less than 3 months</li>
+                                </ul>
+
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="existing_draft">
+                        <p><input type="radio" name='thing' value='valuable' data-id="New_jobs" >Edit an existing draft</p></div>
+                  </div>
+                  <div id="New_jobs" class="none">
+                      <select>
+                          <option value="News Jobs">News Jobs</option>
+                      </select>
+                  </div>
+                  <hr>
+                  <div class="right_main_getting_header">
+                      <form class="fa fa-user" action="{% url  'profile_wizard:job_post_wizard' step %}" method="post">{% csrf_token %}
+                        <a href="" class="cancel">Cancel</a>
+                            {{ wizard.management_form }}
+                          <button class="Continue" type="submit" >Continue</button>
+                       </form>
+                    </div>
+               </div>
+           </div>
+        </div>
+        </div>
+            </div>
+        </div>
+    </section>
+    <!-- <input type="radio" name='thing' value='valuable' data-id="bank" />
+    <input type="radio" name='thing' value='valuable' data-id="school" />
+    <hr />
+    <div id="bank" class="none">Bank</div>
+    <div id="school" class="none">School</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(':radio').change(function (event) {
+    var id = $(this).data('id');
+    $('#' + id).addClass('none').siblings().removeClass('none');
+});
+</script>
+     -->
+   
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- clicked -->
+    <script>
+    $(document).on('click', '.radio_none_item',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+    } )
+    </script>
+
+</body>
+</html> 

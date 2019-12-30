@@ -1,0 +1,219 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'profiles/freelancer_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
+  <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
+
+  <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
+  <script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+
+</head>
+
+<body>
+
+            <!-- end header -->
+    <!-- start section create -->
+    <section id="getting_start">
+    <div class="create_head">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="main_left">
+                        <ul class="main_left_ul">
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'starter' %}"><i class="fas fa-pencil-ruler"></i>Start<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'education' %}"><i class="fas fa-user-graduate"></i>Education <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active current">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'employment' %}"><i class="fas fa-briefcase"></i>Employment <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+                            <li class="main_left_li">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'proficiency' %}"><i class="fas fa-eye"></i>Languages & Skills<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'location' %}"><i class="fas fa-search-location"></i>Location <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+  <div class="col-lg-9 col-md-12 col-sm-12 col-sm-12 col-xs-12 main_sign">
+                    <form  action="{% url  'profile_wizard:profile_wizard' step  %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+                    <div class="main_sign_info">
+
+                        <div class="employement">
+                            <h1 class="employment">Employment history </h1>
+
+
+                            <p>Include previous positions and employment dates.</p>
+
+                        </div>
+                        <div class="employment_info">
+
+                            <div class="row">
+                                <div class="employment_info_input col-md-12">
+                                    <div class="row">
+                                        <div class="employment_info_input_header col-md-6">
+                                            <label for="" class="control-label">Company</label>
+                                            <input type="hidden" name="school" id="input_Company" value="">
+                                             {{ form.company }}
+
+                                        </div>
+
+                                        <div class="employment_info_input_section col-md-6">
+                                            <label for="">Location(optional) </label>
+                                            <div class="row">
+                                                <div class="col-md-6 flag_also" style="display: flex;">
+                                                    <input type="hidden" placeholder="City" id="Location_input">
+                                                    {{ form.location }}{{form.country}}
+                                                    <select id="country" class="selectpicker countrypicker" data-flag="true" style="margin-left: 5px;;" ></select>
+
+                                                                        <script>
+                                                                     $('.countrypicker').countrypicker();
+                                                                         </script>
+  
+
+                                                </div>
+                                                <div>
+                                                    </div>
+                                                <div class="col-md-6">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="employment_info_input_Degree col-md-6">
+                                            <label for="" class="control-label">Title</label>
+                                            <input type="hidden" name="input_degree" id="input_degree_2" value="">
+                                            {{ form.title }}
+
+                                        </div>
+
+                                        <div class=" col-md-6" id="employment_info_input_Role">
+                                            <label for="" class="control-label">Industry</label>
+                                            {{ form.role }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="eemployment_info_input_Period col-md-6">
+                                            <label for="" class="control-label">From</label>
+                                            <div class="raw">
+                                            {{ form.period_sterted }}
+                                            {{ form.month_started }}
+                                        </div>
+                                    </div>
+
+                                        <div class="eemployment_info_input_Period period_end col-md-6">
+                                            <label for="" class="control-label">To</label>
+                                            <div class="raw">
+                                                    {{ form.period_ended }}
+                                                {{ form.month_ended }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="employment_radio">
+                                        <div class="row">
+                                            {{ form.is_current }}
+                                            <p for="id_employment-is_current"style="margin: 0px 0 10px 4px;">I currently work here </p>
+                                            {{ form.repeat }}
+                                        </div>
+                                    </div>
+                                    <div class="employment_info_input_Description">
+                                        <label for="" class="control-label">Description (optional)</label>
+                                         {{ form.description }}
+
+                                    </div>
+                                    <div class="employment_info_footer col-md-12">
+
+                                        <div class="right_main_getting_footer">
+                                            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                                            {{ wizard.management_form }}
+                                        <button onclick="add()" class="Continue" type="submit">Next</button>
+                                         <button onclick="check()" class="Continue" style="background: green!important;">Save and Add
+                                            more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).on('click', '#id_employment-is_current', function () {
+            $('.period_end').toggle('.period_end_none');
+
+        });
+        function check(){
+        document.getElementById("checkbox").checked = true;
+        var x = document.getElementById("country");
+                                    var country = x.options[x.selectedIndex].text;
+                                    document.getElementById('monitor_country').value = country
+
+                                    console.log(country)
+    }
+
+    function uncheck(){
+        document.getElementById("checkbox").checked = false;
+    }
+
+                                    function add(id){
+
+                                    var tag = ''
+                                    var inputStr = ''
+                                    inputStr = document.getElementById('monitor_country').value
+                                    var x = document.getElementById("country");
+                                    var country = x.options[x.selectedIndex].text;
+                                    document.getElementById('monitor_country').value = country
+
+                                    console.log(country)
+                                    }
+
+        </script>
+</body>
+<!--<script src="{% static 'profiles/freelancer_wizard/js/main.js' %}"></script>-->
+</html>
+{% endblock %}
+<!-- Modal Section -->

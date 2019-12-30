@@ -1,0 +1,338 @@
+@font-face {
+    font-family: Gotham;
+    src: url(../Gotham\ Medium.otf);
+  }
+*{
+    background: red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+i{
+    color: #37A000;
+    font-size: 25px!important;
+}
+p{
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 13px!important;
+    color: #656565 !important;
+}
+h2{
+    font-family:Gotham;
+    line-height: 24px!important;
+    font-size: 15px!important;
+    font-weight: 500!important;
+}
+h3{
+    font-family:Gotham; 
+    color: #222;
+    font-weight: 700;
+    font-size: 14px!important;
+}
+a{
+    color: black!important;
+}
+input{
+    margin-top: 15px!important;
+    height: 40px;
+
+}
+
+
+
+input:hover{
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid #008329;
+}
+select{
+    text-indent: 20px;;;
+    height: 53px;;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+}
+select:hover{
+    box-shadow: 0 2px 15px rgba(49, 61, 63, 0.35);
+}
+
+body{
+    
+    background-color: #F2F2F2!important;
+}
+.main_sign{
+   
+    padding: 30px;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+}
+
+.main_sign_info p{
+   
+    word-spacing: 5px;
+}
+.main_sign_info_header  {
+    width: 100%!important;
+    border-bottom: 1px solid rgba(57,73,76,0.35);;
+}
+.tell_us{
+    padding-top: 25px;
+}
+.tell_us_header p{
+    margin-top: 15px;
+    font-weight: 500;
+}
+.avatar img{
+    display: block;
+    width: 100px;
+    cursor: pointer;
+    margin-left: 15px;
+    
+    
+}
+a:hover{
+    text-decoration: none!important;
+    color: #008329!important;;
+}
+.avatar_add {
+    margin-top: 15px;
+    
+    color: #008329;
+    background-color: #fff;
+    border-color: transparent;
+    
+}
+.avatar_add p{
+    padding: 7px 18px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    width: 200px;;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+}
+.avatar_add p::before{
+           
+    
+}
+.avatar-add p:hover{
+    color: #008329;
+    
+    box-shadow:bottom 0 1px 6px rgba(31, 36, 37, 0.35);
+    padding-bottom: 5px;
+}
+button.Add_Photo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+button.Add_Photo i{
+    padding: 7px 18px;
+    font-size: 17px!important;
+    line-height: 13px;
+    border-radius: 2px;
+    padding-bottom: 6px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    border: solid 2px transparent;
+    background: #fff;
+  
+}
+.tell_us{
+    border-bottom: 1px solid rgba(57,73,76,0.35);;;
+}
+.prof_title{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(57,73,76,0.35);;;
+}
+.prof_title span{
+    padding-bottom: 15px;
+    display: block;
+}
+.prof_title input{
+    margin-bottom: 25px;
+    line-height: 35px;;
+    width: 465px;
+}
+
+.prof_title span{
+    font-size: 13px;
+}
+.prof_title textarea{
+    display: block;
+    
+}
+.education{
+    margin-top: 10px;
+}
+
+h3.education{
+    display: inline;;
+}
+span.add_span{
+    cursor:pointer;
+    margin-left: 15px;
+    font-size: 26px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);  
+    border-radius: 50%;color: #008329;
+}
+
+.education p{
+    margin-top: 15px;
+}
+.select_profiction{
+    width: 465px;
+    line-height: 35px;
+    padding: 8px;
+background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
+        -webkit-appearance: none;
+        background-position-x: 430px;;
+    display: block;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+}
+.select_profiction:hover{
+    box-shadow: 0 2px 8px rgba(57,73,76,.35);
+}
+.select_profiction:after{
+    content: '*';
+    float:right
+}
+.select_profiction option{
+    width: 465px;
+}
+/* select.select_profiction{
+     
+        width: 268px;
+        padding: 5px;
+        font-size: 16px;
+        line-height: 1;
+        border: 0;
+        border-radius: 5px;
+        height: 34px;
+        
+    
+} */
+.hour_rate{
+    width: 60%;
+    margin-top: 15px;
+    
+    
+}
+.hour_rate_info{
+    margin: 30px 0 0 30px;;
+    border-bottom: 1px solid rgba(57,73,76,0.35);;;
+}
+input.input_price{
+    padding-left: 27px;
+height: 40px;
+width: 214px;
+margin-bottom: 20px;
+}
+.fa-dollar:before, .fa-usd:before {
+    content: "\f155";
+    position: relative;
+    left: 25px;
+}
+
+input.input_price::placeholder {
+    position: relative;
+    left: 80%;
+    font-size: 20px;
+}
+/* .input_price:hover{
+    
+    border-color: #008329;
+} */
+.fa-question-circle:before {
+    margin-left: 4px;
+    content: "\f059";
+    margin-top: 7px;
+    cursor: pointer;
+    pointer-events: cursor;
+}
+p.show_p{
+    display: none;
+    background: red;
+
+}
+i.fa-question-circle:hover p.show_p{
+    display: block;
+    background: red;
+}
+.add_location{
+    border-bottom: 1px solid rgba(57,73,76,0.35);
+    padding: 30px 30px;
+    
+}
+.add_location h2{
+    padding-bottom: 30px;   
+
+}
+.add_location_info{
+    width: 60%;
+}
+.add_location_info p{
+    padding-top: 90px;
+}
+.add_location_info a{
+    color: #008329!important;
+}
+.add_location_address{
+    width: 100%;
+}
+input.select_input_1{
+    width: 70%!important;
+}
+.add_location_address input{
+    width: 100%;
+}
+input.postal_input{
+    width: 30%;
+}
+select.Country_code option{
+    margin: auto;
+}
+input.select_input{
+    padding-left: 15px;
+    width: 70%;
+    margin-left: 40px;
+}
+.Review_app{
+    padding-top: 30px;
+}
+.Review_input button{
+    margin-left: 15px;
+    color: #37A000;
+    background-color: #fff;
+    height: 40px;;
+    padding: 0 28px;
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    border: solid 2px transparent;
+    box-shadow: 0 2px 10px 1px rgba(57,73,76,0.4), 0 1px 2px rgba(57,73,76,0.25);
+}
+.Review_input button h3{
+    color:#37A000;
+}
+.Review_input button.active{
+ 
+    background-color: #37A000;
+
+}
+.Review_input button.active h3{
+    color: #fff;
+    background-color: #37A000;
+
+}

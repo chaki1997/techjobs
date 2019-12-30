@@ -1,0 +1,397 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href='{% static "profiles/freelancerlistview/images/untitled-1.png"%}' type="image/png">
+    <link rel="shortcut icon" type="image/png" href="images/untitled-1.png" />
+    <link rel="stylesheet" href='{% static "profiles/freelancerlistview/css/freelancers.css" %}'>
+    <link rel="stylesheet" href='{% static "profiles/freelancerlistview/css/pagination.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <!--  start header -->
+
+
+
+    <!-- end header -->
+
+
+    <!--  strat banner-->
+    <section id="jobs_banner">
+        <div class="container">
+            <div class="jobs_banner_content">
+                <div class="jobs_banner_header">
+                    <h1>Search Freelancers/agency</h1>
+                </div>
+                <div class="jobs_banner_content_search">
+                    <form action="{% url 'profile_wizard:search' %}" method="get">
+                        <div class="section_jobs">
+                            <!--<select>-->
+                                <!--<option value="Freelancers">Freelancers</option>-->
+                                <!--<option value="Agencies">Agencies</option>-->
+                            <!--</select>-->
+                            {{form.status}}
+                        </div>
+                        <div class="search_input">
+                            <input name="q" type="text" placeholder="Search by Keyword, skill, or interest">
+                        </div>
+                        <div class="search_location">
+                            <!--<input type="text" placeholder="Search Location">-->
+                            {{form.location}}
+                        </div>
+                        <div class="search_button">
+                            <button>
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  end banner-->
+
+    <!--  start section content -->
+
+    <section id="jobs_content">
+        <div class="container">
+            <div class="jobs_main">
+                <div class="jobs_content">
+                    
+
+                </div>
+                <div class="jobs_left_filter">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="filter_left">
+                                <h4>Filter</h4>
+                                <div class="jobs_progress">
+
+
+                                    <div class="agle_down">
+                                        <span href="">Category<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+                                        <div class="Jobs_category">
+                                            <ul>
+                                                <li class="current">
+                                                    <a href="#">All Caregories</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="#">Accounting & Consulting</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="#">Admin Support</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="#">Customer Service</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="#">Data Science & Analytics</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="#">Design & Creative</a>
+                                                </li>
+                                                <li class="current">
+                                                    <a href="#">IT & Networking</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="jobs_progress">
+
+
+                                    <div class="agle_down">
+                                        <span href="">Specialist<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+                                        <div class="Jobs_category">
+                                            <ul>
+                                                <li><a href="#">3D Modeling</a></li>
+                                                <li><a href="#">3D Rendering</a></li>
+                                                <li><a href="#">3D Rediaring</a></li>
+                                                <li><a href="#">Architecture</a></li>
+                                                <li class="jobs_show_more">
+                                                    <input type="checkbox" id="check_id">
+                                                    <label for="check_id"></label>
+                                                    <ul>
+                                                        <li><a href="#">Five</a></li>
+                                                        <li><a href="#">Six</a></li>
+                                                        <li><a href="#">Seven</a></li>
+                                                        <li><a href="#">Eight</a></li>
+                                                        <li><a href="#">Nine</a></li>
+                                                        <li><a href="#">Ten</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="jobs_progress">
+                                    <div class="agle_down">
+                                        <span href="">Location<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="jobs_progress">
+
+                                    <div class="agle_down">
+                                        <span href="">Talent type<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+
+                                        <form action="" class="">
+                                            <div class="content_sign_input">
+                                                <input id="Freelancers & Agencies" type="radio" name="name"
+                                                    value="Freelancers & Agencies" style=""><label
+                                                    for="Freelancers & Agencies"><span>Freelancers &
+                                                        Agencies</span></label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="Freelancers" type="radio" name="name" value="Freelancers"
+                                                    style=""><label for="Freelancers">Freelancers </label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="Agencies" type="radio" name="name" value="Agencies"
+                                                    style=""><label for="Agencies">Agencies </label>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <div class="jobs_progress">
+
+                                    <div class="agle_down">
+                                        <span href="">Hour Rate<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+
+                                        <form action="" class="">
+                                            <div class="content_sign_input">
+                                                <input id="All" type="radio" name="name" value="All" style=""><label
+                                                    for="All"><span>All</span></label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="Full Time" type="radio" name="name" value="Full Time"
+                                                    style=""><label for="Full Time">Full Time </label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="Part Time" type="radio" name="name" value="Part Time"
+                                                    style=""><label for="Part Time">Part Time </label>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <div class="jobs_progress">
+
+                                    <div class="agle_down">
+                                        <span href="">Education Level<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+
+                                        <form action="" class="">
+                                            <div class="content_sign_input">
+                                                <input id="hire" type="radio" name="name" value="All" style=""><label
+                                                    for="All"><span>All</span></label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="remote" type="radio" name="name" value="Remote"
+                                                    style=""><label for="Remote">No Education Requirement </label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="on_site" type="radio" name="name" value="On sire"
+                                                    style=""><label for="On site">High School Diploma Required</label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="on_site" type="radio" name="name" value="On sire"
+                                                    style=""><label for="On site">2-Year Degree Required</label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="on_site" type="radio" name="name" value="On sire"
+                                                    style=""><label for="On site">4-Year Degree Required</label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="on_site" type="radio" name="name" value="On sire"
+                                                    style=""><label for="On site">J.D. Required</label>
+                                            </div>
+                                            <div class="content_sign_input">
+                                                <input id="on_site" type="radio" name="name" value="On sire"
+                                                    style=""><label for="On site">Master's Degree Required</label>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <div class="jobs_progress">
+
+                                    <div class="agle_down">
+                                        <span href="">Proffesional Level<i class="fa fa-angle-down"> </i></span>
+                                    </div>
+                                    <div class="jobs_progress_info_first">
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="vacation_count">
+                                <h4>4,305 Freelancers found</h4>
+                                <div class="post_job">
+
+                                </div>
+                            </div>
+                            <div class="right_vacantiion">
+                                 {% for freelancer in objects %}
+                                <div class="vacation_content">
+
+
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+
+                                            <div class="col-md-3 vacation_img">
+
+                                                <a href="members.html"><img
+                                                        src="{% static 'images/images.png' %}"
+                                                        alt=""></a>
+                                                        <h3 class="vacation_header_title">
+                                                                <a href={{freelancer.get_absolute_url}}> {{freelancer.user}} </a>
+                                                                </h3>
+
+
+                                            </div>
+
+
+                                            <div class="col-md-9">
+                                                <div class="vacation_content_icon">
+                                                    <div class="vacation_content_header">
+                                                        <div class="vacantion_header_left">
+                                                           <div class="vacation_header_descrition">
+                                                            <h4> Field:{{freelancer.prof_title}} </h4>
+                                                        </div>
+
+                                                        </div>
+                                                        <div class="save_freelancers">
+
+
+
+                                                            <span> <a href="members.html"> $20.00 &nbsp; /hr</a></span><br>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="vacation_timezone">
+
+
+                                                        <div class="row">
+                                                        <div class="freelancers_information col-md-9">
+                                                                <p>{{freelancer.prof_overview}} </p>
+                                                                </div>
+
+                                                    <div class="col-md-3 read_more">
+                                                    <h4> <a href="members.html">Read More</a> </h4></div></div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                                <a> {{result.city|upper}} </a>
+                                {% endfor %}
+{{paginator.page_range}}
+                                {% if is_paginated %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li class="prev pagination_page "><a class="num num2 " href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-left"></i></a></li>
+    {% else %}
+      <!--<li class=" disabled pagination_page "><a class="num num2"><i class="fas fa-angle-left"></i></a></li>-->
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="active pagination_page"><a class="num">{{ i }} <span class="sr-only">(current)</span></a></li>
+      {% else %}
+
+        <!--<li class="pagination_page "><a class="num" href="?page={{ i }}">{{ i }}</a></li>-->
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li class="next  pagination_page "><a class="num num3" href="?page={{ page_obj.next_page_number }}"><i class="fas fa-angle-right"></i></a></li>
+    {% else %}
+      <!--<li class="disabled pagination_page"><a class="num num3"><i class="fas fa-angle-left"></i></a></li>-->
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+ var numberofitem=$(".pagination_page").length;
+$(".num3").on("click", function(){
+    for(var i=6; i<numberofitem; i++){
+       console.log()
+    }
+})
+// $('.pagination_page:gt(' + (numberofitem /4) + ')').css('display', 'none'); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
+
+// $(".pagination .num3").on("click", function() {
+//   // Check if page number that was clicked on is the current page that is being displayed
+//   if ($(this).hasClass('active')) {
+//     return false; // Return false (i.e., nothing to do, since user clicked on the page number that is already being displayed)
+//   } else {
+  
+//     // Loop through total items, selecting a new set of items based on page number
+//     for (var i = grandTotal; i < grandTotal; i++) {
+//       $(".pagination_page:eq(" + i + ")").show(); // Show items from the new page that was selected
+//     }
+//   }
+//   $('.pagination_page:gt('  + ')').css('display', 'block');
+// });
+  
+} );
+    </script>
+    <!--end section content -->
+    {% endblock %}
+  

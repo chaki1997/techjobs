@@ -1,0 +1,808 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+a{
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease!important;
+    color: black!important;
+}
+
+ul{
+    list-style-type: none!important;
+}
+li{
+    text-decoration: none;
+}
+a:hover{
+    list-style-type: none!important;
+    text-decoration: none!important;
+}
+i{
+    color: #3f9bd7;
+    vertical-align: middle;
+    font-size: 20px!important;
+}
+p{
+    
+    /* font-size: 13px!important; */
+    color: #656565 !important;
+}
+h2{
+
+    line-height: 20px!important;
+
+    font-weight: 300!important;
+}
+h3{
+    line-height: 24px;
+    font-size: 18px!important;
+    font-weight: 500;
+    color: #222;
+
+
+}
+h4{
+    color: #33518f;
+    font-size: 16px!important;
+    margin-top: 15px!important;
+}
+
+
+.scrolled{
+    background:#fff;
+}
+header{
+    top: 0;
+    background: #fff;
+    z-index: 9999;
+    position: fixed;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+            box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    padding: 15px;
+    width: 100%;
+}
+.search {
+    width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .searchTerm {
+    width: 200px;
+    border: 1px solid rgba(0, 180, 204, 0.226);
+    border-right: none;
+    padding: 5px;
+
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+
+
+  .searchButton {
+    width:100%;
+    height: 36px;
+    border: 1px solid rgba(0, 180, 204, 0.226);
+    border-left-width: 0px;
+    background: #af6e7400;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .fa-search:before {
+    color: #6e83af;
+    content: "\f002";
+}
+
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 17%;
+
+
+  }
+  .logo{
+      text-align: center;
+  }
+  .logo img{
+      height: 50px;;
+  }
+  .nav_left{
+      padding-top: 15px;
+  }
+
+  .nav_left ul{
+    margin-left: -38px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+
+  }
+  .nav_left ul li{
+    padding-left: 25px;
+  }
+ .post_job a, .post_job a {
+    padding: 5px 18px;
+   
+    width: 96px;
+    color: black!important;
+    border-radius: 2px;
+}
+  .post_job a:hover, .post_job a:hover {
+
+    background: #3f9bd7;
+    color: #fff!important;
+    width: 96px;
+    border-radius: 2px;
+}
+.nav_left ul li a:hover i{
+    color: #8ebbdb;
+}
+.fa-sign-in:before, .fa-user:before {
+    padding-right: 15px;
+}
+
+
+/*  start jobs banner */
+#jobs_banner{
+    padding-top: 200px;
+    background:linear-gradient(0deg, rgba(31, 29, 30, 0.6), rgba(0, 0, 0, 0.3)),url("../../Joblist/images/girl-with-digital-tablet-on-the-grass-PR3LFJW.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position:bottom center;;
+    background-repeat: no-repeat;
+}
+.jobs_banner_header{
+   text-align: center;
+}
+.jobs_banner_header h1{
+    color: #fff;
+}
+.jobs_banner_content_search{
+    margin-top: 50px;
+}
+.jobs_banner_content_search form{
+   width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.jobs_banner_content_search form select, .jobs_banner_content_search form input{
+
+    height: 60px;
+    padding-left: 40px !important;
+
+}
+.jobs_banner_content_search form select{
+    border-radius: 50px 0 0 50px;
+   width: 190px;
+   border: none;
+
+}
+.jobs_banner_content_search form .search_input input{
+    border: none;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+     width: 450px;
+     border-radius: 50px 0 0 50px;
+}
+.jobs_banner_content_search .search_location input{
+    border: none;
+
+
+     width: 190px;
+
+}
+.search_button button{
+    background:#33518f;
+    height: 60px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    width: 90px;
+    color: #fff;
+}
+/*  end jobs banner */
+
+
+/* start Jobs_content */
+.jobs_main{
+    border-radius: 10px 10px 0 0;
+    margin-top: -150px;
+    background-color: rgb(251, 251, 251);
+    padding: 45px;
+    padding-left: 55px;
+    padding-right: 55px;
+
+}
+.jobs_content{
+    z-index: 5;
+
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.jobs_content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.jobs_content_info a{
+color: #33518f!important;
+}
+
+
+.agle_down{
+    cursor: pointer;
+}
+.agle_down span {
+    font-weight: 600;
+}
+.jobs_left_filter{
+    padding-top: 50px;
+}
+.jobs_progress_info_first li {
+    padding: 8px;
+}
+.jobs_progress_info_first ul li a:hover{
+    color: #33518f!important;
+}
+
+
+.jobs_show_more {
+  position: relative;
+  height: auto;
+  border-top: 0;
+}
+
+[type="checkbox"] {
+  display:none;
+}
+
+.jobs_show_more label {
+
+  display: block;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+
+  -webkit-transition: top .45s cubic-bezier(.44, .99, .48, 1);
+
+  -o-transition: top .45s cubic-bezier(.44, .99, .48, 1);
+
+  transition: top .45s cubic-bezier(.44, .99, .48, 1);
+}
+
+
+ .jobs_show_more label:before,
+ .jobs_show_more label:after {
+  position: absolute;
+}
+
+.jobs_show_more label:before {
+  content: 'More';
+  left: 10px;
+}
+
+.jobs_show_more label:after {
+  content: '⇣●';
+  right: 10px;
+  -webkit-animation: sudo .85s linear infinite alternate;
+  animation: sudo .85s linear infinite alternate;
+}
+
+@-webkit-keyframes sudo {
+  from {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  to {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+}
+
+@keyframes sudo {
+  from {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  to {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+}
+
+.jobs_show_more input[type="checkbox"] ~ ul {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height .45s cubic-bezier(.44, .99, .48, 1);
+  -o-transition: max-height .45s cubic-bezier(.44, .99, .48, 1);
+  transition: max-height .45s cubic-bezier(.44, .99, .48, 1);
+}
+
+
+.jobs_show_more input:checked ~ ul {
+
+
+  max-height: 300px;
+}
+
+.jobs_show_more input:checked + label {
+  top: 100%;
+}
+
+.jobs_show_more input:checked + label:before {
+  content: 'Less';
+}
+
+.jobs_show_more input:checked + label:after {
+  content: '⇡●';
+}
+
+
+.jobs_show_more label {
+    margin-left:-11px;
+
+}
+
+.jobs_progress i{
+
+    float: right;
+}
+.jobs_progress{
+    margin-top: 20px;
+    padding:5px 5px;
+
+    border-bottom: 1px solid grey;
+}
+.agle_down i{
+    color: #33518f;
+}
+.filter_left h4{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.jobs_progress_info_first .content_sign_input label{
+    padding-left: 4px;
+}
+.content_sign_input{
+    scroll-behavior: smooth;
+}
+
+/*  start right vanancion */
+.vacation_content{
+    position: relative;
+    background-color: #fff;
+    margin: 35px 0;
+    padding: 5px;
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+
+}
+.vacation_content_icon{
+    padding-left: 25px;
+}
+.vacation_img img{
+    text-align: center;
+    border-radius: 50%;
+    width: 80%;
+}
+.vacation_img{
+text-align: center;
+}
+.vacation_content_header{
+    vertical-align: middle;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.vacation_content_header i{
+    font-size: 16px!important;
+}
+.vacation_header_title{
+    vertical-align: top;
+}
+.vacation_count{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.vacation_content:hover {
+    border-top: 5px solid #618ce4;
+}
+.progress{
+    height: 4px!important;
+}
+.country_freelancers{
+    padding-top: 20px;
+}
+.country_freelancers p span{
+    font-weight: 600;
+    font-size: 16px;
+    color: #33518f;
+}
+.freelancers_information ul {
+    margin-left: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
+.choose_full_check:after {
+    top: -7px;
+    content: '';
+    border-left: 1px solid #80808091;
+    height: 41px;
+    position: absolute;
+    left: 50%;
+}
+.freelancers_information ul li{
+
+    list-style-type: disc!important;
+}
+.save_freelancers h4{
+    margin-top: 0!important;
+}
+.col-md-3.read_more {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    position: ABSOLUTE;
+    bottom: 4%;
+    left: 80%;
+}
+.read_more a{
+    font-weight: bold;
+}
+.freelancers_information {
+word-break: break-word;
+    padding-top: 15px;
+}
+.freelancers_information  p{
+    overflow: hidden;
+    height:90px!important;
+}
+/* end right vanancion */
+/* end Jobs_content */
+/* start pagination */
+.pagination{
+    margin-left: -50px;
+}
+.pagination li a{
+    margin: 6px 1px;
+    display: inline-block;
+    width: 50px;
+    background: #2c3e50;
+    height: 60px;
+    line-height: 60px;
+    color: #fff!important;
+    font-weight: 600;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    padding-right: 6px;
+  }
+  li.prev,li.next{
+
+    font-size: 20px;
+  }
+  a.num.num2 {
+    width: 60px;
+}
+i.fas.fa-angle-left {
+    padding-left: 15px;
+}
+  li.pagination_page a:hover{
+    background: #516bf0 !important
+  }
+
+  li.active a{
+    background: #516bf0 !important
+  }
+  li.disabled{
+    margin: 6px 1px;
+    display: inline-block;
+    width: 40px;
+    background: #2c3e50;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    padding-right: 6px;
+
+  }
+
+
+
+  li.pagination_page a::before,li.pagination_page a:after{
+    content: "";
+    position: absolute;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+
+  }
+
+  a.num::before,li.next::before{
+    border-right: 20px solid #2c3e50;
+    right: 100%;
+
+  }
+  
+  a.num:hover::before,.next:hover::before{
+    border-right: 20px solid #516bf0 !important;
+    right: 100%;
+
+  }
+
+   li a.num:after,.prev:after{
+    border-right: 20px solid #f1f1f1;
+    right: 0;
+
+  }
+   li a.num:last-child:after{
+
+    right: 0;
+
+  }
+  li.active a.num::before, .next:hover::before {
+    border-right: 20px solid #516bf0 !important;
+    right: 100%;
+}
+li.prev.pagination_page a::before, li.prev.pagination_page a:after{
+
+}
+a.num2:first-child:before{
+    border-right: 20px solid #fff;
+
+}
+a.num3:first-child:after{
+    border-right: 20px solid #fff;right: -35px!important;
+}
+li.prev a{
+    border-radius: 30px 0 0 30px;
+  }
+
+  li.next a{
+    border-radius: 0 30px 30px 0;
+  }
+.post_job{
+    width: 100%;
+}
+/* end pagination */
+
+/* start footer */
+
+/* end footer */
+/*  end footer */
+
+
+/* vacation */
+
+/* start vacation_banner */
+@media only screen and (max-width: 991px) {
+    .adv{
+        display: none!important;
+    }
+
+}
+
+@media only screen and (max-width: 967px) {
+    .jobs_banner_content {
+        display: block;
+
+    }
+    .jobs_banner_content_search form select {
+        width: 100%;
+        border-radius: 5px;
+        /* width: 190px; */
+        border: none;
+    }
+    .jobs_banner_content_search form {
+        width: 90%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: contents;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+    width: 90%;
+    }
+    .search_input {
+        width: 100%!important;
+        margin: 5px 0 5px 0;
+    }
+    .jobs_banner_content_search{
+        margin-top: 0!important;
+    }
+
+    .jobs_banner_content_search .search_location input{
+        width: 100%!important;
+        margin: auto;
+    }
+    #jobs_banner{
+        padding-top: 130px;
+    }
+    .jobs_banner_content_search form .search_input input{
+        border-radius: 0 0 0 0 ;
+        width:100% ;
+    }
+    .search_button button {
+        background: #33518f;
+        height: 40px;
+        border: none;
+        border-radius: 2px;
+        width: 90px;
+        color: #fff;
+    }
+    .jobs_banner_content_search form select, .jobs_banner_content_search form input{
+        height: 40px!important;
+    }
+    .jobs_content {
+        display: none;
+
+        -webkit-box-pack: justify;
+
+            -ms-flex-pack: justify;
+
+                justify-content: space-between;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .vacation_content_header {
+        display: table-cell;
+    }
+    .vacation_content_icon {
+        display: -ms-inline-grid;
+        display: inline-grid;
+        margin-top: 23px;
+        padding-left: 25px;
+    }
+    .freelancers_information ul {
+        margin-left: 20px;
+        display: block;
+    }
+    .vacation_img img {
+        text-align: center;
+        border-radius: 50%;
+        width: 20%;
+    }
+    .col-md-3.vacation_img {
+        display: -ms-inline-grid;
+        display: inline-grid;
+        padding-top: 16px;
+    }
+    .vacation_header_title {
+        padding-top: 15px;
+        vertical-align: top;
+    }
+    .jobs_main {
+        border-radius: 10px 10px 0 0;
+        margin-top: -220px;
+        background-color: rgb(251, 251, 251);
+        padding: 0;
+        padding-left: 0;
+        padding-right: 0
+    }
+    .vacation_content {
+        position: relative;
+        background-color: #fff;
+        margin: 35px 0;
+        padding: 0px;
+        padding-left: 15px!important;
+        padding-right: 15!important;
+        -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+        box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+        -webkit-transition: ease-in-out .3s;
+        -o-transition: ease-in-out .3s;
+        transition: ease-in-out .3s;
+    }
+    .vacation_content_icon {
+        display: -ms-inline-grid;
+        display: inline-grid;
+        margin-top: 23px;
+        padding-left: 0px;
+    }
+
+}
+@media only screen and (max-width: 425px) {
+    .vacation_content_icon{
+        padding-left: 0!important;
+    }
+    .jobs_banner_content_search form select {
+        width: 50%;
+        border-radius: 5px;
+        /* width: 190px; */
+        border: none;
+    }
+    .col-md-3.read_more {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        position: ABSOLUTE;
+        bottom: 3%;
+        left: 0;
+
+    }
+    .left_side_bar_item>a.Post_jobs{
+        text-align: center;
+    width: 100%;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .read_more.col-md-3{
+        left: 25px!important;
+    }
+    .search_button {
+        margin-top: 5px;
+    }
+}
+.choose_full_check input, .choose_free_check input {
+    
+    position: relative;
+    background-color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+   border-radius: 5px;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+}
+.choose_full_check input:focus, .choose_free_check input:focus{
+    background: #3f9bd7;
+}
+.choose_full_check:hover input, .choose_free_check:hover input{
+    background: #3f9bd7;
+}
+/* vacation */
+
+/* start vacation_banner */

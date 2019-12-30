@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    
+    <link rel="stylesheet" href="{% static 'profiles/job_post_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ 
+</head>
+<body>
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="main_left">
+                    <ul class="main_left_ul">
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'index' %}"><i class="fas fa-pencil-ruler"></i>Title <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'description' %}"><i class="fas fa-file-prescription"></i>Description <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'detials' %}"><i class="fas fa-info" style="padding-left: 5px;"></i>Details <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'expertise' %}"><i class="fab fa-creative-commons-remix"></i>Expertise <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'visibility' %}"><i class="fas fa-eye"></i>Visibilite <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'budget' %}"><i class="fas fa-search-dollar"></i>Budget <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="right_main_getting_start">
+            <div class="right_main_getting_header review_header">
+                <h2 >Review and post</h2>
+                <a href="Description.html" class="Post_jobs">Post Jobs Now</a>
+            </div>
+           <div class="right_main_getting_content">
+               <div class="right_main_getting_content_review">
+                   <div class="row">
+                   <div class="review_title col-md-10">
+                       <h3>Title</h3>
+                       <div class="review_title_cont">
+                           <label for="">Title</label>
+                           <p>music</p>
+                       </div>
+                       <div class="review_title_cont">
+                           <label for="">Job Category</label>
+                           <p>Music Composition</p>
+                       </div>
+                   </div>
+                 <div class="col-md-1">
+                                <a href="{% url  'profile_wizard:job_post_wizard' 'index' %}"><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                        </div>
+               
+            </div>
+                  </div>
+               </div>
+           </div>
+            <div class="right_main_getting_start">
+            
+           <div class="right_main_getting_content_review">
+                <div class="row">
+                        <div class="review_title col-md-10">
+                            <h3>Description</h3>
+                            <div class="review_title_cont">
+                                <label for="">Description</label>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis adipisci quis eius reprehenderit sunt maiores minima veritatis quidem unde est, voluptatem nihil? Nesciunt voluptatibus, eveniet corrupti quibusdam velit labore architecto.</p>
+                            </div>
+                            
+                        </div>
+                      <div class="col-md-1">
+                                     <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                             </div>
+                             </div>
+                            
+                    
+                 
+                  
+                 
+               </div>
+           </div>
+
+            <div class="right_main_getting_start">
+            
+           <div class="right_main_getting_content_review">
+                <div class="row">
+                        <div class="review_title col-md-10">
+                            <h3>Details</h3>
+                            <div class="review_title_cont">
+                                <label for="">Type of Project</label>
+                                <p>One-time project</p>
+                            </div>
+                            
+                        </div>
+                      <div class="col-md-1">
+                                     <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                             </div>
+                             </div>
+                             <hr>
+                             <div class="row">
+                             <div class="review_title col-md-9">
+                                    <h3>Screening Questions</h3>
+                                    <div class="review_title_cont">
+                                        <label for="">Require Cover Letter</label>
+                                        <p>Yes</p>
+                                    </div>
+                                    
+                                </div></div>                                                  
+                 
+               </div>
+           </div>
+
+
+            <div class="right_main_getting_start">
+            
+           <div class="right_main_getting_content_review">
+                <div class="row">
+                        <div class="review_title col-md-10">
+                            <h3>Visibility</h3>
+                            <div class="review_title_cont">
+                                <label for="">Job Posting Visibility</label>
+                                <p>Freelancers and agencies using Upwork and public search engines can find this job.</p>
+                            </div>
+                            
+                        </div>
+                      <div class="col-md-1">
+                                     <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                             </div>
+                             </div>
+                             <hr>
+                             <div class="row">
+                             <div class="review_title col-md-12">
+                                    <h3>Talent Preferences</h3>
+                                    <div class="row">
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Talent Type</label>
+                                        <p>No preference</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Job Success Score</label>
+                                        <p>Any job success</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Hours Billed on Upwork</label>
+                                        <p>Any amount</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">English Level (self-assigned)</label>
+                                        <p>Any level</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Rising Talent</label>
+                                        <p>Include rising talent    </p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Qualification Group</label>
+                                        <p>No preference</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Location</label>
+                                        <p>Any location</p>
+                                    </div>
+                                    
+                                    </div>
+                                </div></div>                                                  
+                  
+               </div>
+           </div>
+            <div class="right_main_getting_start">
+            
+           <div class="right_main_getting_content_review">
+                <div class="row">
+                        <div class="review_title col-md-10">
+                            <h3>Budget</h3>
+                            
+                            
+                        </div>
+                      <div class="col-md-1">
+                                     <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                             </div>
+                             </div>
+                            
+                             <div class="row">
+                             <div class="review_title col-md-12">
+                                    
+                                    <div class="row">
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Hourly or Fixed-Price</label>
+                                        <p>Pay by the hour</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Experience Level</label>
+                                        <p>Entry</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Project Duration</label>
+                                        <p>More than 6 months</p>
+                                    </div>
+                                    <div class="review_title_cont col-md-6">
+                                        <label for="">Time Commitment</label>
+                                        <p>More than 30 hrs/week</p>
+                                    </div>
+                                   
+                                    
+                                    </div>
+                                </div></div>                                                  
+                  
+               </div>
+           </div>
+
+ <div class="right_main_getting_start">
+            
+           <div class="right_main_getting_content_review">
+                <div class="row">
+                        <div class="review_title col-md-10">
+                            <h3> <i class="far fa-gem"></i> &#160; Boost your job's visibility</h3>
+                            <div class="review_title_cont">
+                               
+                                <p>We'll feature your job and top talent will receive special discounts to work on your project.</p>
+                               <p>
+                                <input type="checkbox">
+                                <span>Tell me how I can <strong>reach more freelancers and agencies and hire in less time.</strong></span>
+                               </p>
+                            </div>
+                            
+                        </div>
+                      <div class="col-md-1">
+                                     <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                             </div>
+                             </div>
+                             
+               </div>
+           </div>
+
+ <div class="right_main_getting_start">
+            
+           <div class="right_main_getting_content_review">
+                <div class="row">
+                        <div class="review_title col-md-10">
+                            <h3> <i class="fas fa-user-plus"></i> &#160; Coworkers</h3>
+                            <div class="review_title_cont">
+                               
+                                <p>Let a coworker help you find, interview, and evaluate freelancers.</p>
+                               <div class="review_cowerkers">
+                                   <label for="" class="control-label">Email Addresses</label>
+                                   <input type="text" placeholder="Separate emails using commas">
+                               </div>
+                               <div class="review_cowerkers">
+                                   <label for="" class="control-label">Message</label>
+                                   <textarea name="message" id=""  rows="60" placeholder="Write a message to your coworker"></textarea>
+                               </div>
+                               <input type="checkbox">
+                               <span>Also allow these coworkers to hire and pay with this account.</strong></span>
+                            </div>
+                            
+                        </div>
+                      <div class="col-md-1">
+                                     <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                             </div>
+                             </div>
+                             
+               </div>
+               <div class="right_main_getting_footer">
+                    <form class="fa fa-user" action="{% url  'profile_wizard:job_post_wizard' step %}" method="post">{% csrf_token %}
+                       <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                            {{ wizard.management_form }}
+                          <button class="Continue" type="submit">Continue</button>
+                       </form>
+                </div>
+           </div>
+
+           <!-- end -->
+        </div>
+        </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </body>
+    </html>

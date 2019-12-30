@@ -1,0 +1,46 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+   
+    <link rel="stylesheet" href='{% static "user/css/pass.css"%}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <section id="password_change ">
+        <div class="container">
+            <div class="password_change_info text-center  ">
+                <h2>Change Your Password</h2>
+<form  action="{% url  'profile_wizard:password'   %}" method="post" > {% csrf_token %}
+ 
+    <div class="col-md-12">
+        <label for="id_old_password"> Old Password  </label>  
+        <div>{{form.old_password}}</div>
+     </div>
+    <div class="col-md-12"><label for="id_new_password1"> New Password  </label> 
+        <div> {{form.new_password1}} </div>
+    </div>
+    <div class="col-md-12"> <label for="id_new_password2">  Confirm  new password </label> 
+        <div>{{form.new_password2}} </div>
+        </div>
+<div><button type="submit" id="save_button">Update</button></div>
+    </row>
+</form>
+</div>
+</div>
+</section>
+
+</body>
+</html>
+{% endblock %}

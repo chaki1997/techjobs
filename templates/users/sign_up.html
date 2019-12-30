@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href='{% static "user/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <style>
+    #message {
+        display:none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+      }
+      
+      #message p {
+        padding: 10px 35px;
+        font-size: 15px;
+      }
+      
+      /* Add a green text color and a checkmark when the requirements are right */
+      .valid {
+        color: green;
+      }
+      
+      .valid:before {
+        border: 1px solid black;
+        position: relative;
+        left: -35px;
+        content: "✔";
+      }
+      
+      /* Add a red text color and an "x" when the requirements are wrong */
+      .invalid {
+        color: red;
+      }
+      
+      .invalid:before {
+          border: 1px solid black;
+        position: relative;
+        left: -35px;
+        content: "✖";
+      }
+      </style>
+   <!-- <script>
+        function validatePassword(password) {
+
+            // Do not show anything when the length of password is zero.
+            if (password.length === 0) {
+                document.getElementById("msg").innerHTML = "";
+                return;
+            }
+            // Create an array and push all possible values that you want in password
+            var matchedCase = new Array();
+            matchedCase.push("[$@$!%*#?&]"); // Special Charector
+            matchedCase.push("[A-Z]");      // Uppercase Alpabates
+            matchedCase.push("[0-9]");      // Numbers
+            matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+            // Check the conditions
+            var ctr = 0;
+            for (var i = 0; i < matchedCase.length; i++) {
+                if (new RegExp(matchedCase[i]).test(password)) {
+                    ctr++;
+                }
+            }
+            // Display it
+            var color = "";
+            var strength = "";
+            switch (ctr) {
+                case 0:
+                case 1:
+                case 2:
+                    strength = "Very Weak";
+                    color = "red";
+                    break;
+                case 3:
+                    strength = "Medium";
+                    color = "orange";
+                    break;
+                case 4:
+                    strength = "Strong";
+                    color = "green";
+                    break;
+            }
+            document.getElementById("msg").innerHTML = strength;
+            document.getElementById("msg").style.color = color;
+        }
+    </script> -->
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" col-md-3 logo">
+                        <a href="{% url 'home:index'  %}" ><img href="kjkj" src="{% static 'images/logo.png'%}" alt=""></a>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="sign_up">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
+                    <div class="login_form login_form_user">
+                        <form class="login100-form validate-form p-l-55 p-r-55 p-t-178"
+                            action="{% url  'users:register'  %}" method="post" id="pass_conf">
+                            {% csrf_token %}
+                            <div class="login_form_header">
+                                <h2>Get Your Free account</h2>
+                                <div class="user_form first" >
+                                    {{ form.subject.errors }}
+                                    {{ form.first_name }}
+                                    {{ form.subject.errors }}
+                                    {{ form.last_name }}
+                                    <hr>
+                                    {{ form.subject.errors }}
+                                    {{ form.email }}
+                                    <div><span id="msg"></span></div>
+
+                                 
+                            
+                            
+
+                                <div class="user_form second">
+                                     {{ form.subject.errors }}
+                                    {{ form.username }}
+                                    <hr>
+                                   
+                                    {{ form.subject.errors }}
+                                    {{ form.password1 }}
+                                    <br>
+
+                                    {{ form.subject.errors }}
+                                    {{ form.password2 }}
+                                    <hr>
+                                    <span id="msg"></span>
+                                    <div id="message">
+                                        <p>Password must contain the following:</p>
+                                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                        <p id="number" class="invalid">A <b>number</b></p>
+                                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                      </div>
+                                      <div id="confirm-message3" class="confirm-message"></div>
+                                    <div class="content_sign">
+                                        <h4 style="text-align: center; font-weight: 400;">Who You
+                                            Are:</h4>
+                                        <div class="radio_block">
+                                            <form action="" class="">
+                                                <!-- <div class="row"></div> -->
+                                                <div class="radio_none_item content_sign_input seeker_main fixed_price col-md-6">
+                                                    <input id="Seeker" type="radio" name="name" value="Job Seeker"
+                                                        style="">
+                                                    <label for="Seeker">
+                                                        <span id="tag4" onclick="add(id)" class="tag_skills_info ">Job Seeker</span>
+                                                    </label>
+                                                </div>
+                                                <div class="radio_none_item content_sign_input employer employer pay_hour col-md-6">
+                                                    <input id="Employer" type="radio" name="name" value="Employer"
+                                                        style="">
+                                                    <label for="Employer">
+                                                            <span id="tag2" onclick="add(id)" class="tag_skills_info ">Employer</span>
+                                                         </label>
+                                                </div>
+                                            
+                                            </form>
+                                        </div>
+                                        
+                                            
+
+                </div>
+                <!-- <div class="input"><input type="text" class="input"></div> -->
+                <script>
+                        $(document).ready(function(){
+                          $(".employer").click(function(){
+                            $('#input').val($('#tag2').text() );
+
+                            
+                             
+                            
+                             
+                          });
+                          $(".company").click(function(){
+                            $('#input').val(  $('#tag6').text() );  
+                             
+                            
+                             
+                          });
+                          $(".seeker_main").click(function(){
+                            $('#input').val(  $('#tag4').text() );  
+                             
+                            
+                             
+                          });
+                          $(".tag_skills_info ").click(function(){
+                            $('#input').val(  $('#tag4').text() );  
+                             
+                            
+                             
+                          });
+                          $(".employer ").click(function(){
+                            $('.employer').css('background-color', '#007bff;');  
+                             
+                            
+                             
+                          });
+
+                      });
+                  </script>
+
+                                    {{ form.subject.errors }}
+                                    {{ form.status }}
+
+
+
+
+
+
+                                        <button type="submit" class="user_sign_up">Sign Up</button>
+
+                                    </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- end Form -->
+    <!-- <section id="vendors">
+        <div class="container">
+            <div class="vendor_main">
+                <h4 style="text-align: center;">Trusted by 5M+ businesses</h4>
+            <div class="vendor_images"></div>
+        </div>
+    </div>
+    </section> -->
+
+    <!-- end vendor -->
+
+    <footer>
+            <div class="container">
+                <div class="row footer_head">
+
+
+               <div class="logo_footer col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <img src='{% static "home/images/logo.png" %}' alt="">
+                            </div>
+
+
+            </div>
+            <div class="footer_nav">
+                <div class="row">
+
+
+                <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                    <h2>Company</h2>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:about' %}">About Us</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile_wizard:freelancer_list' 'freelancer' %}">Freelancers</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile_wizard:joblist' 'all' %}">Find Jobs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                    <h2>RESOURCES</h2>
+                    <ul>
+                       <li>
+                            <a href="{% url 'home:terms' %}">Terms</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'home:privacy' %}">Pivacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social col-md-4">
+                        <div class="social_head">
+                            <h2>Follow Us</h2>
+                            <ul class="social_ul" style="display:flex; justify-content: center;">
+                                <li>
+                                    <a href="https://www.facebook.com/techjobs.one/">
+                                            <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCbLW_RTS4sqFW1avthebTeQ/featured?view_as=subscriber">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                                
+                                
+                            </ul>   
+                        </div>
+                    </div>
+
+            </div>
+            </div>
+            </div>
+            </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <script>
+        $("#id_username").change(function () {
+            console.log($(this).val());
+        });
+    </script>
+    <script>
+        // $('.user_sign_up').click(function () {
+        //     $(".first").fadeOut(function () {
+        //         $(".second").fadeIn();
+        //     });
+        // });
+        // $('.Back_button').click(function () {
+        //     $(".login_form_password").fadeOut(function () {
+        //         $(".login_form").fadeIn();
+        //     });
+        // });
+        
+    </script>
+    <script>
+    $(document).on('click', '.radio_none_item', function () {
+            $(this).toggleClass('active').siblings().removeClass('active');
+
+        });
+        $(document).ready(function () {
+            $(".fix_hour_none").hide();
+            $(".pay_hour_none").hide();
+            $(".pay_hour").click(function () {
+                $(".pay_hour_none").show("swing");
+                $(".fix_hour_none").hide("swing");
+            })
+            $(".fixed_price").click(function () {
+                $(".fix_hour_none").show("swing");
+                $(".pay_hour_none").hide("swing");
+
+            });
+        })
+        
+    </script>
+    <!-- script menu -->
+
+    <script>
+        $('#hamburger').click(function () {
+
+            $(this).toggleClass('animate');
+            $('.nav_left').toggleClass('active');
+            // $('.search').toggleClass('active');
+
+
+        });
+    </script>
+    <!-- script menu -->
+    <script>
+    $(document).on('click', '.tag_skills_info',function(){
+        $(this).toggleClass('active');
+
+
+    } )
+    
+    // $(document).on('click', '.tag_skills_info',function(){
+    //     var val = $("#input").val();
+    //     if(val=='Company'){
+    //         $(this).addClass('company')
+    //     }
+    //      else{
+    //         $(this).addClass('companyy')
+    //     }
+
+    // })
+
+
+
+    </script>
+
+<script>
+    var myInput = document.getElementById("psw");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function() {
+      document.getElementById("message").style.display = "block";
+    }
+    
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function() {
+      document.getElementById("message").style.display = "none";
+    }
+    
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+      // Validate lowercase letters
+      var lowerCaseLetters = /[a-z]/g;
+      if(myInput.value.match(lowerCaseLetters)) {  
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+      } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+      }
+      
+      // Validate capital letters
+      var upperCaseLetters = /[A-Z]/g;
+      if(myInput.value.match(upperCaseLetters)) {  
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+      } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+      }
+    
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+      
+      // Validate length
+      if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }
+    </script>
+    <script>
+        $(function(){
+    $('#pass_conf [type="password"]').keyup(function(){
+        //Store the field objects into variables ...
+        var password = $('#psw');
+        var confirm  = $('#psw2');
+        var message  = $('#confirm-message3');
+        
+        //Set the colors we will be using ...
+        var good_color = "#66cc66";
+        var bad_color  = "#ff6666";
+        if(password.val() == confirm.val()){
+            confirm.css('background-color', good_color);
+            message.css('color', good_color).html("Passwords Match!");
+        } else {
+            confirm.css('background-color', bad_color);
+            message.css('color', bad_color).html("Passwords Do Not Match!");
+        }
+    });
+});
+    </script>
+    
+    <!-- <script src="{% static 'user/js/skillTag.js' %}"></script> -->
+
+</body>
+
+</html>

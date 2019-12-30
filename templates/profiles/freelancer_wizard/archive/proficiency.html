@@ -1,0 +1,98 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'profiles/freelancer_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+        
+            <!-- end header -->
+    <!-- start section create -->
+    <section id="getting_start">
+    <div class="create_head">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="main_left">
+                        <ul class="main_left_ul">
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'starter' %}"><i class="fas fa-pencil-ruler"></i>Start<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'education' %}"><i class="fas fa-user-graduate"></i>Education <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'employment' %}"><i class="fas fa-briefcase"></i>Employment <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            {% if  all_data.starter.status == 'Freelancer' %}
+                            <li class="main_left_li active">
+
+                                <a href="{% url 'profile_wizard:profile_wizard' 'hour_rate' %}"><i class="fas fa-search-dollar"></i>Hourly Rate <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            {% endif %}
+                            <li class="main_left_li active current">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'proficiency' %}"><i class="fas fa-eye"></i>Languages & Skills <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-search-location"></i>Location <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-check"></i>Review <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12 col-sm-12 main_sign">
+                    <form  action="{% url  'profile_wizard:profile_wizard' step %}" method="post"> {% csrf_token %}
+            {{ wizard.management_form }}
+                    <div class="main_sign_info">
+                        <div class="profiction_main">
+                            <h3 class="profiction">What is your English proficiency? </h3>
+                             {{ form.language_compatancy }}
+                            <h3 style="margin-top: 15px;">Category/industry</h3>
+                            {{ form.category_industry }}
+                        </div>
+                        <div class="right_main_getting_footer">
+                                 <button formnovalidate="formnovalidate" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                                            {{ wizard.management_form }}
+                                        <button class="Continue" type="submit">Continue</button>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+{% endblock %}

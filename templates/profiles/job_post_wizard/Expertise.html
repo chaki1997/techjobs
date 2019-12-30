@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    
+    <link rel="stylesheet" href="{% static 'profiles/job_post_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ 
+</head>
+<body>
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="main_left">
+                    <ul class="main_left_ul">
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'index' %}"><i class="fas fa-pencil-ruler"></i>Title <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'description' %}"><i class="fas fa-file-prescription"></i>Description <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'detials' %}"><i class="fas fa-info" style="padding-left: 5px;"></i>Details <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'expertise' %}"><i class="fab fa-creative-commons-remix"></i>Expertise <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'visibility' %}"><i class="fas fa-eye"></i>Visibilite <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'budget' %}"><i class="fas fa-search-dollar"></i>Budget <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="right_main_getting_start">
+            <div class="right_main_getting_header">
+                <h2>Expertise</h2>
+                <p>Step 4 of 7</p>
+            </div>
+           <div class="right_main_getting_content">
+               <h4>What skills and expertise are most important to you in Music Composition?</h4>
+               <div class="create_skills">
+                   <div class="music_instrument">
+                   <p>Musical Instruments (optional)</p>
+                   <hr>
+                </div>
+                <div class="left_side_skills_info">
+                    <span id="tag1" onclick="add(id)" class="tag_skills_info ">
+                        Administrative Support </span>
+                    <span id="tag2" onclick="add(id)" class="tag_skills_info">
+                        Virtual Assistent</span>
+                    <span id="tag3" onclick="add(id)" class="tag_skills_info">
+                        English</span>
+                    <span id="tag4" onclick="add(id)" class="tag_skills_info">
+                        Chines</span>
+                    <span id="tag5" onclick="add(id)" class="tag_skills_info">
+                        CopyWriting</span>
+                    <span id="tag6" onclick="add(id)"  class="tag_skills_info">
+                        Copyending</span>
+                    <span id="tag7" onclick="add(id)" class="tag_skills_info">
+                        Customer Service</span>
+                    <span id="tag8" onclick="add(id)" class="tag_skills_info">
+                        Cistomer Support</span>
+                        <span id="tag9" onclick="add(id)" class="tag_skills_info">
+                            Customer Retention</span>
+                    <input type="text" name="fname" id="input" value="">
+                    <p id="demo"></p>
+                </div>
+               
+                 
+                  
+                  <hr>
+                 
+               </div>
+           </div>
+        </div>
+        
+            
+
+            
+                    <div class="right_main_getting_start">
+                    <h4>What additional skills and expertise are important to you?</h4>
+                    <div class="create_skills">
+                           
+                         <div class="left_side_skills">
+                             <span class="tag_skills_info"> 
+                                    English Grammar  </span>
+                             <span class="tag_skills_info">
+                                    Adobe Photoshop </span>
+                             <span class="tag_skills_info">
+                                    Writing </span>
+                             <span class="tag_skills_info">
+                                    WordPress </span>
+                             <span class="tag_skills_info">
+                                    Graphic Design </span>
+                             <span class="tag_skills_info">
+                                    Content Writing </span>
+                             <span class="tag_skills_info">
+                                    Internet Research </span>
+                             <span class="tag_skills_info">
+                                    Transcription </span>
+                                 <span class="tag_skills_info">
+                                        Microsoft Word </span>
+                                 <span class="tag_skills_info">
+                                        Motion Graphics  </span>
+                                 <span class="tag_skills_info">
+                                        Article Writing  </span>
+                                 <span class="tag_skills_info">
+                                        Blog Writing   </span>
+                                 <span class="tag_skills_info">
+                                   Creative Writing    </span>
+                                 <span class="tag_skills_info">
+                                     Adobe Illustrator     </span>
+                                 <span class="tag_skills_info">
+                                        Website Development     </span>
+                                 <span class="tag_skills_info">
+                                        Website Design     </span>
+                                 <span class="tag_skills_info">
+                                        SEO Writing      </span>
+                                 <span class="tag_skills_info">
+                                    Css </span>
+                                 <span class="tag_skills_info">
+                                        Copywriting  </span>
+                                 <span class="tag_skills_info">
+                                        PHP  </span>
+                         </div>
+
+                         <div class="different_skills">
+                             <h4>Not what you're looking for? </h4>
+                             <input type="text" placeholder="Type to add a different skills">
+                         </div>
+                        
+                          
+                           
+                           <br>
+                           <div class="right_main_getting_footer">
+                                <form  action="{% url  'profile_wizard:job_post_wizard' step %}" method="post">{% csrf_token %}
+                        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                            {{ wizard.management_form }}
+                          <button class="Continue" type="submit">Continue</button>
+                       </form>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- clicked -->
+    <script>
+    $(document).on('click', '.tag_skills_info',function(){
+        $(this).toggleClass('active');
+        
+        
+    } )
+
+    
+    
+   
+    </script>
+    <script src="{% static 'profiles/job_post_wizard/js/skillTag.js' %}"></script>
+
+
+ </body>
+ </html>

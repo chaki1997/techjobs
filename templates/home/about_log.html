@@ -1,0 +1,106 @@
+{% extends 'header/header_footer_in.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="shortcut icon" href='{% static "home/about/images/untitled-1.png" %}' type="image/png">
+    <link rel="shortcut icon" type="image/png" href='{% static "home/about/images/untitled-1.png" %}' />
+    <link rel="stylesheet" href='{% static "home/about/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+    <!-- start banner -->
+
+    <section class="About_banner">
+
+    </section>
+
+    <!-- end banner -->
+    <!-- start About us 1-->
+    <section id="About Us">
+        <div class="container">
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 about_main">
+                <div class="about_header">
+                    <h2>ABOUT TECHJOBS. <span>ONE</span></h2>
+                    <div class="info_p">
+                    <p style=" padding-top: 20px;">
+                    We designed Tech Jobs with a simple goal in mind: to create the ONE platform that everybody goes to
+                    when they need a job.
+                </p>
+                    <p  style="">
+                    In today’s global job market, platforms and sites tend to neglect the real needs of their users in
+                    favour of whatever allows them to sell their data or allows them to maximize advertising space. Tech
+                    Jobs is our response to this: a platform that gives the power back to users and thoroughly adapts to
+                    the changing needs of our times.
+                    </p >
+                    <p style="">
+                    By coding and crafting a beautiful, user-friendly platform, we strive to provide every type of user
+                    with a job-seeking experience that painlessly allows them to land the job they want. Whether you’re
+                    looking for remote work, a high-profile position, or an internship, Tech Jobs is designed to direct
+                    and guide you along the way and help you present your best possible self to potential employers.
+                        </p>
+</div>  
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end About us1 -->
+
+    <!-- start carousel -->
+    <section id="about_different">
+        <div class="container">
+            <div class="different_content">
+                <h3> WHAT MAKES <span>US</span> DIFFERENT? </h3>
+                <div class="different_content_info">
+                    <div class="row">
+                        <div class="different_cont ">
+                            <p style=""> For starters, we’ve taken the most common, frustrating, and well known issues of the modern
+                           job seeker - such as unnecessary data entry and limited customisation options - and turned
+                           them into our greatest strength. Striving to innovate where others have failed; we’ve
+                           focused our commitment on job seekers maximising the efficacy of their efforts, therein
+                           allowing them to access the best possible opportunities within their reach, and letting the
+                           job seeker to decide their next step! Because we believe in fairness, creating and fostering
+                           win-win scenarios, we’ve also made sure to create the best possible tools for recruiters to
+                           connect with the people that can spark innovation and change in their organisations. Our
+                           recruiter services and packages, therefore, are based solely on effectiveness and
+                           satisfaction.
+                            </p>
+                           <p style="">Most significantly, Tech Jobs is about fixing the broken model that job platforms have
+                               created. We’re here to do well by doing good.
+                           </p>
+                           <p style="font-weight: bold; text-align: center;">
+                            We wish you a great experience using our site! </p>
+
+                       </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- start carousel -->
+
+    <!--  start footer -->
+</body>
+
+</html>
+{% endblock %}

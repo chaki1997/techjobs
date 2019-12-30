@@ -1,0 +1,33 @@
+{% extends 'profiles/new_base_logged.html' %}
+{% block body_block %}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+"login100-form validate-form p-l-55 p-r-55 p-t-178"
+
+
+<input type="text" placeholder="User Or Email">
+
+<input type="text" placeholder="Password">
+
+
+<input type="text" placeholder="First Name" class="user_form_text">
+<input type="text" placeholder="Last name" class="user_form_text">
+                                <input type="Email" placeholder="Work Email Adress">
+
+
+                                console.log(username.result);
+                        alert (data.result);
+                    if (data.result == False){
+                        document.getElementById("msg").innerHTML = 'user does not exists';
+                        return
+                    }
+
+                    console.log(data.result);

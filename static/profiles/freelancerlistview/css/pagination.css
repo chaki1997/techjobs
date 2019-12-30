@@ -1,0 +1,114 @@
+.pagination{
+    margin-left: -50px;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+.pagination li a{
+    margin: 6px 1px;
+    display: inline-block;
+    width: 50px;
+    background: #2c3e50;
+    height: 60px;
+    line-height: 60px;
+    color: #fff!important;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    padding-right: 6px;
+  }
+  li.prev,li.next{
+
+    font-size: 20px;
+  }
+  a.num.num2 {
+    width: 60px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-left: -1px;
+}
+i.fas.fa-angle-left {
+    padding-left: 15px;
+}
+  li.pagination_page a:hover{
+    background: #516bf0 !important
+  }
+
+  li.active a{
+    background: #516bf0 !important
+  }
+  li.disabled{
+    margin: 0px 20px;
+    display: inline-block;
+    width: 40px;
+    background: #fff!important;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    padding-right: 6px;
+
+  }
+
+
+
+  li.pagination_page a::before,li.pagination_page a:after{
+    content: "";
+    position: absolute;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+
+  }
+
+  a.num::before,li.next::before{
+    border-right: 20px solid #2c3e50;
+    right: 100%;
+
+  }
+ 
+
+  a.num::before:hover,.next::before:hover{
+    border-right: 20px #516bf0 !important;
+    right: 100%;
+
+  }
+  a.num::before:hover, li.next::before:hover{
+    border-right: 20px #516bf0 !important;
+  }
+  a.num:hover::before, li.next:hover::before {
+    border-right: 20px solid #516bf0;
+    right: 100%;
+}
+   li a.num:after,.prev:after{
+    border-right: 20px solid #f1f1f1;
+    right: 0;
+
+  }
+   li a.num:last-child:after{
+
+    right: 0;
+
+  }
+  li.active a.num::before, .next:hover::before {
+    border-right: 20px solid #516bf0 !important;
+    right: 100%;
+}
+li.prev.pagination_page a::before, li.prev.pagination_page a:after{
+
+}
+a.num2:first-child:before{
+    border-right: 20px solid #fff;
+
+}
+a.num3:first-child:after{
+    border-right: 20px solid #fff;right: -35px!important;
+}
+li.prev a{
+    border-radius: 30px 0 0 30px;
+  }
+
+  li.next a{
+    border-radius: 0 30px 30px 0;
+  }

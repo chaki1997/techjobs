@@ -1,0 +1,158 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'profiles/freelancer_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+        
+            <!-- end header -->
+    <!-- start section create -->
+    <section id="getting_start">
+    <div class="create_head">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="main_left">
+                        <ul class="main_left_ul">
+                            <li class="main_left_li active">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'starter' %}"><i class="fas fa-pencil-ruler"></i>Start<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active current">
+                                <a href="{% url 'profile_wizard:profile_wizard' 'education' %}"><i class="fas fa-user-graduate"></i>Education <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-briefcase"></i>Employment <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-eye"></i>Languages & Skills <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-search-location"></i>Location <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="#"><i class="fas fa-check"></i>Review <i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-md-12 col-sm-12 col-sm-12 col-xs-12 main_sign">
+                    <div class="main_sign_info">
+
+                        <div class="education">
+                            <h1 class="education">Education </h1>
+
+                            
+                            <p id="in_there"></p>
+                        </div>
+
+                    </div>
+                    <!-- Modal Section -->
+
+                    <div class="education_info">
+                    <form  action="{% url  'profile_wizard:profile_wizard' step  %}" method="post" > {% csrf_token %}
+                                    {{ wizard.management_form }}
+                        <div class="row"></div>
+                        <div class="education_info_input col-md-12">
+                            <div class="row">
+                                <div class="education_info_input_header col-md-6">
+                                    <label for="" class="control-label">School/University/College Name</label>
+                                    <input type="hidden" name="school" id="input_school" placeholder="School/University/College Name" value="">
+                                    {{ form.school }}
+
+                                </div>
+
+                                <div class="education_info_input_section col-md-6">
+                                    <label for="">Date attended (optional) </label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {{ form.started }}
+                                        </div>
+                                        <div class="col-md-6 ">
+                                             {{ form.ended }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="education_info_input_Degree col-md-6">
+                                    <label for="" class="control-label">Degree (optional)</label>
+                                    <input type="hidden" name="input_degree" id="input_degree" value="">
+                                    {{ form.degree }}
+
+                                </div>
+                                <div class="education_info_input_Area_of_study col-md-6">
+                                    <label for="" class="control-label">Area of study (optional)</label>
+                                    <input type="hidden" name="Area_of_study" id="Area_of_study" value="">
+                                    {{ form.area_of_study }}
+
+                                </div>
+                                <div class="education_info_input_Description col-md-12">
+                                    <label for="" class="control-label">Description (optional)</label>
+
+                                    {{ form.Description }}
+                                    {{ form.repeat }}
+
+                                </div>
+                               <div class="education_info_footer col-md-12">
+                                    <div class="right_main_getting_footer">
+                                        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                                        {{ wizard.management_form }}
+                                    <button class="Continue" type="submit">Next</button>
+                                     <button onclick="check()" class="Continue" style="background: green!important;">Save and Add
+                                        more</button>
+                                    </div>
+                                   <script>
+                                       function check(){
+        document.getElementById("checkbox").checked = true;
+    }
+
+    function uncheck(){
+        document.getElementById("checkbox").checked = false;
+    }
+
+                                   </script>
+
+
+
+                    </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <!--<script src="{% static 'profiles/freelancer_wizard/js/main.js' %}"></script>-->
+</body>
+
+</html>
+{% endblock %}

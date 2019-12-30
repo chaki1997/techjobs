@@ -1,0 +1,415 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <section class="banner">
+        <div class="container">
+            <div class=" col-md-12 col-md-12 banner_info">
+                <div class=" col-md-6 banner_text">
+                <h2>The ONE Site You'll Ever Need.</h2>
+                <p>We designed Tech Jobs with a simple goal in mind: To create the ONE platform that everybody goes to when they need a job. </p>
+
+                
+            </div>
+            </div>
+        </div>
+    </section>
+    <!--  end banner -->
+     <div class="contest">
+        <div class="container">
+            <div class="contest_info">
+                <div class="row">
+
+                            <div class="come">
+                                    <i class="fas fa-times"></i>
+                                </div>
+
+                        <div class="col-md-12 contest_content">
+                <p>
+                    We're giving away $1,000! The wittiest, most powerful answer to ONE simple question will be the
+                    winner. Would you like to participate?
+                </p>
+                <button><a href="{% url 'home:contest' %}">Yes, Tell me More</a></button>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       $(document).ready(function(){
+    $(".come").click(function(){
+        $('.contest').toggleClass('contest-active');
+
+
+
+    });
+});
+    </script>
+
+    <!-- start find your freelancer -->
+    <section id="find_freelancer">
+        <div class="container">
+            <h2 style="text-align: center; padding-bottom: 25px;">Most Popular Categories</h2>
+            <div class="find_info">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                        <div class="find_info_img">
+
+
+                            <img src='{% static "home/images/IconsTech_Admin.png" %}' alt="" style="width: 100%;">
+                            <p>Administration</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                        <div class="find_info_img">
+                            <img src="{% static 'home/images/IconsTech_Cyber Security.png'%}" alt="">
+                            <p>Cyber Security</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+
+                        <div class="find_info_img">
+                            <img src="{% static 'home/images/IconsTech_IT.png'%}" alt="">
+                            <p>IT</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+
+                        <div class="find_info_img">
+                            <img src="{% static 'home/images/IconsTech_Law.png'%}" alt="">
+                            <p>Law</p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                        <div class="find_info_img">
+                            <img src='{% static "home/images/IconsTech_Marketing.png" %}' alt="">
+                            <p>Marketing</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                        <div class="find_info_img">
+                            <img src='{% static "home/images/IconsTech_Translation.png" %}' alt="">
+                            <p>Translation</p>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <!-- end find your freelancer -->
+
+    <!-- start offers -->
+
+    <section id="offers">
+        <div class="container">
+            <div class="offer_h2">
+                <h2>Recruitment Deals</h2>
+                <p>Free to recruiters until June 30th 2020. </p>
+                <p>Your perfect team is already here. It’s time for you to find them.
+                    Select your package to start
+                    recruiting.
+                </p>
+            </div>
+            <div class="offer_info">
+                <div class="row">
+                    {% for plan in subscription_plan %}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">
+
+                            <div class="offer_info_first_header">
+                            <p class="fa fa-battery-quarter"></p>
+                            <h3>{{plan.name}}</h3>
+                            <a href="{% url  'paypal_subscription:subscription_detail' plan.pk plan.slug   %}" class="Select_info">{{plan.name}}</a><br>
+
+                            <span>free</span>
+
+                        </div>
+                        <div class="offer_info_first_main">
+
+                            <p>
+                                <i class="fa fa-check"></i>
+                                Full Customization
+                            </p>
+                            <p>
+                                <i class="fa fa-check"></i>
+                                Full Access to the TechJobs User Pool
+                            </p>
+
+                            <p>
+                                <i class="fa fa-check"></i>
+                                Post Full-Time Jobs
+
+                            </p>
+                            <p>
+                                <i class="fas fa-times"></i>
+                                Finished After 1 Months
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+                    {% endfor %}
+                    <!--<div class=" col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">-->
+                        <!--<div class="offer_info_first_header">-->
+                            <!--<p class="fa fa-battery-half"></p>-->
+
+                            <!--<h3>1 Month</h3>-->
+                            <!--<a href="#" class="Select_info">SELECT</a><br>-->
+
+                            <!--<span>$99</span><br>-->
+
+                        <!--</div>-->
+                        <!--<div class="offer_info_first_main">-->
+
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Unlimited Postings-->
+                            <!--</p>-->
+
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Post Full-Time Jobs-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<i class="fas fa-times"></i>-->
+                                <!--Best Deal Per-Month-->
+                            <!--</p>-->
+
+
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">-->
+                        <!--<div class="offer_info_first_header">-->
+                            <!--<p class="fa fa-battery-three-quarters"></p>-->
+                            <!--<h3>12 Months</h3>-->
+                            <!--<a href="#" class="Select_info">SELECT</a><br>-->
+                            <!--<span>$999</span>-->
+                        <!--</div>-->
+                        <!--<div class="offer_info_first_main">-->
+
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Unlimited Postings-->
+                            <!--</p>-->
+
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Post Full-Time Jobs-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<i class="fas fa-times"></i>-->
+                                <!--Best Deal Per-Month-->
+                            <!--</p>-->
+
+
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">-->
+                        <!--<div class="offer_info_first_header">-->
+                            <!--<p class="fa fa-battery-full"></p>-->
+                            <!--<h3>24 Months</h3>-->
+                            <!--<a href="#" class="Select_info">SELECT</a><br>-->
+                            <!--<span>$1899</span>-->
+                        <!--</div>-->
+                        <!--<div class="offer_info_first_main">-->
+
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Unlimited Postings-->
+                            <!--</p>-->
+
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Post Full-Time Jobs-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<i class="fa fa-check"></i>-->
+                                <!--Best Deal Per-Month-->
+                            <!--</p>-->
+
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end offers -->
+
+    <!-- start video -->
+
+    <section id="section_video">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 video_left">
+                    <h3>100% Free For Job Seekers, And Always Will Be.</h3>
+                 
+                </div>
+                <div class="col-md-6 video_right">
+                    <iframe src="https://player.vimeo.com/video/376764214" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+                </div>
+
+            </div>
+        </div>
+    </section>  
+    <!-- end video -->
+    <!-- start Top skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="skill_info">
+                <h3 style="text-weight:bold;">Categories</h3>
+                <div class="row skill_info_main">
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Accounting  </a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Admin</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Automotive</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Agriculture </a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Aviation</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Banking</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Construction</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Consulting</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Cosmetics</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Cyber Security</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Education</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Engineering</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Finance</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">FMCG</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Government</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Healthcare</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">HR</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Insurance</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">IT</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Law</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Logistics</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Manufacturing</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Marketing</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Media and Entertainment </a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Non-Profit</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Oil & Gas</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Personal/Domestic Care</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Publishing</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Real Estate</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Retail</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Security</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Shipping</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Telecom</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Translation </a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Utilities</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end Top skills -->
+
+    <!--  start footer -->
+ 
+
+{% endblock %}
+  </body>
+   </html>

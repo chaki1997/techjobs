@@ -1,0 +1,9 @@
+.idea
+.pyc
+
+.DS_Store
+.idea
+
+.jobs/settings
+
+.aws_settings/settings.py

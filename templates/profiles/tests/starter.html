@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+</head>
+<body>
+<form action="{% url 'users:logout'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+			</form>
+    <!-- start section create -->
+    <div class="create_head">
+        <div class="container">
+           
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <div class="main_sign_info">
+                    <div class="col-md-12 main_sign_info_header">
+                         <h1>Create your profile</h1>
+                        <p>If your profile is IMG TESTS
+                             it will become the public profile you’ll use to market your freelance business to clients (you can edit it after approval).
+                             for inspiration? <a href="">Check out these tips. </a></p>
+                    </div>
+                </div>
+                <div class="col-md-12 tell_us">
+        <form  action="{% url  'profile_wizard:test'  %}" method="post"> {% csrf_token %}
+
+                    <div class="tell_us_header">
+                    <h2>Tell us more about you</h2>
+                    <h3>Please upload a professional portrait that clearly shows your face <i class="fa fa-question-circle some"></i> </h3>
+                    </div>
+                    <div class="avatar col-md-5">
+                        <img src='{% static "profiles/wizard_all/images/Layer-11.png" %}' alt="">
+                        <a href="#" class="avatar_add">
+                             {{form.profile_image}}
+                                <button class="Add_Photo"><i class="fa fa-plus-circle">Add a photo Now</i></button></i>
+
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-12 prof_main">
+                    <div class="prof_title">
+
+                    <h3>Add a professional title </h3>
+                    <span>Try to choose a title that will help you stand out <i class="fa fa-question-circle some"></i>.</span>
+
+
+                    {{ form.prof_title }}
+                    <h3>Write a professional overview </h3>
+                    <span>Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile.</span>
+
+                    {{ wizard.management_form }}
+                    {{ form.prof_overview }}
+                    <button onclick="check()" type="submit" value="SUBMIT" class="btn btn-primary button_Continue">Save and Add more</button>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </body>
+        </html>

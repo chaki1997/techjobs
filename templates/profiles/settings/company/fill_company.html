@@ -1,0 +1,190 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+{% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="stylesheet" href="{% static 'profiles/settings/fill_company/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!--  start header -->
+
+
+    <!-- end header -->
+    <!-- start section create -->
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="main_left">
+                        <ul class="main_left_ul">
+                            <li class="main_left_li active ">
+                                <a href="{% url 'profile_wizard:settings' %}"><i class="fas fa-pencil-ruler"></i>Account Information<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li active current">
+                                <a href=""><i class="fas fa-id-card"></i>Profile information<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <li class="main_left_li">
+                                <a href="{% url 'profile_wizard:postjob'   %}"><i class="fas fa-briefcase"></i>Post jobs<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li>
+                            <!--<li class="main_left_li">-->
+                                <!--<a href="#"><i class="fas fa-file"></i>Create Resume<i-->
+                                        <!--class="fas fa-chevron-circle-down"></i></i></a>-->
+                            <!--</li>-->
+                            <!-- {% if user.status == 'Company' or user.status == 'Individual' %} -->
+                            <!-- <li class="main_left_li">
+                                <a href="{% url 'jobapply:myemployee' %}"><i class="fas fa-file"></i>My Emplyees<i
+                                        class="fas fa-chevron-circle-down"></i></i></a>
+                            </li> -->
+                            <!-- {%endif%} -->
+<!-- 
+
+                        </ul>
+                    </div>
+                </div> --> 
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12 main_sign">
+                    <h1>Create Your Profile</h1>
+                    <div class="main_sign_info">
+                        <div class="col-md-12 setting_profile_avatar">
+                            
+                        </div>
+                    </div>
+
+
+                   
+                        <div class="create_job">
+                            <div class="radio_block">
+
+
+                                <div class="row " style="display: flex; justify-content: space-between;">
+                                    <div class="radio_none_item details_radio_button pay_hour  col-md-3 active " id="tag1" onclick="addJobStatus(id)">
+                                        <div class="radio_none_content">
+                                            
+                                            <h6>Company</h6>
+                                          
+
+                                        </div>
+                                    </div>
+                                    <div class="radio_none_item details_radio_button fixed_price col-md-3" id="tag2" onclick="addJobStatus(id)"
+                                        checked="checked">
+                                        <div class="radio_none_content">
+                                            
+                                            <h6>Individual</h6>
+                                          
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                {{ form.Status }}
+                                <div class="freelancer_block">
+                                <div class="row">
+                                    <div class="col-md-12 edit_profile">
+                                        <div class="col-md-12 setting_profile_avatar">
+                                            <div class="setting_profile_header">
+                                                <div class="company_details">
+                                            <h2>Company Details</h2>
+                                <form action="{% url 'profile_wizard:company_create'  %}" method="post">{% csrf_token %}
+                                                <!--<input type="text" name="name" value="" placeholder="Company Name">-->
+                                                {{form.company_name}}
+                                            </div>
+                                                <div class="row">
+                                                    <div class="fix_hour_none location active col-md-12">
+                                                       
+                                                        
+                    
+                    <input type="text" name="name" value="" placeholder=" Name" style="width:60%; margin-bottom: 25px;">
+                                                           
+                    
+                                                        
+                    
+                                                    </div>
+                                                </div>
+                                                <!--<textarea name="descriptiom" id="company_description" cols="60" rows="10" placeholder="Company Description" maxlength="200" ></textarea>-->
+                                                {{form.company_description}}
+                                                <!--<input type="text" name="Website" value="" placeholder="Website">-->
+                                                {{form.website}}
+                
+                                            
+                                        </div>
+                                        
+                                            <div class="setting_profile_content">
+                                            <h2>Contact Person Details</h2>
+                
+                                                <!--<input type="text" name="name" value="" placeholder="Name">-->
+                                                {{form.contact_person_name}}
+                                                
+                                                <!--<input type="tel" name="tel" value="" placeholder="Tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required>-->
+                                                {{form.phone}}
+                                                {{form.email}}
+                                                
+                
+                                            
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                           
+                    </div>
+
+                </div>
+            </div>
+                            <form class="row">
+                               
+                              
+                               
+
+                                <div class="right_main_getting_footer">
+                                    <a href="Description.html" class="cancel">Back to main menu</a>
+                                    <input type="submit" class="Continue">
+                                </div>
+                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+   
+</body>
+<script>
+    var expanded = !1; function showCheckboxes() { var e = document.getElementById("checkboxes"); expanded ? (e.style.display = "none", expanded = !1) : (e.style.display = "block", expanded = !0) } function showCheckboxes2() { var e = document.getElementById("checkboxes2"); expanded ? (e.style.display = "none", expanded = !1) : (e.style.display = "block", expanded = !0) } !function (e) { e.fn.countTo = function (t) { return t = t || {}, e(this).each(function () { var n = e.extend({}, e.fn.countTo.defaults, { from: e(this).data("from"), to: e(this).data("to"), speed: e(this).data("speed"), refreshInterval: e(this).data("refresh-interval"), decimals: e(this).data("decimals") }, t), o = Math.ceil(n.speed / n.refreshInterval), a = (n.to - n.from) / o, i = this, c = e(this), r = 0, d = n.from, l = c.data("countTo") || {}; function s(e) { var t = n.formatter.call(i, e, n); c.html(t) } c.data("countTo", l), l.interval && clearInterval(l.interval), l.interval = setInterval(function () { r++ , s(d += a), "function" == typeof n.onUpdate && n.onUpdate.call(i, d); r >= o && (c.removeData("countTo"), clearInterval(l.interval), d = n.to, "function" == typeof n.onComplete && n.onComplete.call(i, d)) }, n.refreshInterval), s(d) }) }, e.fn.countTo.defaults = { from: 0, to: 0, speed: 1e3, refreshInterval: 100, decimals: 0, formatter: function (e, t) { return e.toFixed(t.decimals) }, onUpdate: null, onComplete: null } }(jQuery), jQuery(function (e) { e(".count-number").data("countToOptions", { formatter: function (e, t) { return e.toFixed(t.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ",") } }), e(".timer").each(function (t) { var n = e(this); t = e.extend({}, t || {}, n.data("countToOptions") || {}), n.countTo(t) }) }), $(document).on("click", ".radio_none_item", function () { $(this).addClass("active").siblings().removeClass("active") }), $(document).ready(function () { $(".fix_hour_none").hide(), $(".pay_hour_none").hide(), $(".pay_hour").click(function () { $(".pay_hour_none, #id_company_name").show(), $(".fix_hour_none").hide() }), $(".fixed_price").click(function () { $(".pay_hour_none, .location").show(), $("#id_company_name").hide('') }) });
+$(".fixed_price").click(function () {$(".freelancer_block input").each(function() {
+    this.value = "";
+   
+})})
+$(".pay_hour ").click(function () {$(".freelancer_block input").each(function() {
+    this.value = "";
+   
+})})
+
+</script>
+</html>
+
+{% endblock %}

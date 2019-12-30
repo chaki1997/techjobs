@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    
+    <link rel="stylesheet" href="{% static 'profiles/job_post_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ 
+</head>
+<body>
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="main_left">
+                    <ul class="main_left_ul">
+                        <li class="main_left_li active ">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'index' %}"><i class="fas fa-pencil-ruler"></i>Title <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'description' %}"><i class="fas fa-file-prescription"></i>Description <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'detials' %}"><i class="fas fa-info" style="padding-left: 5px;"></i>Details <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'expertise' %}"><i class="fab fa-creative-commons-remix"></i>Expertise <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'visibility' %}"><i class="fas fa-eye"></i>Visibilite <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'budget' %}"><i class="fas fa-search-dollar"></i>Budget <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="right_main_getting_start">
+            <div class="right_main_getting_header">
+                <h2>Details</h2>
+                <p>Step 1 of 7</p>
+            </div>
+           <div class="right_main_getting_content">
+               <h4>What type of project do you have?</h4>
+               <div class="create_job">
+                   <div class="radio_block">
+                 
+                  
+                      <div class="row">
+                      <div class="radio_none_item details_radio_button  col-md-3 "   >
+                          <div class="radio_none_content">
+                                <span><i class="fas fa-briefcase"></i></span>
+                                <h4>One-time project</h4>
+                                <p>Find the right skills for a short-term need.</p>
+
+                          </div>
+                      </div>
+                      <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                          <div class="radio_none_content">
+                                <span><i class="fab fa-r-project"></i></span>
+                                <h4>Ongoing project</h4>
+                                <p>Find a skilled resource for an extended engagement.</p>
+
+                          </div>
+                      </div>
+                      <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                          <div class="radio_none_content">
+                                <span><i class="fas fa-grip-horizontal"></i></span>
+                                <h4>Complex project</h4>
+                                <p>Find specialized experts and agencies for large projects.</p>
+
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                 
+                  <hr>
+                 
+               </div>
+           </div>
+            </div>
+           <div class="right_main_getting_start">
+            
+            <div class="right_main_getting_content">
+                <div class="right_main_getting_content_first">
+                <h4>Screening Questions (optional)</h4>
+             
+                 <p>Add screening questions and/or require a cover letter</p>
+                 <a href=""><span class="add_span">+</span>
+                 <p class="add_right">add</p></a>
+             </div>
+                   <hr>
+                   <div class="right_main_getting_footer">
+                       <form class="fa fa-user" action="{% url  'profile_wizard:job_post_wizard' step %}" method="post">{% csrf_token %}
+
+                          <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                         {{ wizard.management_form }}
+                          <button class="Continue" type="submit">Continue</button>
+                           </form>
+                     </div>
+
+
+            
+        </div>
+        </div>
+            </div>
+        </div>
+    </section>
+    <!-- <input type="radio" name='thing' value='valuable' data-id="bank" />
+    <input type="radio" name='thing' value='valuable' data-id="school" />
+    <hr />
+    <div id="bank" class="none">Bank</div>
+    <div id="school" class="none">School</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(':radio').change(function (event) {
+    var id = $(this).data('id');
+    $('#' + id).addClass('none').siblings().removeClass('none');
+});
+</script>
+     -->
+   
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- clicked -->
+    <script>
+    $(document).on('click', '.radio_none_item',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+    } )
+    </script>
+
+</body>
+</html> 

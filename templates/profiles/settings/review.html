@@ -1,0 +1,1120 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+{% block content %}
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>TechJobs</title>
+         <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+        <link rel="stylesheet" href="{% static 'profiles/settings/review/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+        <!--  start header -->
+       
+
+        <!-- end header -->
+
+        <!-- start by education -->
+        <section id="getting_start">
+                <div class="main_review">
+                        <div class="container">
+                               <div class="row">
+                                       
+
+                                        <div class="right_create_head col-lg-12 col-md-12 col-sm-12">
+
+
+
+                                                <div class="create_head">
+                                                        <div class="container">
+
+
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                        <div class="main_sign_info">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <h1>Title</h1>
+                                                                                                <div class="tell_us">
+                                                                                                        <div
+                                                                                                                class="tell_us_header">
+
+                                                                                                                <h3
+                                                                                                                        id="title_review">
+                                                                                                                        Professional
+                                                                                                                        title
+                                                                                                                </h3>
+                                                                                                                <p
+                                                                                                                        id="title_var">
+                                                                                                                        dasdasd
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                        <h3
+                                                                                                                id="professional_review">
+                                                                                                                Write a
+                                                                                                                professional
+                                                                                                                overview
+                                                                                                        </h3>
+                                                                                                        <p
+                                                                                                                id="prof_var">
+                                                                                                                dasdas
+                                                                                                        </p>
+
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="col-md-1 edit_span">
+                                                                                                        <button
+                                                                                                                id="edit_button_review"><span
+                                                                                                                        class="add_span edit_info"><i
+                                                                                                                                class="fas fa-pencil-alt"></i></span></button>
+                                                                                                </div>
+                                                                                                <button type="button"
+                                                                                                        id="save_button">Update</button>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div id="review_edit">
+                                                                                <div>
+                                                                                        <label for="edit_title">
+                                                                                                <h3>Professional title
+                                                                                                </h3>
+                                                                                        </label> <br>
+                                                                                        <input id="edit_title"
+                                                                                                value="dass "></input>
+                                                                                </div>
+                                                                                <div>
+                                                                                        <label for="edit_prof">
+                                                                                                <h3>Write a professional
+                                                                                                        overview</h3>
+                                                                                        </label> 
+                                                                                        <input id="edit_prof"
+                                                                                                value=" "></input>
+                                                                                </div>
+                                                                        </div>
+
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+
+
+
+                                                <!-- end by education -->
+                                                <!-- start section create -->
+                                                <div class="create_head">
+                                                        <div class="container">
+
+
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                        <div class="main_sign_info">
+
+                                                                                <div class="education">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="education_left col-md-10">
+                                                                                                        <h1
+                                                                                                                class="education">
+                                                                                                                Education
+                                                                                                        </h1>
+
+                                                                                                        <p>Tell us about
+                                                                                                                your
+                                                                                                                education
+                                                                                                                history.
+                                                                                                        </p>
+
+                                                                                                </div>
+                                                                                                <div class="col-md-1">
+                                                                                                        <button
+                                                                                                                class="edit_button_review"><span
+                                                                                                                        class="add_span edit_info"><i
+                                                                                                                                class="fas fa-pencil-alt"></i></span></a>
+                                                                                                                <button type="button"
+                                                                                                                        id="save_button">Update</button>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!-- Modal Section -->
+
+                                                                        <div class="education_info">
+
+                                                                                <div class="row">
+                                                                                        <div
+                                                                                                class="education_info_input col-md-12">
+                                                                                                <div class="row">
+                                                                                                        <div
+                                                                                                                class="education_info_input_header col-md-6">
+                                                                                                                <div
+                                                                                                                        class="row">
+                                                                                                                        <div
+                                                                                                                                class="col-md-10">
+                                                                                                                                <label id="school_info"
+                                                                                                                                        for=""
+                                                                                                                                        class="control-label"
+                                                                                                                                        style="color: black; font-weight:500">School</label>
+                                                                                                                                <p
+                                                                                                                                        id="school_var1">
+                                                                                                                                        Antwerp
+                                                                                                                                        International
+                                                                                                                                        Business
+                                                                                                                                        School
+                                                                                                                                </p>
+                                                                                                                                <p
+                                                                                                                                        id="school_var2">
+                                                                                                                                        Instituut
+                                                                                                                                        Dames
+                                                                                                                                        van
+                                                                                                                                        het
+                                                                                                                                        Christelijk
+                                                                                                                                        Onderwijs
+                                                                                                                                </p>
+                                                                                                                        </div>
+
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                id="education_edit">
+                                                                                                                <div>
+                                                                                                                        <label
+                                                                                                                                for="school1">School:</label>
+                                                                                                                        <br>
+                                                                                                                        <input id="school1"
+                                                                                                                                value="Antwerp International Business School "></input>
+                                                                                                                        <label
+                                                                                                                                for="school2"></label>
+                                                                                                                        <br>
+                                                                                                                        <input id="school2"
+                                                                                                                                value="Antwerp International Business School "></input>
+                                                                                                                </div>
+                                                                                                        </div>
+
+                                                                                                        <div
+                                                                                                                class="education_info_input_section col-md-6">
+                                                                                                                <div
+                                                                                                                        class="row">
+                                                                                                                        <div
+                                                                                                                                class="col-md-10">
+                                                                                                                                <label for=""
+                                                                                                                                        id="education_date"
+                                                                                                                                        style="color: black; font-weight:500">Date
+                                                                                                                                        attended
+                                                                                                                                </label>
+                                                                                                                                <p>From <span
+                                                                                                                                                id="education_date_var">
+                                                                                                                                                2018</span>
+                                                                                                                                        to
+                                                                                                                                        <span
+                                                                                                                                                id="educaton_date_var2">2024</span>
+                                                                                                                                </p>
+
+                                                                                                                        </div>
+
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                id="education_date_edit">
+                                                                                                                <label
+                                                                                                                        for="educaton_date1">Date
+                                                                                                                        attended</label>
+                                                                                                                <br>
+                                                                                                                <div
+                                                                                                                        class="education_date_info">
+                                                                                                                        <label>for
+                                                                                                                        </label>
+                                                                                                                        <select name=""
+                                                                                                                                id="education_date1">
+                                                                                                                                <option
+                                                                                                                                        value="1197">
+                                                                                                                                        1197
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="1198">
+                                                                                                                                        1198
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="1999">
+                                                                                                                                        1999
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2000">
+                                                                                                                                        2000
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2001">
+                                                                                                                                        2001
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2202">
+                                                                                                                                        2202
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2203">
+                                                                                                                                        2203
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2004">
+                                                                                                                                        2004
+                                                                                                                                </option>
+                                                                                                                        </select>
+                                                                                                                        <label
+                                                                                                                                for="educaton_date2">to</label>
+                                                                                                                        <br>
+                                                                                                                        <select name=""
+                                                                                                                                id="educaton_date2">
+                                                                                                                                <option
+                                                                                                                                        value="1197">
+                                                                                                                                        1197
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="1198">
+                                                                                                                                        1198
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="1999">
+                                                                                                                                        1999
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2000">
+                                                                                                                                        2000
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2001">
+                                                                                                                                        2001
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2202">
+                                                                                                                                        2202
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2203">
+                                                                                                                                        2203
+                                                                                                                                </option>
+                                                                                                                                <option
+                                                                                                                                        value="2004">
+                                                                                                                                        2004
+                                                                                                                                </option>
+                                                                                                                        </select>
+                                                                                                                </div>
+
+                                                                                                        </div>
+
+
+                                                                                                        
+                                                                                                        <div
+                                                                                                                class="educaton_info_degree">
+                                                                                                                <div
+                                                                                                                        class="education_info_input_Degree col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for=""
+                                                                                                                                                id="degree_education"
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500">Degree</label>
+                                                                                                                                        <p
+                                                                                                                                                id="degree_var">
+                                                                                                                                                Instituut
+                                                                                                                                                van
+                                                                                                                                                de
+                                                                                                                                                Heilige
+                                                                                                                                                Familie
+                                                                                                                                        </p>
+                                                                                                                                </div>
+
+
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                                <!-- end education -->
+                                                                                                                <div
+                                                                                                                        class="education_info_input_Area_of_study col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for=""
+                                                                                                                                                id="education_area"
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500">Area
+                                                                                                                                                of
+                                                                                                                                                study</label>
+                                                                                                                                        <p
+                                                                                                                                                id="area_var">
+                                                                                                                                                Aerial
+                                                                                                                                                archaeology
+                                                                                                                                        </p>
+                                                                                                                                </div>
+
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                                <!-- start description -->
+                                                                                                                <div
+                                                                                                                        class="education_info_input_Description col-md-12">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-11">
+                                                                                                                                        <label for=""
+                                                                                                                                                id="education_description"
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500; display:inline;">Description
+                                                                                                                                                (Optional)
+                                                                                                                                        </label>
+                                                                                                                                        <p
+                                                                                                                                                id="edu_desc_var">
+                                                                                                                                                Lorem
+                                                                                                                                                Ipsum
+                                                                                                                                                is
+                                                                                                                                                simply
+                                                                                                                                                dummy
+                                                                                                                                                text
+                                                                                                                                                of
+                                                                                                                                                the
+                                                                                                                                                printing
+                                                                                                                                                and
+                                                                                                                                                typesetting
+                                                                                                                                                industry.
+                                                                                                                                                Lorem
+                                                                                                                                                Ipsum
+                                                                                                                                                has
+                                                                                                                                                been
+                                                                                                                                                the
+                                                                                                                                                industry's
+                                                                                                                                                standard
+                                                                                                                                                dummy
+                                                                                                                                                text
+                                                                                                                                                ever
+                                                                                                                                                since
+                                                                                                                                                the
+                                                                                                                                                1500s,
+                                                                                                                                                when
+                                                                                                                                                an
+                                                                                                                                                unknown
+                                                                                                                                                printer
+                                                                                                                                                took
+                                                                                                                                                a
+                                                                                                                                                galley
+                                                                                                                                                of
+                                                                                                                                                type
+                                                                                                                                                and
+                                                                                                                                                scrambled
+                                                                                                                                                it
+                                                                                                                                                to
+                                                                                                                                                make
+                                                                                                                                                a
+                                                                                                                                                type
+                                                                                                                                                specimen
+                                                                                                                                                book.
+                                                                                                                                                It
+                                                                                                                                                has
+                                                                                                                                                survived
+                                                                                                                                                not
+                                                                                                                                                only
+                                                                                                                                                five
+                                                                                                                                                centuries,
+                                                                                                                                                but
+                                                                                                                                                also
+                                                                                                                                                the
+                                                                                                                                                leap
+                                                                                                                                                into
+                                                                                                                                                electronic
+                                                                                                                                                typesetting,
+                                                                                                                                                remaining
+                                                                                                                                                essentially
+                                                                                                                                                unchanged.
+                                                                                                                                                It
+                                                                                                                                                was
+                                                                                                                                                popularised
+                                                                                                                                                in
+                                                                                                                                                the
+                                                                                                                                                1960s
+                                                                                                                                                with
+                                                                                                                                                the
+                                                                                                                                                release
+                                                                                                                                                of
+                                                                                                                                                Letraset
+                                                                                                                                                sheets
+                                                                                                                                                containing
+                                                                                                                                                Lorem
+                                                                                                                                                Ipsum
+                                                                                                                                                passages,
+                                                                                                                                                and
+                                                                                                                                                more
+                                                                                                                                                recently
+                                                                                                                                                with
+                                                                                                                                                desktop
+                                                                                                                                                publishing
+                                                                                                                                                software
+                                                                                                                                                like
+                                                                                                                                                Aldus
+                                                                                                                                                PageMaker
+                                                                                                                                                including
+                                                                                                                                                versions
+                                                                                                                                                of
+                                                                                                                                                Lorem
+                                                                                                                                                Ipsum
+                                                                                                                                        </p>
+                                                                                                                                </div>
+
+
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                id="edit_degree_main">
+                                                                                                                <div class="edit_degree_first">
+                                                                                                                <label
+                                                                                                                        for="edit_degree">Degree</label>
+                                                                                                                
+                                                                                                                <input id="edit_degree"
+                                                                                                                        value="Instituut van
+                                                                                                                        de
+                                                                                                                        Heilige
+                                                                                                                        Familie"></input></div>
+                                                                                                                        <div class="edit_degree_area">
+                                                                                                                <label
+                                                                                                                        for="edit_value">Area
+                                                                                                                        of
+                                                                                                                        study</label>
+                                                                                                                
+                                                                                                                <input id="edit_value"
+                                                                                                                        value="Aerial archaeology"></input></div>
+                                                                                                                        <div class="edit_degree_description">
+                                                                                                                <label
+                                                                                                                        for="edu_description">Description
+                                                                                                                        (Optional)</label>
+                                                                                                                
+                                                                                                                <textarea
+                                                                                                                        id="edu_description"
+                                                                                                                        cols="90"
+                                                                                                                        row="80"
+                                                                                                                        value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum">dasdas</textarea>
+                                                                                                        </div>
+                                                                                                </div>
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+
+                                                        </div>
+                                                        <!-- end education answer -->
+
+
+                                                        <!-- start employement answer -->
+                                                        <div class="create_head" style="margin-top:50px;">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+
+                                                                                        <div class="education">
+                                                                                                <div class="row">
+                                                                                                        <div
+                                                                                                                class="education_left col-md-10">
+                                                                                                                <h1
+                                                                                                                        class="education">
+                                                                                                                        Employment
+                                                                                                                </h1>
+
+                                                                                                                <p>Tell us
+                                                                                                                        about
+                                                                                                                        your
+                                                                                                                        education
+                                                                                                                        history.
+                                                                                                                </p>
+
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="col-md-1">
+                                                                                                                <a
+                                                                                                                        href=""><span
+                                                                                                                                class="add_span edit_info"><i
+                                                                                                                                        class="fas fa-pencil-alt"></i></span></a>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="employment_info">
+
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="employment_info_input col-md-12">
+                                                                                                        <div
+                                                                                                                class="row">
+
+                                                                                                                <div
+                                                                                                                        class="employment_info_input_header col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for="" id="employement_company"
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500">Company</label>
+                                                                                                                                        <p id="employement_company_var">Company
+                                                                                                                                                name
+                                                                                                                                        </p>
+                                                                                                                                </div>
+                                                                                                                                <!-- <div class="col-md-1">
+                                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                        </div> -->
+                                                                                                                        </div>
+                                                                                                                </div>
+
+                                                                                                                <div
+                                                                                                                        class="employment_info_input_section col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for="" id="employement_location"
+                                                                                                                                                style="color: black; font-weight:500;">Location
+                                                                                                                                        </label>
+                                                                                                                                        <div
+                                                                                                                                                class="row">
+                                                                                                                                                <div
+                                                                                                                                                        class="col-md-6">
+                                                                                                                                                        <p id="employement_location_var">Tbilisi
+                                                                                                                                                                dhsagjkdhsak
+                                                                                                                                                        </p>
+                                                                                                                                                </div>
+                                                                                                                                                <div
+                                                                                                                                                        class="col-md-6">
+                                                                                                                                                        <p >From <span id="employement_var1" >2018</span>
+                                                                                                                                                                to
+                                                                                                                                                                <span class="employement_var2">2022</span>
+                                                                                                                                                        </p>
+                                                                                                                                                </div>
+
+                                                                                                                                        </div>
+
+                                                                                                                                </div>
+                                                                                                                                <!-- <div class="col-md-1">
+                    <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+            </div> -->
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="employment_info_input_Degree col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for=""
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500;">Title</label>
+                                                                                                                                        <p>
+                                                                                                                                        </p>
+                                                                                                                                </div>
+                                                                                                                                <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                                                        </div>
+                                                                                                                </div>
+
+
+                                                                                                                <div class=" col-md-6"
+                                                                                                                        id="employment_info_input_Role">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for=""
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500;">Role</label>
+                                                                                                                                        <p>nurse
+                                                                                                                                        </p>
+                                                                                                                                </div>
+                                                                                                                                <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="row">
+                                                                                                                <div
+                                                                                                                        class="eemployment_info_input_Period col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for=""
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500;">from</label>
+                                                                                                                                        <div
+                                                                                                                                                class="row">
+                                                                                                                                                <p
+                                                                                                                                                        class="col-md-5">
+                                                                                                                                                        28.03
+                                                                                                                                                </p>
+                                                                                                                                                <p
+                                                                                                                                                        class="col-md-7">
+                                                                                                                                                        2018
+                                                                                                                                                </p>
+                                                                                                                                        </div>
+                                                                                                                                </div>
+                                                                                                                                <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                                                        </div>
+                                                                                                                </div>
+
+                                                                                                                <div
+                                                                                                                        class="eemployment_info_input_Period col-md-6">
+                                                                                                                        <div
+                                                                                                                                class="row">
+                                                                                                                                <div
+                                                                                                                                        class="col-md-10">
+                                                                                                                                        <label for=""
+                                                                                                                                                class="control-label"
+                                                                                                                                                style="color: black; font-weight:500;">to</label>
+                                                                                                                                        <div
+                                                                                                                                                class="row">
+                                                                                                                                                <p
+                                                                                                                                                        class="col-md-5">
+                                                                                                                                                        28.03
+                                                                                                                                                </p>
+                                                                                                                                                <p
+                                                                                                                                                        class="col-md-7">
+                                                                                                                                                        2018
+                                                                                                                                                </p>
+                                                                                                                                        </div>
+                                                                                                                                </div>
+                                                                                                                                <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+
+                                                                                                        <div
+                                                                                                                class="employment_info_input_Description">
+
+                                                                                                                <div
+                                                                                                                        class="row">
+                                                                                                                        <div
+                                                                                                                                class="col-md-11">
+                                                                                                                                <!-- <label for="" class="control-label" style="color: black; font-weight:500; display:inline;">Description (Optional) </label><a href=""><span class="add_span edit_info" style="display: inline-block;"><i class="fas fa-pencil-alt"></i></span></a> -->
+                                                                                                                                <p>Lorem Ipsum
+                                                                                                                                        is
+                                                                                                                                        simply
+                                                                                                                                        dummy
+                                                                                                                                        text
+                                                                                                                                        of
+                                                                                                                                        the
+                                                                                                                                        printing
+                                                                                                                                        and
+                                                                                                                                        typesetting
+                                                                                                                                        industry.
+                                                                                                                                        Lorem
+                                                                                                                                        Ipsum
+                                                                                                                                        has
+                                                                                                                                        been
+                                                                                                                                        the
+                                                                                                                                        industry's
+                                                                                                                                        standard
+                                                                                                                                        dummy
+                                                                                                                                        text
+                                                                                                                                        ever
+                                                                                                                                        since
+                                                                                                                                        the
+                                                                                                                                        1500s,
+                                                                                                                                        when
+                                                                                                                                        an
+                                                                                                                                        unknown
+                                                                                                                                        printer
+                                                                                                                                        took
+                                                                                                                                        a
+                                                                                                                                        galley
+                                                                                                                                        of
+                                                                                                                                        type
+                                                                                                                                        and
+                                                                                                                                        scrambled
+                                                                                                                                        it
+                                                                                                                                        to
+                                                                                                                                        make
+                                                                                                                                        a
+                                                                                                                                        type
+                                                                                                                                        specimen
+                                                                                                                                        book.
+                                                                                                                                        It
+                                                                                                                                        has
+                                                                                                                                        survived
+                                                                                                                                        not
+                                                                                                                                        only
+                                                                                                                                        five
+                                                                                                                                        centuries,
+                                                                                                                                        but
+                                                                                                                                        also
+                                                                                                                                        the
+                                                                                                                                        leap
+                                                                                                                                        into
+                                                                                                                                        electronic
+                                                                                                                                        typesetting,
+                                                                                                                                        remaining
+                                                                                                                                        essentially
+                                                                                                                                        unchanged.
+                                                                                                                                        It
+                                                                                                                                        was
+                                                                                                                                        popularised
+                                                                                                                                        in
+                                                                                                                                        the
+                                                                                                                                        1960s
+                                                                                                                                        with
+                                                                                                                                        the
+                                                                                                                                        release
+                                                                                                                                        of
+                                                                                                                                        Letraset
+                                                                                                                                        sheets
+                                                                                                                                        containing
+                                                                                                                                        Lorem
+                                                                                                                                        Ipsum
+                                                                                                                                        passages,
+                                                                                                                                        and
+                                                                                                                                        more
+                                                                                                                                        recently
+                                                                                                                                        with
+                                                                                                                                        desktop
+                                                                                                                                        publishing
+                                                                                                                                        software
+                                                                                                                                        like
+                                                                                                                                        Aldus
+                                                                                                                                        PageMaker
+                                                                                                                                        including
+                                                                                                                                        versions
+                                                                                                                                        of
+                                                                                                                                        Lorem
+                                                                                                                                        Ipsum
+                                                                                                                                </p>
+                                                                                                                        </div>
+
+
+                                                                                                                </div>
+
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+
+                                                                                </div>
+                                                                                <div id="employment_edit">
+                                                                                                <div
+                                                                                                id="employement_location">
+                                                                                                <div class="edit_employement_company_location">
+                                                                                                <label
+                                                                                                        for="edit_employement_company">Company</label>
+                                                                                                
+                                                                                                <input id="edit_employement_company"
+                                                                                                        value="Company name"></input></div>
+                                                                                                <div class="edit_employement_company_location">
+                                                                                                <label
+                                                                                                        for="edit_employement_location">Location</label>
+                                                                                                
+                                                                                                <input id="edit_employement_location"
+                                                                                                        value="Company name"></input></div>
+                                                                                </div>
+                                                                                </div>
+<script>
+                                                                                                                        $('#edit_button_review').on("click", () => {
+                                                                                                                                $('.tell_us').css('display', 'none');
+                                                                                                                                $('#review_edit').css('display', 'block');
+                                                                                                                                $('.education_info_input_header').css('display', 'none');
+                                                                                                                                $('#education_edit').css('display', 'block');
+                                                                                                                                $('.education_info_input_section').css('display', 'none');
+                                                                                                                                $('#education_date_edit').css('display', 'block');
+                                                                                                                                $('.educaton_info_degree').css('display', 'none');
+                                                                                                                                $('#edit_degree_main').css('display', 'block');
+                                                                                                                                $('.employment_info').css('display', 'none');
+                                                                                                                                $('#employment_edit').css('display', 'block');
+                                                                                                                                $('#edit_button_review').css('display', 'none');
+                                                                                                                                $('#save_button').css('display', 'block');
+
+
+                                                                                                                })
+
+                                                                                                                $('#save_button').on("click", () => {
+
+                                                                                                                        $('#title_var').text($('#edit_title').val());
+                                                                                                                        $('#prof_var').text($('#edit_prof').val());
+                                                                                                                        $('#school_var1').text($('#school1').val());
+                                                                                                                        $('#school_var2').text($('#school2').val());
+                                                                                                                        $('#education_date_var').text($('#education_date1').val());
+                                                                                                                        $('#educaton_date_var2').text($('#educaton_date2').val());
+
+                                                                                                                        $('#degree_var').text($('#edit_degree').val());
+                                                                                                                        $('#area_var').text($('#edit_value').val());
+                                                                                                                        $('#edu_desc_var').text($('#edu_description').val());
+
+
+
+                                                                                                                        $('.tell_us').css('display', 'block');
+                                                                                                                        $('#review_edit').css('display', 'none');
+                                                                                                                        $('.education_info_input_header').css('display', 'block');
+                                                                                                                        $('#education_edit').css('display', 'none');
+                                                                                                                        $('.education_info_input_section').css('display', 'block');
+                                                                                                                        $('#education_date_edit').css('display', 'none');
+                                                                                                                        $('.educaton_info_degree').css('display', 'block');
+                                                                                                                        $('#edit_degree_main').css('display', 'none');
+                                                                                                                        $('#edit_button_review').css('display', 'block');
+                                                                                                                        $('#save_button').css('display', 'none');
+
+                                                                                                                })
+                                                                                                        </script>
+                                                                        </div>
+
+                                                                </div>
+
+
+                                                        </div>
+
+                                                        <div class="create_head">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="col-md-10 tell_us">
+                                                                                                        <h2>What is your
+                                                                                                                English
+                                                                                                                proficiency?
+                                                                                                        </h2>
+                                                                                                        <div
+                                                                                                                class="tell_us_header">
+                                                                                                                <div
+                                                                                                                        class="row">
+                                                                                                                        <div
+                                                                                                                                class="col-md-12">
+                                                                                                                                <h3>Select
+                                                                                                                                        Your
+                                                                                                                                        Profesionality
+                                                                                                                                </h3>
+                                                                                                                                <p>Programmer
+                                                                                                                                </p>
+                                                                                                                        </div>
+                                                                                                                        <div
+                                                                                                                                class="col-md-12">
+                                                                                                                                <h2>Category/industry
+                                                                                                                                </h2>
+                                                                                                                                <p>category
+                                                                                                                                        industy
+                                                                                                                                </p>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="col-md-1 edit_span">
+                                                                                                        <a href=""><span
+                                                                                                                        class="add_span edit_info"><i
+                                                                                                                                class="fas fa-pencil-alt"></i></span></a>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="create_head">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="col-md-10 tell_us">
+                                                                                                        <h1>Set your
+                                                                                                                Hourly
+                                                                                                                Rate
+                                                                                                        </h1>
+                                                                                                        <div
+                                                                                                                class="row">
+                                                                                                                <div
+                                                                                                                        class="tell_us_header col-md-6">
+
+                                                                                                                        <h3>Hourly
+                                                                                                                                Rate
+                                                                                                                        </h3>
+                                                                                                                        <p>40$/hr
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>20% Upwork
+                                                                                                                                Service
+                                                                                                                                Fee
+                                                                                                                        </h3>
+                                                                                                                        <p>8$
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>You'll
+                                                                                                                                Receive
+                                                                                                                        </h3>
+                                                                                                                        <p>32$
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="col-md-1 edit_span">
+                                                                                                        <a href=""><span
+                                                                                                                        class="add_span edit_info"><i
+                                                                                                                                class="fas fa-pencil-alt"></i></span></a>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                        <!--start location -->
+                                                        <div class="create_head">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="col-md-12 tell_us">
+                                                                                                        <div
+                                                                                                                class="row">
+                                                                                                                <div
+                                                                                                                        class="tell_us_header col-md-10">
+                                                                                                                        <h1>Add your
+                                                                                                                                availability
+                                                                                                                                and
+                                                                                                                                location
+                                                                                                                        </h1>
+
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-1 edit_span">
+                                                                                                                        <a
+                                                                                                                                href=""><span
+                                                                                                                                        class="add_span edit_info"><i
+                                                                                                                                                class="fas fa-pencil-alt"></i></span></a>
+                                                                                                                </div>
+                                                                                                                <div class="col-md-12"
+                                                                                                                        style="margin-top: 15px;">
+                                                                                                                        <h3>How many
+                                                                                                                                hours
+                                                                                                                                do
+                                                                                                                                you
+                                                                                                                                have
+                                                                                                                                available
+                                                                                                                                for
+                                                                                                                                work
+                                                                                                                                each
+                                                                                                                                week?
+                                                                                                                        </h3>
+
+                                                                                                                        <p>More than
+                                                                                                                                30hrs/week
+                                                                                                                        </p>
+                                                                                                                </div>
+
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>Address
+                                                                                                                        </h3>
+                                                                                                                        <p>Tbilisi
+                                                                                                                                lortqifanidzis
+                                                                                                                                26
+                                                                                                                        </p>
+                                                                                                                        <p>Tbilisi
+                                                                                                                                lortqifanidzis
+                                                                                                                                26
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>City
+                                                                                                                        </h3>
+                                                                                                                        <p>Tbilisi
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>Postal
+                                                                                                                                Code
+                                                                                                                        </h3>
+                                                                                                                        <p>32
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>Country
+                                                                                                                        </h3>
+                                                                                                                        <p>Georgia
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>Phone
+                                                                                                                                Number
+                                                                                                                        </h3>
+                                                                                                                        <p>+995 <span>599456574</span>
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                        </div>
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                                class="employment_info_footerr col-md-12">
+
+
+                                                                                                <submit
+                                                                                                        class="btn btn-primary submit_save">
+                                                                                                        Submit</button>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                </div>
+        </section>
+
+        <script src="js/main.js"></script>
+</body>
+
+</html>
+{% endblock %}

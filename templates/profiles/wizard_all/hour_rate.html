@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+</head>
+<body>
+<form action="{% url 'users:logout'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+			</form>
+    <!-- start section create -->
+    <div class="create_head">
+        <div class="container">
+            <form  action="{% url  'profile_wizard:profile_wizard' step %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                        <div class="main_sign_info">
+                                <div class="hour_rate">
+                                        <h2>Set your Hourly Rate</h2>
+                                        <h3>The Upwork Service Fee is 20% when you begin a contract with a new client. Once you bill over $500 with your client, the fee will be 10%.</h3>
+                                        <div class="hour_rate_info">
+                                            <div class="row">
+                                            <div class="col-lg-6  col-md-6">
+                                                <h3>Hourly Rate</h3>
+                                                <p>Total amount the client will see</p>
+                                            </div>
+                                            <div class="col-lg-6  col-md-6 input_right">
+                                                    <i class="fa fa-usd"></i> {{ form.hourly_rate }}/hr
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="hour_rate_info">
+                                            <div class="row">
+                                            <div class="col-lg-6  col-md-6">
+                                                <h3>20% Upwork Service Fee</h3>
+                                               
+                                            </div>
+                                            <div class="col-lg-6  col-md-6 input_right">
+                                                    <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="hour_rate_info">
+                                            <div class="row">
+                                            <div class="col-lg-6  col-md-6 hour_rate_info_left">
+                                                <h3>You'll Receive</h3>
+                                                <p>The estimated amount you'll receive after 
+                                                        service fees <i class="fa fa-question-circle some"></i> <p class="show_p">Depending on hours billed, amount shown may vary slightly due to rounding. Learn more</p>
+                                                        </p>
+                                                    
+                                                          
+                                                 
+                                            </div>
+                                            <div class="col-lg-6  col-md-6 input_right">
+                                                    <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <button onclick="check()" type="submit" value="SUBMIT" class="btn btn-primary button_Continue">Save and Add more</button>
+            </form>
+                                    </div>
+                    </div>   
+</div>
+            
+
+    </div> 
+</div>
+
+    </body>
+    </html>
+   

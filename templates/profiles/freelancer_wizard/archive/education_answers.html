@@ -1,0 +1,1096 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>TechJobs</title>
+        <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+        <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+       <link rel="stylesheet" href="{% static 'profiles/freelancer_wizard/css/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+        <!-- start by education -->
+        <section id="getting_start">
+        <div class="main_review">
+                <div class="container">
+                        <div class="row">
+                                        <div class="col-lg-3 col-md-12 col-sm-12 ">
+                                                        <div class="main_left">
+                                                            <ul class="main_left_ul">
+                                                                <li class="main_left_li active">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'starter' %}"><i class="fas fa-pencil-ruler"></i>Start<i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                                                <li class="main_left_li active">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'education' %}"><i class="fas fa-user-graduate"></i>Education <i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                                                <li class="main_left_li active">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'employment' %}"><i class="fas fa-briefcase"></i>Employment <i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                                                    {% if  all_data.starter.status == 'Freelancer' %}
+                                                                <li class="main_left_li active">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'hour_rate' %}"><i class="fas fa-search-dollar"></i>hourly Rate <i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                                                    {% endif %}
+                                                                <li class="main_left_li active">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'proficiency' %}"><i class="fas fa-eye"></i>Languages & Skills <i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                                                <li class="main_left_li active">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'location' %}"><i class="fas fa-search-location"></i>Location <i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                                                <li class="main_left_li active current">
+                                                                    <a href="{% url 'profile_wizard:profile_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i
+                                                                            class="fas fa-chevron-circle-down"></i></i></a>
+                                                                </li>
+                                    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                        
+          <div class="right_create_head col-lg-9 col-md-12 col-sm-12">
+
+
+
+        <div class="create_head">
+                <div class="container-fluid">
+
+                        <form action="{% url  'profile_wizard:profile_wizard' step %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+                        <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                <div class="main_sign_info">
+                                        <div class="row">
+                                                <div class="col-md-10 tell_us">
+                                                        
+                                                        <div class="tell_us_header">
+
+                                                                <h2>Professional Title </h2>
+                                                                <p>{{ all_data.starter.prof_title }}</p>
+                                                        </div>
+                                                        <h2>Professional Overview </h2>
+                                                        <p>{{ all_data.starter.prof_overview }}</p>
+
+                                                </div>
+
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+        </div>
+
+
+
+        <!-- end by education -->
+        <!-- start section create -->
+        <div class="create_head">
+
+                <div class="container-fluid">
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                <div class="main_sign_info">
+
+                                        <div class="education">
+                                                <div class="row">
+                                                        <div class="education_left col-md-10">
+                                                                <h2> Education </h2>
+
+                                                                
+
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- Modal Section -->
+
+                                <div class="education_info">
+
+                                        <div class="row">
+                                                <div class="education_info_input col-md-12">
+                                                        <div class="row">
+                                                                <div class="education_info_input_header col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">School</label>
+                                                                                        <p>{{ all_data.education.school }}</p>
+                                                                                        <p>
+                                                                                        </p>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="education_info_input_section col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                style="color: black; font-weight:500">Date
+                                                                                                ateented </label>
+                                                                                        <p>From <span> {{ all_data.education.started }}</span> to
+                                                                                                <span>{{ all_data.education.ended }}</span></p>
+
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+
+
+                                                                <div class="education_info_input_Degree col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">Degree</label>
+                                                                                        <p>{{ all_data.education.degree }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- end education -->
+                                                                <div
+                                                                        class="education_info_input_Area_of_study col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">Area
+                                                                                                of study</label>
+                                                                                        <p>{{ all_data.education.area_of_study }}</p>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- start description -->
+                                                                <div class="education_info_input_Description col-md-12">
+                                                                        <div class="row">
+                                                                                <div class="col-md-11">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500; display:inline;">Description
+                                                                                                (Optional) </label>
+                                                                                        <p>{{ all_data.education.Description }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                </div>
+                        </div>
+
+                </div>
+                <!-- end education answer -->
+        </div>
+
+                {% if  all_data.education.repeat == True %}
+                <div class="create_head">
+                <div class="container-fluid">
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                <div class="main_sign_info">
+
+                                        <div class="education">
+                                                <div class="row">
+                                                        <div class="education_left col-md-10">
+                                                                <h2 class="education">Education </h2>
+
+                                                               
+
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- Modal Section -->
+
+                                <div class="education_info">
+
+                                        <div class="row">
+                                                <div class="education_info_input col-md-12">
+                                                        <div class="row">
+                                                                <div class="education_info_input_header col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">School</label>
+                                                                                        <p>{{ all_data.first_education.school }}</p>
+                                                                                        <p>
+                                                                                        </p>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="education_info_input_section col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                style="color: black; font-weight:500">Date
+                                                                                                ateented </label>
+                                                                                        <p>From <span> {{ all_data.first_education.started }}</span> to
+                                                                                                <span>{{ all_data.first_education.ended }}</span></p>
+
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+
+
+                                                                <div class="education_info_input_Degree col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">Degree</label>
+                                                                                        <p>{{ all_data.first_education.degree }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- end education -->
+                                                                <div
+                                                                        class="education_info_input_Area_of_study col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">Area
+                                                                                                of study</label>
+                                                                                        <p>{{ all_data.first_education.area_of_study }}</p>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- start description -->
+                                                                <div class="education_info_input_Description col-md-12">
+                                                                        <div class="row">
+                                                                                <div class="col-md-11">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500; display:inline;">Description
+                                                                                                (Optional) </label>
+                                                                                        <p>{{ all_data.first_education.Description }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                </div>
+                        </div>
+
+                </div>
+                </div>
+                {% endif %}
+
+                {% if  all_data.first_education.repeat == True %}
+                <div class="create_head">
+                <div class="container-fluid">
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                <div class="main_sign_info">
+
+                                        <div class="education">
+                                                <div class="row">
+                                                        <div class="education_left col-md-10">
+                                                                <h2 class="education">Education </h2>
+
+                                                                <p>Tell us about your education history.</p>
+
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- Modal Section -->
+
+                                <div class="education_info">
+
+                                        <div class="row">
+                                                <div class="education_info_input col-md-12">
+                                                        <div class="row">
+                                                                <div class="education_info_input_header col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">School</label>
+                                                                                        <p>{{ all_data.second_education.school }}</p>
+                                                                                        <p>
+                                                                                        </p>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="education_info_input_section col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                style="color: black; font-weight:500">Date
+                                                                                                ateented </label>
+                                                                                        <p>From <span> {{ all_data.second_education.started }}</span> to
+                                                                                                <span>{{ all_data.second_education.ended }}</span></p>
+
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+
+
+
+                                                                <div class="education_info_input_Degree col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">Degree</label>
+                                                                                        <p>{{ all_data.second_education.degree }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- end education -->
+                                                                <div
+                                                                        class="education_info_input_Area_of_study col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500">Area
+                                                                                                of study</label>
+                                                                                        <p>{{ all_data.second_education.area_of_study }}</p>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <!-- start description -->
+                                                                <div class="education_info_input_Description col-md-12">
+                                                                        <div class="row">
+                                                                                <div class="col-md-11">
+                                                                                        <label for=""
+                                                                                                class="control-label"
+                                                                                                style="color: black; font-weight:500; display:inline;">Description
+                                                                                                (Optional) </label>
+                                                                                        <p>{{ all_data.second_education.Description }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                </div>
+                        </div>
+
+                </div>
+                </div>
+                {% endif %}
+
+
+
+                <!-- start employement answer -->
+                <div class="create_head">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                        <div class="main_sign_info">
+
+                                                <div class="education">
+                                                        <div class="row">
+                                                                <div class="education_left col-md-10">
+                                                                        <h2 class="education">Employment </h2>
+
+                                                                       
+
+                                                                </div>
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="employment_info">
+
+                                                <div class="row">
+                                                        <div class="employment_info_input col-md-12">
+                                                                <div class="row">
+
+                                                                        <div
+                                                                                class="employment_info_input_header col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500">Company</label>
+                                                                                                <p>{{ all_data.employment.company }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                                class="employment_info_input_section col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        style="color: black; font-weight:500;">Location
+                                                                                                </label>
+                                                                                                <div class="row">
+                                                                                                        <div
+                                                                                                                class="col-md-6">
+                                                                                                                <p>{{ all_data.employment.location }}
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="col-md-6">
+                                                                                                                <p>From <span>{{ all_data.employment.period_sterted }}</span>
+                                                                                                                        to
+                                                                                                                        <span>{{ all_data.employment.period_ended }}</span>
+                                                                                                                </p>
+                                                                                                        </div>
+
+                                                                                                </div>
+
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                    <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+            </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                        <div
+                                                                                class="employment_info_input_Degree col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">Title</label>
+                                                                                                <p>{{ all_data.employment.title }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+
+                                                                        <div class=" col-md-6"
+                                                                                id="employment_info_input_Role">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">Role</label>
+                                                                                                <p>{{ all_data.employment.role }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div
+                                                                                class="eemployment_info_input_Period col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">from</label>
+                                                                                                <div class="row">
+                                                                                                        <p
+                                                                                                                class="col-md-5">
+                                                                                                                {{ all_data.employment.period_sterted }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                                class="col-md-7">
+                                                                                                                </p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                                class="eemployment_info_input_Period col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">to</label>
+                                                                                                <div class="row">
+                                                                                                        <p
+                                                                                                                class="col-md-5">
+                                                                                                               {{ all_data.employment.period_ended }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                                class="col-md-7">
+                                                                                                                </p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="employment_info_input_Description">
+
+                                                                        <div class="row">
+                                                                                <div class="col-md-11">
+                                                                                        <!-- <label for="" class="control-label" style="color: black; font-weight:500; display:inline;">Description (Optional) </label><a href=""><span class="add_span edit_info" style="display: inline-block;"><i class="fas fa-pencil-alt"></i></span></a> -->
+                                                                                        <p>{{ all_data.employment.description }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+                        </div>
+
+
+                </div>
+
+                {% if  all_data.first_employment != none %}
+                <div class="create_head" style="margin-top:50px;">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                        <div class="main_sign_info">
+
+                                                <div class="education">
+                                                        <div class="row">
+                                                                <div class="education_left col-md-10">
+                                                                        <h2 class="education">Employment </h2>
+
+                                                                        
+
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                        <a href=""><span class="add_span edit_info"><i
+                                                                                                class="fas fa-pencil-alt"></i></span></a>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="employment_info">
+
+                                                <div class="row">
+                                                        <div class="employment_info_input col-md-12">
+                                                                <div class="row">
+
+                                                                        <div
+                                                                                class="employment_info_input_header col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500">Company</label>
+                                                                                                <p>{{ all_data.first_employment.company }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                                class="employment_info_input_section col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        style="color: black; font-weight:500;">Location
+                                                                                                </label>
+                                                                                                <div class="row">
+                                                                                                        <div
+                                                                                                                class="col-md-6">
+                                                                                                                <p>{{ all_data.first_employment.location }}
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="col-md-6">
+                                                                                                                <p>From <span>{{ all_data.first_employment.period_sterted }}</span>
+                                                                                                                        to
+                                                                                                                        <span>{{ all_data.first_employment.period_ended }}</span>
+                                                                                                                </p>
+                                                                                                        </div>
+
+                                                                                                </div>
+
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                    <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+            </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                        <div
+                                                                                class="employment_info_input_Degree col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">Title</label>
+                                                                                                <p>{{ all_data.first_employment.title }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+
+                                                                        <div class=" col-md-6 col-sm-12"
+                                                                                id="employment_info_input_Role">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">Role</label>
+                                                                                                <p>{{ all_data.first_employment.role }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div
+                                                                                class="eemployment_info_input_Period col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">from</label>
+                                                                                                <div class="row">
+                                                                                                        <p
+                                                                                                                class="col-md-5">
+                                                                                                                {{ all_data.first_employment.period_sterted }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                                class="col-md-7">
+                                                                                                                </p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                                class="eemployment_info_input_Period col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">to</label>
+                                                                                                <div class="row">
+                                                                                                        <p
+                                                                                                                class="col-md-5">
+                                                                                                               {{ all_data.first_employment.period_ended }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                                class="col-md-7">
+                                                                                                                </p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="employment_info_input_Description">
+
+                                                                        <div class="row">
+                                                                                <div class="col-md-11">
+                                                                                        <!-- <label for="" class="control-label" style="color: black; font-weight:500; display:inline;">Description (Optional) </label><a href=""><span class="add_span edit_info" style="display: inline-block;"><i class="fas fa-pencil-alt"></i></span></a> -->
+                                                                                        <p>{{ all_data.first_employment.description }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+                        </div>
+
+
+                </div>
+                {% endif %}
+
+                {% if  all_data.second_employment != none %}
+                <div class="create_head" style="margin-top:50px;">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                        <div class="main_sign_info">
+
+                                                <div class="education">
+                                                        <div class="row">
+                                                                <div class="education_left col-md-10">
+                                                                        <h2 class="education">Employment </h2>
+
+                                                                      
+
+                                                                </div>
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="employment_info">
+
+                                                <div class="row">
+                                                        <div class="employment_info_input col-md-12">
+                                                                <div class="row">
+
+                                                                        <div
+                                                                                class="employment_info_input_header col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500">Company</label>
+                                                                                                <p>{{ all_data.second_employment.company }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                                class="employment_info_input_section col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        style="color: black; font-weight:500;">Location
+                                                                                                </label>
+                                                                                                <div class="row">
+                                                                                                        <div
+                                                                                                                class="col-md-6">
+                                                                                                                <p>{{ all_data.second_employment.location }}
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="col-md-6">
+                                                                                                                <p>From <span>{{ all_data.second_employment.period_sterted }}</span>
+                                                                                                                        to
+                                                                                                                        <span>{{ all_data.second_employment.period_ended }}</span>
+                                                                                                                </p>
+                                                                                                        </div>
+
+                                                                                                </div>
+
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                    <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+            </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                        <div
+                                                                                class="employment_info_input_Degree col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">Title</label>
+                                                                                                <p>{{ all_data.second_employment.title }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+
+                                                                        <div class=" col-md-6"
+                                                                                id="employment_info_input_Role">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">Role</label>
+                                                                                                <p>{{ all_data.second_employment.role }}</p>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div
+                                                                                class="eemployment_info_input_Period col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">from</label>
+                                                                                                <div class="row">
+                                                                                                        <p
+                                                                                                                class="col-md-5">
+                                                                                                                {{ all_data.second_employment.period_sterted }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                                class="col-md-7">
+                                                                                                                </p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+        </div> -->
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                                class="eemployment_info_input_Period col-md-6">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-10">
+                                                                                                <label for=""
+                                                                                                        class="control-label"
+                                                                                                        style="color: black; font-weight:500;">to</label>
+                                                                                                <div class="row">
+                                                                                                        <p
+                                                                                                                class="col-md-5">
+                                                                                                               {{ all_data.second_employment.period_ended }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                                class="col-md-7">
+                                                                                                                </p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <!-- <div class="col-md-1">
+                            <a href=""><span class="add_span edit_info"><i class="fas fa-pencil-alt"></i></span></a>
+                    </div> -->
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="employment_info_input_Description">
+
+                                                                        <div class="row">
+                                                                                <div class="col-md-11">
+                                                                                        <!-- <label for="" class="control-label" style="color: black; font-weight:500; display:inline;">Description (Optional) </label><a href=""><span class="add_span edit_info" style="display: inline-block;"><i class="fas fa-pencil-alt"></i></span></a> -->
+                                                                                        <p>{{ all_data.second_employment.description }}</p>
+                                                                                </div>
+
+
+                                                                        </div>
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+                        </div>
+
+
+                </div>
+                {% endif %}
+
+                <div class="create_head">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                        <div class="main_sign_info">
+                                                <div class="row">
+                                                        <div class="col-md-10 tell_us">
+                                                                <h2>What is your English proficiency</h2>
+                                                                <div class="tell_us_header">
+                                                                        <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                        <label for="">Select Your Language Level
+                                                                                        <label>
+                                                                                        <p>{{ all_data.proficiency.language_compatancy }}</p>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                        <label> Other Skills </label>
+                                                                                        <p>{{ all_data.proficiency.category_industry }}</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+                {% if  all_data.hour_rate != none %}
+                <div class="create_head">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                        <div class="main_sign_info">
+                                                <div class="row">
+                                                        <div class="col-md-10 tell_us">
+                                                                <h2>Set your Hourly Rate</h2>
+                                                                <div class="row">
+                                                                        <div class="tell_us_header col-md-6">
+
+                                                                                <label>Hourly Rate </label>
+                                                                                <p>{{ all_data.hour_rate.hourly_rate }}</p>
+                                                                        </div>
+                                                                        
+                                                                </div>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+                {% endif %}
+                <!--start location -->
+                <div class="create_head">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                        <div class="main_sign_info">
+                                                <div class="row">
+                                                        <div class="col-md-12 tell_us">
+                                                                <div class="row">
+                                                                        <div class="tell_us_header col-md-10">
+                                                                                <h2>Location
+                                                                                </h2>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-12"
+                                                                                style="margin-top: 15px;">
+                                                                                <h3>How many hours do you have available
+                                                                                        for work each week? </h3>
+
+                                                                                <p>{{all_data.hour_rate.availability}}</p>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-6 col-sm-12">
+                                                                                <label>Address</label>
+                                                                                <p>{{ all_data.location.address_1 }}</p>
+
+                                                                        </div>
+                                                                        <div class="col-md-6 col-sm-12">
+                                                                                <label>City</label>
+                                                                                <p>{{ all_data.location.city }}</p>
+                                                                        </div>
+                                                                       
+                                                                        <div class="col-md-6 col-sm-12">
+                                                                                <label>Country</label>
+                                                                                <p>{{ all_data.location.country }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-sm-12">
+                                                                                <label>Phone Number</label>
+                                                                                <p>+{{all_data.location.phone_number.country_code}}<span> {{all_data.location.phone_number.national_number}}</span></p>
+
+                                                                        </div>
+                                                                </div>
+
+                                                        </div>
+                                                </div>
+                                                <div class="employment_info_footerr col-md-12">
+                                                        <div class="right_main_getting_footer">
+                                    <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                                                    {{ wizard.management_form }}
+<!--                                        <submit class="Continue" class="btn btn-primary submit_save">Submit</button>-->
+                                                <button class="Continue" type="submit">Submit</button>
+                                </div>
+
+                                                        
+                                                </div>
+                                        </form>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+        </div>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <!--<script src="{% static 'profiles/freelancer_wizard/js/main.js' %}"></script>-->
+</body>
+
+</html>
+{% endblock %}

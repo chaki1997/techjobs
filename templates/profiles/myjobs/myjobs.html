@@ -1,0 +1,124 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="stylesheet" href="{% static 'profiles/myjobs/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+
+<body>
+    <!--  start header -->
+
+
+    <!-- end header -->
+    <!-- start section create -->
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+
+
+
+                <div class="col-lg-9 col-md-12 col-sm-12 main_sign">
+                    <h1>Who See Your vacancy</h1>
+                   
+
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-hover  ">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col ">#</th>
+                            <th scope="col">Job Title</th>
+                            <th scope="col">Freelacner/ Full Time</th>
+                            <th scope="col">Category</th>
+                              <th scope="col">Budget</th>
+                              <th scope="col">Deadline</th>
+                               <th scope="col">Applicants</th>
+                            <th scope="col">See More</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for job in jobs %}
+                          <tr>
+                            <td class="text-center table-success">{{ forloop.counter }} </td>
+                            <td>{{job.job_title}}</td>
+                            <td>
+                                {{job.Status}}
+
+                            </td>
+                              <td>{{job.category}}</td>
+                              <td>{{job.budjet}}</td>
+
+                              <td>{{job.deadline}}</td>
+                              <td><a href="{% url 'jobapply:myemployee' job.pk %}"> <i class="fas fa-user"></i> {{ lenn }}</a></td>
+                            <td>
+
+                                <div class="read_more">
+                                    <!--<a href="{{obj.applier.get_absolute_url}}"> Applier</a>-->
+                                    <a href='{{job.get_absolute_url}}'> View Job  </a>
+                                </div>
+
+                            </td>
+                          </tr>
+                        {% endfor %}
+                          <!--<tr>-->
+                            <!--<td class="text-center table-success">   2 </td>-->
+                            <!--<td>Davit Bochorishvili</td>-->
+                            <!--<td>Freelancer</td>-->
+                            <!--<td>Developer</td>-->
+                            <!--<td>-->
+                                <!--<div class="read_more">-->
+                                    <!--<a href=""> Read More</a>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center table-success">  3 </td>-->
+                            <!--<td>Davit Bochorishvili</td>-->
+                            <!--<td>Freelancer</td>-->
+                            <!--<td>Developer</td>-->
+                            <!--<td>-->
+                                <!--<div class="read_more">-->
+                                    <!--<a href=""> Read More</a>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                        </tbody>
+                      </table>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+            </div>
+        </div>
+        </div>
+    </section>
+<script>
+    $(document).ready(function () {
+$('#dtOrderExample').DataTable({
+columnDefs: [{
+orderable: false,
+targets: 3
+}]
+});
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+    <script src="js/main.js"></script>
+   
+</body>
+
+</html>
+{% endblock %}

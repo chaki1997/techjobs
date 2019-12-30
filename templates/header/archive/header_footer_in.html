@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="shortcut icon" href='{% static "profiles/freelancerlistview/images/untitled-1.png"%}' type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/fontawesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--post job-->
+
+    <!--jobdetail-->
+    
+    
+    <!--about-->
+
+    <!--header-->
+    <link rel="stylesheet" href="{% static 'header_footer/login/css/style.css' %}">
+    <!--home-->
+   
+</head>
+<body>
+    <!--  start header -->
+    <header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-10 col-10 logo">
+
+                    <a href="{% url 'home:index' %}"><img src="{% static 'header_footer/logout/images/logo.png' %}" alt=""></a>
+                </div>
+                <div class=" col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 nav_left">
+                    <nav class="nav_left">
+                        <ul>
+                            {% if user.status == 'Job Seeker' %}
+                            <li><a href="{% url 'profile_wizard:joblist' %}">Find Jobs </a></li>
+                            {% endif %}
+                            {% if user.status == 'Company' or user.status == 'individual' %}
+                            <li><a href="{% url 'profile_wizard:freelancer_list' 'freelancer' %}">Freelancers </a></li>
+                            <li><a href="{% url 'profile_wizard:freelancer_list' 'fulltime' %}">Full Time </a></li>
+
+                            {% endif %}
+                            <!--<li><a href="">My Jobs</a></li>-->
+                            <li><a href="{% url 'home:about' %}">About Us</a></li>
+
+                            
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class=" nav_left_profile">
+                    
+                     <div></div>
+                   
+                    <div class="header-user-menu">
+                            
+                        <img src="{% static 'header_footer/login/images/2.jpg' %}" />
+
+                        <ul class="header-user-menu-down">
+                            <li class="avatar_user">
+                                
+                                  <div class="user_info">
+                                    <span class="user_name" class="">
+                                         {{user.first_name|title}} {{user.last_name|title}}
+                                        
+                                    </span>
+                                    <p class="user_type">
+                                            {{user.status|title}}
+                                            </p>
+                                        </div>
+                                    
+                            </li>
+                            <li class="menu_settings">
+                                <a href="{% url 'profile_wizard:settings' %}">Settings<i class="fas fa-cogs"></i></a>
+                            </li>
+                            <li class="menu_settings">
+                                {% if user.status == 'Job Seeker' %}
+                                <a href="{% url 'profile_wizard:profile_wizard' 'starter'  %}">Create Your Resume<i class="fas fa-cogs"></i></a>
+                                {% endif %}
+                                {% if user.status == 'Company'  %}
+                                <a href="{% url 'profile_wizard:postjob'   %}">Post A Job<i class="fas fa-cogs"></i></a>
+                                {% endif %}
+                                {% if user.status == 'individual'  %}
+                                <a href="{% url 'profile_wizard:postjob'   %}">Post A Job<i class="fas fa-cogs"></i></a>
+                                {% endif %}
+                            </li>
+
+
+                            
+                            <li class="logout">
+                                <a href="{% url 'users:logout' %}">Logout <i class="fas fa-sign-out-alt"></i> </a>
+                             
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <div id="hamburger">
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="message_up">
+        <ul class="messages">
+    {% for message in messages %}
+      <!--<li class="{{ message.tags }}">{{ message }}</li>-->
+      <div class="alert alert-success" role="alert">
+  <strong>Well done!</strong> {{ message }}
+</div>
+
+    {% endfor %}
+  </ul>
+        </div>
+    </header>
+    <script>
+           $(document).ready(function(){
+        $(".message_up").click(function(){
+            $('.message_up').toggleClass('contest-active');
+
+
+
+        });
+    });
+        </script>
+
+    <!-- end header -->
+{% block content %}
+    {% endblock %}
+            <!--start footer-->
+<footer>
+<div class="container">
+    <div class="row footer_head">
+    <div class="logo_footer col-md-3 col-sm-12 col-12">
+        <img src='{% static "home/images/logo.png" %}' alt="">
+    </div>
+    <div class="col-md-5 counter">
+    <div class="col_fourth">
+
+      <h2 class="timer count-title count-number" data-to="300" data-speed="1500"></h2>
+       <p class="count-text ">Jobs Added</p>
+    </div>
+
+    <div class="col_fourth">
+
+      <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+      <p class="count-text ">Jobs Posted</p>
+    </div>
+
+    <div class=" col_fourth">
+
+      <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+      <p class="count-text ">Companies</p>
+    </div>
+
+    <div class="col_fourth end">
+
+      <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+      <p class="count-text ">Freelancer</p>
+    </div>
+</div>
+<div class="social col-md-4">
+    <div class="social_head">
+        <h3>Follow Us</h3>
+        <ul class="social_ul">
+            <li>
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                        <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                        <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                        <i class="fab fa-pinterest-p"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="footer_nav">
+    <div class="row">
+    <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+        <h2>Company</h2>
+        <ul>
+            <li>
+                <a href="{% url 'home:about' %}">About Us</a>
+            </li>
+            <li>
+                <a href="{% url 'profile_wizard:freelancer_list' 'freelancer' %}">Freelancers</a>
+            </li>
+            <li>
+                <a href="{% url 'profile_wizard:joblist' %}">Find Jobs</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+        <h2>RESOURCES</h2>
+        <ul>
+            <li>
+                <a href="{% url 'home:terms' %}">Terms</a>
+            </li>
+            <li>
+                <a href="{% url 'home:privacy' %}">Pivacy Policy</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="col-md-4 footer_nav_info">
+
+            </div>
+</div>
+</div>
+</div>
+</footer>
+        <!--end footer-->
+      <!-- script -->
+
+
+
+      
+     <!--<script>-->
+         <!--$(document).ready(function(){-->
+      <!--$('.header-user-menu-down').hide();-->
+      <!--$('.header-user-menu').click(function(){-->
+          <!--$('.header-user-menu-down').toggle(200);-->
+      <!--})-->
+  <!--})-->
+
+      <!--$('#hamburger').click( function() {-->
+
+              <!--$(this).toggleClass('animate');-->
+              <!--$('.nav_left').toggleClass('active');-->
+              <!--$('.nav_left_profile').toggleClass('active');-->
+
+
+              <!--});-->
+     <!--</script>-->
+</body>
+<!--joblist-->
+
+<script src="{% static 'profiles/joblist/js/main.js' %}"></script>
+<!--job post-->
+<!--<script src="{% static 'user/js/skillTag.js' %}"></script>-->
+<!--<script src="{% static 'profiles/postjob/js/main.js' %}"> </script>-->
+
+</html>

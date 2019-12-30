@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+</head>
+<body>
+<form action="{% url 'users:logout'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+			</form>
+    <!-- start section create -->
+    <div class="create_head">
+        <div class="container">
+           
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <div class="main_sign_info">
+
+<div class="add_location col-md-12">
+    <form action="{% url  'profile_wizard:profile_wizard' step %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+        <h2>Add your availability and location</h2>
+    <div class="add_location_info">
+        <h3>How many hours do you have available for work each week?</h3>
+
+
+            {{ form.availability }}
+          {{ all_data.prof_title }}
+          <p>We take your privacy seriously. Only your city and country will be shared with clients. <a href=""> Learn more </a></p>
+          <div class="add_location_address">
+          <h3>Address</h3>
+
+              {{ form.address_1 }}
+
+              {{ form.address_2 }}
+          
+          <h3 style="padding-top:30px">City</h3>
+
+            {{ form.city }}
+          <h3  style="padding-top:30px">Postal Code</h3>
+
+            {{ form.zip_code }}
+         
+          <h3  style="padding-top:30px">Country</h3>
+
+            {{ form.country }}
+          <h3  style="padding-top:30px">Phone Number</h3>
+         <select class="Country_code">
+             <option value="" selected disabled hidden> Ge +995</option>
+             <option value=""> Afganistan +93</option>
+             <option value=""> Algaria +217</option>
+         </select> 
+         <input class="select_input" type="text" name="Phone Number" placeholder="Phone Number">
+          
+          </div>
+      </div>
+</div>
+<div class="col-md-12">
+<div class="Review_app">
+    <p>See what your profile will look like to prospective clients if your application to join is approved.</p>
+    <div class="Review_input">
+        <button class="Review App active"><h3>Review Application</h3></button>
+        <button class="Review App"><h3>Back</h3></button>
+        
+    </form>
+
+        
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

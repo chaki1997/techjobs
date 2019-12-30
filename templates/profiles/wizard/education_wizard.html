@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+
+
+{% load static %}
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Techjobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{%  static "profiles/path/to/font-awesome/css/font-awesome.min.css"%}'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+<header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 logo">
+                    <a href="#index.html"><img src="{% static 'home/images/logo.png'%}"alt=""></a>
+                </div>
+                <div class="col-md-3 search">
+                    <div class="wrap">
+
+                         </div>
+
+            </div>
+                <div class="col-md-5 nav_left">
+                    <ul class="nav_left_ul">
+                        <li>
+
+                        </li>
+                        <li>
+                                <a href="app/login">
+
+                                    </a>
+                        </li>
+                        <li>
+
+                        </li>
+                        <li class="post_job">
+                             <form action="{% url 'users:logout'  %}" method="post">
+                            {% csrf_token %}
+                            <a href="#">Logout</a>
+                            <input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+     {% block body_block %}
+{% endblock %}
+    </header>
+
+
+<div class="create_head">
+
+        <div class="container">
+
+
+<!-- First Element -->
+            <form class="fa fa-user" action="{% url  'profile_wizard:profile_wizard'  %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+	<div class="education_info" id="show" style="display:block;">
+        <div class="education_info_header">
+            <h3>Add education</h3>
+            <i class="fa fa-times close_pop"></i>
+        </div>
+        <div class="row"></div>
+        <div class="education_info_input col-md-12">
+
+    <div class="education_info_input_header" >
+        <div class="education_info_input_header">
+
+            <label for="" class="control-label">School</label>
+
+                    {{ form.school }}
+
+
+        </div>
+
+           <div class="education_info_input_section">
+                <label for="">Date  ateented </label>
+                <div class="row">
+                <div class="col-md-6">
+
+                    {{ form.started }}
+
+
+            </div>
+            <div class="col-md-6 ">
+
+                {{ form.ended }}
+
+
+    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="education_info_input_Degree" >
+                    <label for="" class="control-label">Degree</label>
+
+                {{ form.degree }}
+
+                </div>
+                <div class="education_info_input_Area_of_study">
+                        <label for="" class="control-label">Area of study</label>
+
+                   {{ form.area_of_study }}
+
+                    </div>
+                    <div class="education_info_input_Description">
+                            <label for="" class="control-label">Description (Optional)</label>
+
+                        {{ form.Description }}
+
+
+                        </div>
+
+
+                </div>
+            </div>
+<!-- First Element -->
+    <div class="education_info" id="show1" style="display:none;">
+        <div class="education_info_header">
+            <h3>Add education</h3>
+            <i class="fa fa-times close_pop"></i>
+        </div>
+        <div class="row"></div>
+        <div class="education_info_input col-md-12">
+
+    <div class="education_info_input_header" >
+        <div class="education_info_input_header">
+
+            <label for="" class="control-label">School</label>
+
+                    {{ form.school_second }}
+
+
+        </div>
+
+           <div class="education_info_input_section">
+                <label for="">Date  ateented </label>
+                <div class="row">
+                <div class="col-md-6">
+
+                    {{ form.started_second }}
+
+
+            </div>
+            <div class="col-md-6 ">
+
+                {{ form.ended_second }}
+
+
+    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="education_info_input_Degree" >
+                    <label for="" class="control-label">Degree</label>
+
+                {{ form.degree_second }}
+
+                </div>
+                <div class="education_info_input_Area_of_study">
+                        <label for="" class="control-label">Area of study</label>
+
+                   {{ form.area_of_study_second }}
+
+                    </div>
+                    <div class="education_info_input_Description">
+                            <label for="" class="control-label">Description (Optional)</label>
+
+                        {{ form.Description_second }}
+
+
+                        </div>
+
+
+                </div>
+            </div>
+
+            <input type="submit" value="SUBMIT"/>
+            <button name="wizard_goto_step" onclick=show()>SAVE AND ADD MORE</button>
+</form>
+        <div class="education_info_footer">
+
+        <a href="#" class="close_pop">Cancel</a>
+
+   </div>
+</div>
+
+
+    <script>
+    function show() {
+        if(document.getElementById('show').style.display=='block') {
+          document.getElementById('show').style.display='none';
+            document.getElementById('show1').style.display='block';
+
+        }
+        else
+        {
+            document.getElementById('show').style.display='block';
+            document.getElementById('show1').style.display='none'
+        }
+    }
+</script>
+
+
+
+   </div>
+</div>
+
+    </div>
+<div id="show1", style="display:none;"></div>

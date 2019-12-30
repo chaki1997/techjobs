@@ -1,0 +1,157 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="stylesheet" href="{% static 'apply/css/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+
+<body>
+    <!--  start header -->
+
+
+    <!-- end header -->
+    <!-- start section create -->
+     <section id="getting_start">
+        <div class="container">
+            <div class="row">
+                
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12 main_sign">
+                    <h1>Who See Your vacancy</h1>
+                   
+
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-hover  ">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col ">#</th>
+                            <th scope="col">Name Surname</th>
+                            <th scope="col">Freelacner/ Full Time</th>
+                            <th scope="col">Vacancy</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Deadline</th>
+                            <th scope="col">See More</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for obj in objs %}
+                          <tr>
+                            <td class="text-center table-success">{{ forloop.counter }} </td>
+                            <td>{{ obj.employee.first_name}} {{obj.employee.last_name}}</td>
+                            <td>
+                                <div>{{ obj.job_signed.Status}}</div>
+                                <!--<div><a href="{% url 'jobapply:contract' obj.id %}">Make Contract</a></div>-->
+                            </td>
+                              <td>{{ obj.job_signed.job_title}}</td>
+                              <td>{{ obj.status}}</td>
+                              <td>{{ obj.job_signed.deadline}}</td>
+                            <td>
+
+                                <div class="read_more">
+                                    {% if user.status|capfirst == 'Employer' %}
+                                    <form  action="{% url 'jobapply:mycontracts' 'er' obj.pk  %}" method="post" > {% csrf_token %}
+
+                                    <button > Complate  </button>
+                                    </form>
+                                    {% endif %}
+                                    {% if user.status|capfirst == 'Job Seeker' %}
+                                    <form  action="{% url 'jobapply:mycontracts' 'ee' obj.pk  %}" method="post" > {% csrf_token %}
+
+                                    <button > Complate  </button>
+                                    </form>
+                                    {% endif %}
+                                </div>
+                                <hr>
+
+                            </td>
+                          </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+
+                      </table>
+
+                        <table class="table table-bordered table-hover  ">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col ">#</th>
+                            <th scope="col">Name Surname</th>
+                            <th scope="col">Freelacner/ Full Time</th>
+                            <th scope="col">Vacancy</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Deadline</th>
+                            <th scope="col">See More</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for obj in done %}
+                          <tr>
+                            <td class="text-center table-success">{{ forloop.counter }} </td>
+                            <td>{{ obj.employee.first_name}} {{obj.employee.last_name}}</td>
+                            <td>
+                                <div>{{ obj.job_signed.Status}}</div>
+                                <!--<div><a href="{% url 'jobapply:contract' obj.id %}">Make Contract</a></div>-->
+                            </td>
+                              <td>{{ obj.job_signed.job_title}}</td>
+                              <td>{{ obj.status}}</td>
+                              <td>{{ obj.job_signed.deadline}}</td>
+                            <td>
+
+                                <div class="read_more">
+                                    {% if obj.status != 'done' %}
+                                    Weiting
+                                    {% endif %}
+                                    {% if obj.status == 'done' %}
+                                    Accepted
+                                    {% endif %}
+                                </div>
+                                <hr>
+
+                            </td>
+                          </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+
+                      </table>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+            </div>
+        </div>
+        </div>
+    </section>
+<script>
+    $(document).ready(function () {
+$('#dtOrderExample').DataTable({
+columnDefs: [{
+orderable: false,
+targets: 3
+}]
+});
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+    <script src="js/main.js"></script>
+   
+</body>
+
+</html>
+{% endblock %}

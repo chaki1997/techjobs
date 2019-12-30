@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+
+
+{% load static %}
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>techjobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{%  static "profiles/path/to/font-awesome/css/font-awesome.min.css"%}'>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+<header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 logo">
+                    <a href="#index.html"><img src="{% static 'home/images/logo.png'%}"alt=""></a>
+                </div>
+                <div class="col-md-3 search">
+                    <div class="wrap">
+
+                         </div>
+
+            </div>
+                <div class="col-md-5 nav_left">
+                    <ul class="nav_left_ul">
+                        <li>
+
+                        </li>
+                        <li>
+                                <a href="app/login">
+
+                                    </a>
+                        </li>
+                        <li>
+
+                        </li>
+                        <li class="post_job">
+                             <form action="{% url 'users:logout'  %}" method="post">
+                            {% csrf_token %}
+                            <a href="#">Logout</a>
+                            <input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+     {% block body_block %}
+{% endblock %}
+    </header>
+
+<div class="create_head">
+
+        <div class="container">
+
+
+            
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <div class="main_sign_info">
+                    <div class="col-md-12 main_sign_info_header"><h1>Create your profile</h1>
+                        <p>If your profile is
+                             it will become the public profile you’ll use to market your freelance business to clients (you can edit it after approval).
+                             for inspiration? <a href="">Check out these tips. </a></p>
+                    </div>
+                </div>
+                <div class="col-md-12 tell_us">
+                    <div class="tell_us_header">
+                    <h2>tell us more about you</h2>
+                    <h3>Please upload a professional portrait that clearly shows your face <i class="fa fa-question-circle some"></i> </h3>
+                    </div>
+                    <div class="avatar col-md-5">
+                        <form class="fa fa-user" action="{% url  'profile_wizard:profile_wizard'  %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+                            <img src='{%  static  "images/Layer-11.png" %}' alt="">
+                        <a href="#" class="avatar_add">
+                                <button class="Add_Photo"><i class="fa fa-plus-circle">Add a photo Now</i></button></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col-md-12 prof_title">
+                    <h3>Add a professional title </h3>
+                    <span>Try to choose a title that will help you stand out <i class="fa fa-question-circle some"></i>.</span>
+                    {{ wizard.management_form }}
+                    {{ form.prof_title }}
+                    <h3>Write a professional overview </h3>
+                    <span>Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile.</span>
+                    {{ form.prof_overview }}
+                    <div class="education">
+                            <button onclick="check()" type="submit" value="SUBMIT" class="btn btn-primary button_save">Continue</button>
+</form>

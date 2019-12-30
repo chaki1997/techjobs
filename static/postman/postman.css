@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    margin-bottom: 0!important;
+}
+a{
+    list-style-type: none;
+}
+
+body{
+    /* background-image: url(https://loveincorporatedthebook.com/wp-content/themes/loveinc/img/backgrounds/banner-background-about-the-book.jpg); */
+    background-attachment: fixed;
+    background-size: cover;
+    height: 350px;
+    background-repeat: round;
+    background-position: top;
+}
+.main{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    
+}
+#postman_menu{
+  background: #fff;
+    text-align: center;
+    padding: 90px 70px 0 35px;
+    opacity: 0.8;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+    
+    
+}
+#postman_menu li
+{
+    padding:5px 0 5px;
+}
+#postman_menu li a{
+   
+    list-style-type: none;
+}
+#postman{
+    width: 80%;
+    background-color: #fff;
+  
+    padding: 10px;
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+    padding-bottom: 30%;
+
+}
+#postman h1{
+    text-align: center;
+}
+li.write_text a{
+    padding:7px 20px 7px 20px;
+    background: blue;
+    margin-top: 15px;;
+    border-radius: 10px;
+    
+}
+li.write_text a{
+    font-size: 18px;
+    color: #fff!important;    
+}
+#pm_messages{
+    margin-top: 5px;
+}
+.main table, .main tr{
+    text-align: center;
+    width: 100%;;
+    border: 1px solid black;
+}
+.main td, .main th{
+    border: 1px solid black;
+}
+.main thead{
+    width: 100%;
+    border: 1px solid black;
+}
+a.pm_action-reply{
+    display: none;
+}
+#pm_buttons button, .pm_btn-send, .pm_btn-reply, a.pm_action-reply, a.pm_action-back{
+    position: relative;
+    background-color: #fff;
+    background-color: #3F9BD7;
+    border: none;
+    color: white!important;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+}
+#pm_byModes {
+    text-align: center;
+}
+table.write_text tr {
+    text-align: left!important;
+   
+}
+table.write_field input{
+    width: 100%;
+    
+    border: 1px solid rgba(169, 169, 169, 0.69);
+    height: 30px;
+    border-radius: 5px;
+   
+}
+textarea{
+    border: 1px solid rgba(169, 169, 169, 0.69);
+    border-radius: 5px;
+}
+table.write_field textarea{
+    width: 100%;
+}
+.write_field tbody tr, .write_field tbody th{
+    border: 6px solid transparent;
+}
+.pm_header{
+    text-align: center;
+}
+#pm_reply textarea{
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+}
+
+@media(max-width:990px){
+    .main{
+        display: block!important;
+    }
+    #postman{
+        width: 100%;
+    }
+}
+
+@media(max-width:425px){
+    #pm_buttons button, .pm_btn-send, .pm_btn-reply, a.pm_action-reply, a.pm_action-back{
+        padding: 7px 2px;
+    }
+
+}
+@media(max-width:768px){
+    #postman_menu{
+        padding: 90px 35px 0 35px;
+    }
+}

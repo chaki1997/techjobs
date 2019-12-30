@@ -1,0 +1,318 @@
+{% extends 'header/header_footer_out.html' %}
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+
+
+    <section class="banner">
+        <div class="container">
+            <div class=" col-md-12 col-md-12 banner_info">
+                <div class=" col-md-6 banner_text">
+                <h2>The ONE Site You'll Ever Need.</h2>
+                <p>We designed Tech Jobs with a simple goal in mind: To create the ONE platform that everybody goes to when they need a job. </p>
+
+               
+            </div>
+            </div>
+        </div>
+    </section>
+    <!--  end banner -->
+
+    <!-- start find your freelancer -->
+    <section id="find_freelancer">
+        <div class="container">
+            <h3>A Job Hunt You'll Actually Enjoy</h3>
+            <div class="find_info">
+                <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                   
+
+
+                    <img src='{% static "home/images/home.jpg" %}' alt="">
+                    <p>Web, Mobile & Software Dev</p>
+                   
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                   
+                    <img src="{% static 'home/images/home.png'%}" alt="">
+                    <p>Web, Mobile & Software Dev</p>
+                  
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                   
+                    <img src='{% static "home/images/02.png" %}'>
+                    <p>Web, Mobile & Software Dev</p>
+                  
+                </div> 
+                
+             </div>
+             <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                       
+                        <img src='{% static "home/images/03.png" %}' alt="">
+                        <p>Web, Mobile & Software Dev</p>
+                       
+                    </div> 
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                       
+                        <img src='{% static "home/images/04.png" %}' alt="">
+                        <p>Web, Mobile & Software Dev</p>
+                        
+                    </div> 
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 find_info_agency">
+                       
+                        <img src='{% static "home/images/home.png" %}' alt="">
+                        <p>Web, Mobile & Software Dev</p>
+                        
+                    </div> 
+        </div>
+    </section>
+
+    <!-- end find your freelancer -->
+
+    <!-- start offers -->
+
+    <section id="offers">
+        <div class="container">
+            <div class="offer_h2">
+                <h2>Waste No Time. Start Now!</h2>
+                <p>All options include access to TechJobs’ talent pool of top-quality freelancers and agencies.</p>
+            </div>
+            <div class="offer_info">
+                <div class="row">
+
+                    {% for plan in subscription_plan %}
+
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">
+                        <div class="offer_info_first_header">
+                             <p class="fa fa-battery-quarter"></p>
+                            <h3>{{plan.price}}</h3>
+                            <a href="{% url 'paypal_subscription:subscription_detail' plan.pk plan.slug %}" class="Select_info">SELECT BASIC</a><br>
+                          
+                            <span >free</span> 
+                             
+                        </div>
+                        <div class="offer_info_first_main">
+                            
+                            
+                        </div>
+                    </div>
+
+                    {% endfor%}
+                    <!--<div class=" col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">-->
+                        <!--<div class="offer_info_first_header">-->
+                                <!--<p class="fa fa-battery-half"></p>-->
+                                <!---->
+                            <!--<h3>1 Month</h3>-->
+                            <!--<a href="#" class="Select_info">SELECT</a><br>-->
+                            <!---->
+                            <!--<span>$99</span><br>-->
+                            <!---->
+                        <!--</div>-->
+                        <!--<div class="offer_info_first_main">-->
+                           <!---->
+                            <!---->
+                            <!---->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">-->
+                        <!--<div class="offer_info_first_header">-->
+                                <!--<p class="fa fa-battery-three-quarters"></p>-->
+                            <!--<h3>12 Months</h3>-->
+                            <!--<a href="#" class="Select_info">SELECT</a><br>-->
+                            <!--<span>$999</span>-->
+                        <!--</div>-->
+                        <!--<div class="offer_info_first_main">-->
+                           <!---->
+                            <!---->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 offer_info_first">-->
+                        <div class="offer_info_first_header">
+                                <p class="fa fa-battery-full"></p>
+                            <h3>24 Months</h3>
+                            <a href="#" class="Select_info">SELECT</a><br>
+                            <span>$1899</span>
+                        </div>
+                        <div class="offer_info_first_main">
+                            
+                            <p>
+                                    <i class="fa fa-check"></i>
+                                   
+                            <p>
+                                    <i class="fa fa-check"></i>
+                                   
+                            </p>
+                            <p>
+                                    <i class="fa fa-check"></i>
+                                    
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end offers -->
+
+    <!-- start video -->
+
+    <section id="section_video">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 video_left">
+                    <h3>Stand Out In Your Unique Style</h3>
+                    <p>"TechJobs took a lot of stress off of growing with minimal resources"</p>
+                </div>
+                <div class="col-md-6 video_right">
+                        <iframe class="video-element-iframe" data-src="https://player.vimeo.com/video/154254456?transparent=0&amp;color=6dda42&amp;title=0&amp;byline=0&amp;portrait=0" src="https://player.vimeo.com/video/154254456?transparent=0&amp;color=6dda42&amp;title=0&amp;byline=0&amp;portrait=0" allow="fullscreen" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                   
+                    </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- end video -->
+    <!-- start Top skills -->
+        <section id="skills">
+            <div class="container">
+                <div class="skill_info">
+                    <h3 style="text-weight:bold;">Top Skills</h3>
+                <div class="row skill_info_main">
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Bookkeeper</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Content Writer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Copywriter</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Bookkeeper</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Content Writer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Copywriter</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Bookkeeper</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Content Writer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Copywriter</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Android Developer</a>
+                    </div>
+                   
+                </div>
+                </div>
+                <div class="skill_info">
+                    <h3 style="text-weight:bold;">Trending skills</h3>
+                <div class="row skill_info_main">
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Apple UIKit</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Apple Xcode</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Articulate storyline</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Atlassian Confluence</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Blockchain</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Customer retention</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">eLearning</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Enterprise architecture</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">GitLab</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Go development</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Developer Google App Engine</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Google Cloud Platform</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Node.js</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Copywriter</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Product photography</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <a href="#" class="skill_info_header">Rapid prototyping </a>
+                    </div>
+                   
+                </div>
+                </div>
+            </div>
+        </section>
+    <!-- end Top skills -->
+
+    <!--  start footer -->
+   </body>
+   </html>
+
+{% endblock %}

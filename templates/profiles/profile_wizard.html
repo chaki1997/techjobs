@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+
+
+
+{% load static %}
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{%  static "profiles/path/to/font-awesome/css/font-awesome.min.css"%}'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+<header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 logo">
+                    <a href="#index.html"><img src="{% static 'home/images/logo.png'%}"alt=""></a>
+                </div>
+                <div class="col-md-3 search">
+                    <div class="wrap">
+
+                         </div>
+
+            </div>
+                <div class="col-md-5 nav_left">
+                    <ul class="nav_left_ul">
+                        <li>
+
+                        </li>
+                        <li>
+                                <a href="app/login">
+
+                                    </a>
+                        </li>
+                        <li>
+
+                        </li>
+                        <li class="post_job">
+                             <form action="{% url 'users:logout'  %}" method="post">
+                            {% csrf_token %}
+                            <a href="#">Logout</a>
+                            <input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+     {% block body_block %}
+{% endblock %}
+    </header>
+    <!-- start section create -->
+    <div class="create_head">
+
+        <div class="container">
+
+
+            
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <div class="main_sign_info">
+                    <div class="col-md-12 main_sign_info_header"><h1>Create your profile</h1>
+                        <p>If your profile is 
+                             it will become the public profile you’ll use to market your freelance business to clients (you can edit it after approval).
+                             for inspiration? <a href="">Check out these tips. </a></p>
+                    </div>
+                </div>
+                <div class="col-md-12 tell_us">
+                    <div class="tell_us_header">
+                    <h2>tell us more about you</h2>
+                    <h3>Please upload a professional portrait that clearly shows your face <i class="fa fa-question-circle some"></i> </h3>
+                    </div>
+                    <form class="fa fa-user" action="{% url  'profiles_test:profiles'  %}" method="post">
+                    <div class="avatar col-md-5">
+                        <img src='{%  static  "images/Layer-11.png" %}' alt="">
+                        <a href="#" class="avatar_add">
+                                <button class="Add_Photo"><i class="fa fa-plus-circle">Add a photo Now</i></button></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-12 prof_title">
+                    <h3>Add a professional title </h3>
+
+                    <span>Try to choose a title that will help you stand out <i class="fa fa-question-circle some"></i>.</span>
+                    {{ form.subject.errors }}
+                    {{ form.prof_title }}
+
+                    <h3>Write a professional overview </h3>
+                    <span>Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile.</span>
+                    {{ form.subject.errors }}
+                    {{ form.prof_overview }}
+                    <div class="education">
+                            <h3 class="education">Education  </h3> 
+                             <a href=""><span class="add_span">+</span></a>
+                             <p>Tell us about your education history.</p>
+                             <p id="in_there"></p>
+                            </div>
+                            <div class="education">
+                            <h3 class="education">Employment history  </h3> 
+                             <a href=""><span class="add_span_2">+</span></a>
+                            
+                             <p>Include previous positions and the number of years you've worked, as well as relevant projects.</p>
+                             <p id="in_there_2"></p>
+                                </div>
+                            </div>
+                    
+<!-- Modal Section -->
+<div class="cd-popup" role="alert">
+	<div class="cd-popup-container">
+	<div class="education_info">
+        <div class="education_info_header">
+            <h3>Add education</h3>
+            <i class="fa fa-times close_pop"></i>
+        </div>
+        <div class="row"></div>
+        <div class="education_info_input col-md-12">
+            <form  action="{% url  'profiles_test:education'  %}" method="post">
+                {% csrf_token %}
+        <div class="education_info_input_header">  
+            <label for="" class="control-label">School</label>
+            {{ eduform.subject.errors }}
+            {{ eduform.school }}
+
+           
+        </div>
+        
+           <div class="education_info_input_section">
+                <label for="">Date  ateented </label> 
+                <div class="row">
+                <div class="col-md-6">
+                    {{ eduform.subject.errors }}
+                    {{ eduform.started }}
+
+            </div>
+            <div class="col-md-6 ">
+                {{ eduform.subject.errors }}
+                    {{ eduform.ended }}
+
+            </div>
+            </div>
+            </div>
+            <div class="education_info_input_Degree">  
+                    <label for="" class="control-label">Degree</label>
+
+                  {{ eduform.subject.errors }}
+                    {{ eduform.degree }}
+                </div>
+                <div class="education_info_input_Area_of_study">  
+                        <label for="" class="control-label">Area of study</label>
+
+                       {{ eduform.subject.errors }}
+                    {{ eduform.area_of_study }}
+                    </div>
+                    <div class="education_info_input_Description">  
+                            <label for="" class="control-label">Description (Optional)</label>
+
+                        {{ eduform.subject.errors }}
+                    {{ eduform.Description }}
+
+
+                       
+                            
+                        </div>
+
+                     </form>
+            <button onclick="getvalue()" id=btn class="btn btn-primary button_save">Save</button>
+                 </div>
+            </div>
+        <div class="education_info_footer">
+               
+        <a href="#" class="close_pop">Cancel</a>
+
+   </div> 
+</div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src={% static "profiles/js/ajax.js" %}></script>
+
+<div class="cd-popup_2" role="alert">
+	<div class="cd-popup-container">
+	<div class="employment_info">
+        <div class="employment_info_header">
+            <h3>Add employment</h3>
+            <i class="fa fa-times close_pop"></i>
+        </div>
+        <div class="row"></div>
+        <div class="employment_info_input col-md-12">
+                
+        <div class="employment_info_input_header">  
+            <label for="" class="control-label">Company</label>
+         <input type="text"  name="school" id="input_Company" value="">
+            
+        </div>
+           <div class="employment_info_input_section">
+                <label for="">Location </label> 
+                <div class="row">
+                <div class="col-md-6">
+               <input type="text" placeholder="City" id="Location_input">
+            </div>
+            <div class="col-md-6 ">
+                <select id="input_select_form_3">
+                    <option value=""  selected disabled hidden>Please Select</option>
+                    <option value="From">From</option>
+                    <option value="to">to</option>
+                    <option value="some">some</option>
+                    <option value="any">any</option>
+                </select>
+            </div>
+            </div>
+            </div>
+            <div class="employment_info_input_Degree">  
+                    <label for="" class="control-label">Title</label>
+                 <input type="text"  name="input_degree" id="input_degree_2" value="">
+                    
+                </div>
+                <div class="row">
+                <div class=" col-md-6" id="employment_info_input_Role">  
+                        <label for="" class="control-label">Role</label>
+                     <select name="" id="select_Role" >
+                         <option value=""  selected disabled hidden>Please Select</option>
+                         <option value="some" >some</option>
+                         <option value="any" >any</option>
+                         <option value="any" >any</option>
+                     </select>
+                    </div>
+                    </div>
+                    
+                <div class="eemployment_info_input_Period">  
+                        <label for="" class="control-label">Period</label>
+                        <div class="raw">
+                     <select name="" id="select_Role_year" class="col-md-5"  >
+                            <option value=""  selected disabled hidden>Month</option>
+                            <option value="some" >some</option>
+                            <option value="any" >any</option>
+                            <option value="any" >any</option>
+                     </select>
+                     <select name="" id="select_Role_month" class=" col-md-5   offset-2" >
+                            <option value=""  selected disabled hidden>Year</option>
+                            <option value="some" >some</option>
+                            <option value="any" >any</option>
+                            <option value="any" >any</option>
+                     </select>
+                        </div>
+                    </div>
+                <div class="eemployment_info_input_Period">  
+                        <label for="" class="control-label">through</label>
+                        <div class="raw">
+                     <select name="" id="select_period_year" class="col-md-5">
+                            <option value=""  selected disabled hidden>Month</option>
+                            <option value="some" >some</option>
+                            <option value="any" >any</option>
+                            <option value="any" >any</option>
+                     </select>
+                     <select name="" class="col-md-5   offset-2" id="select_period_month">
+                            <option value=""  selected disabled hidden>Year</option>
+                            <option value="some" >some</option>
+                            <option value="any" >any</option>
+                            <option value="any" >any</option>
+                     </select>
+                        </div>
+                    </div>
+                    <div class="employment_radio">
+                        <div class="row">
+                            <input type="radio" name="" value=""><p>I currently work here </p>
+                    </div>
+                </div>
+                    <div class="education_info_input_Description">  
+                            <label for="" class="control-label">Description (Optional)</label>
+                        <textarea name="Description" id="input_desctiption" cols="69" rows="10"></textarea>
+                            
+                        </div>
+        </div>
+        </div>
+        <div class="education_info_footer">
+               
+        <a href="#" class="close_pop">Cancel</a>
+        <button type="button" onclick="return getvalue_2()" id="button1" class="btn btn-primary button_save">save</button>
+            </form>
+   </div> 
+</div>
+		
+   
+
+
+
+    <script>
+        $('#button1').click(function(e){
+    e.preventDefault();
+    // Code goes here
+});
+        function getvalue_2(){
+            var x=document.getElementById('in_there_2');
+            var y=document.getElementById('input_Company').value;
+            var z=document.getElementById('Location_input').value;
+            var k=document.getElementById('input_select_form_3').value;
+            var l=document.getElementById('input_degree_2').value;
+            var p=document.getElementById('select_Role').value;
+            var m=document.getElementById('select_Role_year').value;
+            var n=document.getElementById('select_Role_month').value;
+            var o=document.getElementById('input_desctiption').value;
+            
+            x.innerHTML='<h3 style="font-weight:500">'+y+'</h3>' + z + '<br>'+ k+ '<br>'+l+ '<br>'+p + '<br>' + m +'<br>' +n + '<br>'+o;
+            // document.getElementById("in_there_2").innerHTML = m;
+            return false
+        }
+    </script>
+    <!-- end pop_up -->
+    <div class="education">
+                    <h3 class="education">What is your English proficiency?  </h3> 
+                    <select class="select_profiction">
+                            <option value="" selected disabled hidden>Select your profesionality</option>
+                            <option value="volvo">Basic: I write in this language decently</option>
+                            <option value="saab">Conversational: I write and speak this language well</option>
+                            <option value="opel">Fluent: I write and speak this language almost perfectly</option>
+                            <option value="audi">Native or Bilingual: I write and speak this language perfectly, including colloquialisms</option>
+                          </select>
+                          <h3 style="margin-top: 15px;">Category/industry</h3>
+                        <select class="select_profiction">
+                                <option value="" selected disabled hidden>Please Select</option>
+                                <option value="volvo">More than 30 hrs/week</option>
+                                <option value="saab">Less than 30 hrs/week</option>
+                                <option value="opel">As needed - open to offers</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="hour_rate">
+                    <h2>Set your Hourly Rate</h2>
+                    <p>The Upwork Service Fee is 20% when you begin a contract with a new client. Once you bill over $500 with your client, the fee will be 10%.</p>
+                    <div class="hour_rate_info">
+                        <div class="row">
+                        <div class="col-lg-6  col-md-6">
+                            <h3>Hourly Rate</h3>
+                            <p>Total amount the client will see</p>
+                        </div>
+                        <div class="col-lg-6  col-md-6 input_right">
+                                <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                        </div>
+                    </div>
+                    </div>
+                    <div class="hour_rate_info">
+                        <div class="row">
+                        <div class="col-lg-6  col-md-6">
+                            <h3>20% Upwork Service Fee</h3>
+                           
+                        </div>
+                        <div class="col-lg-6  col-md-6 input_right">
+                                <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                        </div>
+                    </div>
+                    </div>
+                    <div class="hour_rate_info">
+                        <div class="row">
+                        <div class="col-lg-6  col-md-6 hour_rate_info_left">
+                            <h3>You'll Receive</h3>
+                            <p>The estimated amount you'll receive after 
+                                    service fees <i class="fa fa-question-circle some"></i> <p class="show_p">Depending on hours billed, amount shown may vary slightly due to rounding. Learn more</p>
+                                    </p>
+                                
+                                      
+                             
+                        </div>
+                        <div class="col-lg-6  col-md-6 input_right">
+                                <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="add_location col-md-12">
+                        <h2>Add your availability and location</h2>
+                    <div class="add_location_info">
+                        <h3>How many hours do you have available for work each week?</h3>
+                        <select class="select_profiction">
+                                <option value="" selected disabled hidden>Please Select</option>
+                                <option value="volvo">More than 30 hrs/week</option>
+                                <option value="saab">Less than 30 hrs/week</option>
+                                <option value="opel">As needed - open to offers</option>
+                          </select>
+                        
+                          
+                          <p>We take your privacy seriously. Only your city and country will be shared with clients. <a href=""> Learn more </a></p>
+                          <div class="add_location_address">
+                          <h3>Adress</h3>
+                          <input type="text" name="address_1"><br>
+                          <input type="text" name="adress_2">
+                          
+                          <h3 style="padding-top:30px">City</h3>
+                          <input type="text" name="city" placeholder="start typing your city "><br>
+                          
+                          <h3  style="padding-top:30px">Postal Code</h3>
+                          <input class="postal_input" type="text" name="Postal Code">
+                         
+                         
+                          <h3  style="padding-top:30px">Country</h3>
+                          <input class="select_input_1" type="text" name="Country" placeholder="Country" disabled>
+                          
+                          <h3  style="padding-top:30px">Phone Number</h3>
+                         <select class="Country_code">
+                             <option value="" selected disabled hidden> Ge +995</option>
+                             <option value=""> Afganistan +93</option>
+                             <option value=""> Algaria +217</option>
+                         </select> 
+                         <input class="select_input" type="text" name="Phone Number" placeholder="Phone Number">
+                          
+                          </div>
+                      </div>
+                </div>
+            <div class="col-md-12">
+                <div class="Review_app">
+                    <p>See what your profile will look like to prospective clients if your application to join is approved.</p>
+                    <div class="Review_input">
+                        <button class="Review App active"><h3>Review Application</h3></button>
+                        <button class="Review App"><h3>Create a Client Account Instead</h3></button>
+                        <button class="Review App"><h3>Delete Account</h3></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--  end section create -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+    jQuery(document).ready(function($){
+        //open popup
+        $('.add_span').on('click', function(event){
+            event.preventDefault();
+            $('.cd-popup').addClass('is-visible');
+        });
+    
+        //close popup
+        $('.cd-popup').on('click', function(event){
+            if( $(event.target).is('.close_pop') || $(event.target).is('.button_save') ) {
+                event.preventDefault();
+                $(this).removeClass('is-visible');
+            }
+        });
+        $('button').click(function(){
+       $('input[type="text"]').val('');
+       $('textarea' ).val('');
+    });
+        
+    
+    });
+    </script>
+    <script>
+    jQuery(document).ready(function($){
+        //open popup
+        $('.add_span_2').on('click', function(event){
+            event.preventDefault();
+            $('.cd-popup_2').addClass('is-visible');
+        });
+    
+        //close popup
+        $('.cd-popup_2').on('click', function(event){
+            if( $(event.target).is('.close_pop') || $(event.target).is('.button_save') ) {
+                event.preventDefault();
+                $(this).removeClass('is-visible');
+            }
+        });
+        $('button').click(function(){
+       $('input[type="text"], fieldset').val('');
+    });
+        
+    
+    });
+    </script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

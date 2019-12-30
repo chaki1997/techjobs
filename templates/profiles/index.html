@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--  start header -->
+    <header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-10 col-10 logo">
+
+                    <a href="#index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class=" nav_left">
+                    <nav class="nav_left">
+                        <ul>
+                            <li><a href="">Freelancers </a></li>
+                            <li><a href="">Find Jobs </a></li>
+                            <li><a href="">My Jobs</a></li>
+                            <li><a href="">About Us</a></li>
+                            
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class=" nav_left_profile">
+                     <div class=" bell"><i class="far fa-bell"></i></div>
+                     <div></div>
+                   
+                    <div class="header-user-menu">
+                            
+                        <img src="images/2.jpg" alt="User Image" />
+
+                        <ul class="header-user-menu-down">
+                            <li class="avatar_user">
+                                
+                                  <div class="user_info">
+                                    <span class="user_name" class="">
+                                        name surname
+                                        
+                                    </span>
+                                    <p class="user_type">
+                                            Freelancer
+                                            </p>
+                                        </div>
+                                    
+                            </li>
+                            <li class="menu_settings">
+                                <a href="#">Settings<i class="fas fa-cogs"></i></a>
+                            </li>
+                            
+                            <li class="logout">
+                                <a href="#">Logout <i class="fas fa-sign-out-alt"></i> </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <div id="hamburger">
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- end header -->
+
+      <!-- script -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="js/main.js"> </script>
+      <!-- clicked -->
+     <script>
+         $(document).ready(function(){
+      $('.header-user-menu-down').hide();
+      $('.header-user-menu').click(function(){
+          $('.header-user-menu-down').toggle(200);
+      })
+  })
+  
+      $('#hamburger').click( function() {
+              
+              $(this).toggleClass('animate');
+              $('.nav_left').toggleClass('active');
+              $('.nav_left_profile').toggleClass('active');
+              
+              
+              });
+     </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    
+    <link rel="stylesheet" href="{% static 'profiles/job_post_wizard/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+ 
+</head>
+<body>
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="main_left">
+                    <ul class="main_left_ul">
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'index' %}"><i class="fas fa-pencil-ruler"></i>Title <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'description' %}"><i class="fas fa-file-prescription"></i>Description <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'detials' %}"><i class="fas fa-info" style="padding-left: 5px;"></i>Details <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'expertise' %}"><i class="fab fa-creative-commons-remix"></i>Expertise <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li active">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'visibility' %}"><i class="fas fa-eye"></i>Visibilite <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'budget' %}"><i class="fas fa-search-dollar"></i>Budget <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                        <li class="main_left_li">
+                            <a href="{% url  'profile_wizard:job_post_wizard' 'review' %}"><i class="fas fa-check"></i>Review <i class="fas fa-chevron-circle-down"></i></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="right_main_getting_start">
+            <div class="right_main_getting_header">
+                <h2>Visibility</h2>
+                <p>Step 5 of 7</p>
+            </div>
+           <div class="right_main_getting_content">
+               <h4> your job?</h4>
+               <div class="create_skills">
+                    <div class="radio_block">              
+                       <div class="row">
+                            <div class="radio_none_item details_radio_button  col-md-3 "   >
+                                <div class="radio_none_content">
+                                      <span><i class="fas fa-user-tie"></i></span>
+                                      <h4>Anyone</h4>
+                                      <p>
+                                            Freelancers and agencies using TEchJobs and public search engines can find this job.
+                                      </p>
+      
+                                </div>
+                            </div>
+                            <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                                <div class="radio_none_content">
+                                      <span><i class="fab fa-r-project"></i></span>
+                                      <h4>Only Techjobs talent</h4>
+                                      <p>Only Techjobs users can find this job.</p>
+      
+                                </div>
+                            </div>
+                            <div class="radio_none_item details_radio_button col-md-3"checked="checked">
+                                <div class="radio_none_content">
+                                      <span><i class="fas fa-lock"></i></span>
+                                      <h4>Invite-only</h4>
+                                      <p>Only freelancers and agencies you have invited can find this job.</p>
+      
+                                </div>
+                            </div>
+                            </div>
+               <div class="create_skills">
+                   <h4>How many freelancers do you need for this job?</h4>
+                    <div class="radio_block">              
+                       <div class="row">
+                            <div class="radio_none_item details_radio_button  col-md-4 "   >
+                                <div class="radio_none_content">
+                                      <span><i class="fas fa-user-tie"></i></span>
+                                      <h4>Only Freelancer</h4>
+                                      
+      
+                                </div>
+                            </div>
+                            <div class="radio_none_item details_radio_button col-md-4"checked="checked">
+                                <div class="radio_none_content">
+                                      <span><i class="fab fa-r-project"></i></span>
+                                      <h4>More than one freelancer</h4>
+                                      
+      
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+           </div>
+        </div>
+        </div>
+        </div>
+        
+            
+
+            
+                    <div class="right_main_getting_start">
+                    <h4>Talent Preferences (optional)</h4>
+                    <div class="talant_preferences">
+                            <p>Specify the qualifications you're looking for in a successful proposal.</p>
+                            <a href=""><span class="add_span">+</span>
+                            <p class="add_right">add</p></a>
+                         
+                         </div>
+
+                        
+                        
+                          
+                           
+                           <br>
+                           <div class="right_main_getting_footer">
+                                <form class="fa fa-user" action="{% url  'profile_wizard:job_post_wizard' step %}" method="post">{% csrf_token %}
+                        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="cancel">Previous </button>
+                            {{ wizard.management_form }}
+                          <button class="Continue" type="submit">Continue</button>
+                       </form>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- clicked -->
+    <script>
+    $(document).on('click', '.radio_none_item',function(){
+        $(this).toggleClass('active').siblings().removeClass('active');
+        
+        
+    } )
+
+    
+    
+   
+    </script>
+
+ </body>
+ </html>

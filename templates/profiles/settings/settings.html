@@ -1,0 +1,203 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+     <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'profiles/settings/css/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+
+<body>
+   
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+              
+
+                <div class="col-lg-12 col-md-12 col-sm-12 main_sign">
+                    <h1>Profile</h1>
+                    <div class="main_sign_info">
+                        <div class="col-md-12 setting_profile_avatar">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12 avatar_settings">
+                                    <div class="avatar_change_picture">
+                                        <img src="images/2.jpg" alt="">
+                                    </div>
+                                    <div class="avatar_change_picture_info">
+                                        <h4>{{user.first_name}} {{user.last_name}}</h4>
+                                        <p>{{user.status}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 edit_profile">
+                        <div class="col-md-12 setting_profile_avatar">
+                            <div class="setting_profile_header">
+                            <h2>Personal Information</h2>
+                            <div>
+                                <button type="button" id="edit_button"><i
+                                    class="fas fa-pencil-alt"></i>Edit</button>
+                                
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-12 avatar_settings">
+
+                 <form  action="{% url  'profile_wizard:settings'   %}" method="post" > {% csrf_token %}
+
+
+
+
+                                        {% csrf_token %}
+
+
+
+                                        <div id="info_div">
+                                            <h3  id="info_name">Full Name   </h3><span id="name_var">{{user.first_name}} {{user.last_name}}</span>
+                                            {% if location_form.phone_number %}
+                                            <h3 id="info_phone">Phone:  </h3><span id="phone_var">{{phone}}</span>
+                                            {% endif %}
+                                            <h3 id="info_mail">Email: </h3><span id="mail_var">{{user.email}}</span>
+                                            <h3 id="info_password">password:</h3> <span id="password_var">*****</span>
+                                          </div>
+                                          <div id="edit_div">
+
+
+                                                  <div>
+                                                      <label for="edit_name">First Name:</label> <br>
+                                                      <!--<input id="edit_name" value="hhh "></input>-->
+                                                      {{edit_form.first_name}}
+                                                      <script>
+                                                          document.getElementById("firstname").value = '{{user.first_name}}';
+                                                      </script>
+
+                                                  </div>
+                                                    <div>
+                                                      <label for="lastname">Last Name:</label> <br>
+                                                      <!--<input id="edit_name" value="hhh "></input>-->
+                                                      {{edit_form.last_name}}
+                                                      <script>
+                                                          document.getElementById("lastname").value = '{{user.last_name}}';
+                                                      </script>
+
+                                                  </div>
+                                              <div>
+                                                      <label for="username">Username:</label> <br>
+                                                      <!--<input id="edit_name" value="hhh "></input>-->
+                                                      {{edit_form.username}}
+                                                      <script>
+                                                          document.getElementById("username").value = '{{user.username}}';
+                                                      </script>
+
+                                                  </div>
+                                              {% if location_form.phone_number %}
+                                                  <div>
+                                                      <label for="edit_phone">Phone:</label> <br>
+                                                      <!--<input id="edit_phone" value="99566884264"></input>-->
+
+                                                        {{location_form.phone_number}}
+
+                                                      <script>
+                                                          document.getElementById("phonenumebr").value = '{{phone}}';
+                                                      </script>
+                                                  </div>
+                                              {%endif%}
+                                                  <div>
+                                                      <label for="edit_mail">Email:</label> <br>
+                                                      <!--<input id="edit_mail" value="davit@bochora.com"></input>-->
+                                                      {{edit_form.email}}
+
+                                                      <script>
+                                                          document.getElementById("email").value = '{{user.email}}';
+                                                      </script>
+
+
+
+                                                  </div>
+                                                  <div>
+                                                      <label for="edit_password">Password:</label> <br>
+                                                      <!--<input id="edit_password" type="password"value="*****"></input>-->
+
+                                                      <!--<script>-->
+                                                          <!--&lt;!&ndash;document.getElementById("password1").value = '{{user.password1}}';&ndash;&gt;-->
+                                                      <!--</script>-->
+
+                                                      <!--{{form_change.as_p}}-->
+
+                                                  </div>
+                                              <div><a href="{% url 'profile_wizard:password' %}"><i ></i>Change Password  <i ></i></i></a></button></div>
+                                              </div>
+                                              <div><button type="submit" id="save_button">Update</button></div>
+
+
+                                              
+                                         
+
+                                          <script>
+                                              $('#edit_button').on("click",() =>{
+                                                  $('#info_div').css('display', 'none');
+                                                  $('#edit_div').css('display', 'block');
+                                                  $('#edit_button').css('display', 'none');
+                                                  $('#save_button').css('display', 'block');
+                                              })
+                                      
+                                              $('#save_button').on("click",() =>{
+                                      
+                                                  $('#name_var').text($('#edit_name').val());
+                                                  $('#phone_var').text( $('#edit_phone').val());
+                                                  $('#mail_var').text( $('#edit_mail').val());
+                                                  $('#password_var').text( $('#edit_password').val());
+                                      
+                                      
+                                                  $('#info_div').css('display', 'block');
+                                                  $('#edit_div').css('display', 'none');
+                                                  $('#edit_button').css('display', 'block');
+                                                  $('#save_button').css('display', 'none');
+                                              })
+                                          </script>
+                                    </form>
+
+                                </div>
+                                <hr>
+                               
+
+                                <div class="right_main_getting_footer">
+                                    <a href="Description.html" class="cancel">Back to main menu</a>
+                                   
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+   
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+input{
+
+    height: 40px;
+padding-left: 35px;
+}
+
+a{
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease!important;
+    color: black!important;
+}
+a:hover{
+    text-decoration: none!important;
+    color: #33518f!important;
+}
+input:hover{
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid #00837c;
+}
+form.fa-user:before {
+    content: "\f007";
+    height: 30px;
+    color: #33518f;
+    position: relative;
+    left: -82px;
+    top: 41px;
+
+
+}
+input#username {
+
+    display: table-footer-group;
+}
+
+ul{
+    list-style-type: none!important;
+}
+li{
+    text-decoration: none;
+}
+
+
+.scrolled{
+    background:#fff;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+/* header */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    height: 150px;
+    background: #33518F;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5);
+}
+
+
+
+
+/* login form */
+
+
+
+body{
+    background-color: #d7dde0;
+}
+#password_change{
+
+   background: #d7dde0;
+   padding-bottom: 5%;;
+
+}
+.password_change_info{
+    text-align: center;
+ margin: 150px 0 64px 0;
+        color: #33518f;
+        background-color: #fff;
+        /* height: 40px; */
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 18px;
+        border-radius: 2px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: inline-block;
+        border: solid 2px transparent;
+        -webkit-box-shadow: 0 2px 10px 1px rgba(57,73,76,0.4), 0 1px 2px rgba(57,73,76,0.25);
+                box-shadow: 0 2px 10px 1px rgba(57,73,76,0.4), 0 1px 2px rgba(57,73,76,0.25);
+
+}
+.password_change_info form {
+
+    text-align: center;
+}
+#save_button{
+    color: #fff;
+    background-color: #33518f;
+    height: 40px;
+
+    font-size: 18px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    border: solid 2px transparent;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(57,73,76,0.4), 0 1px 2px rgba(57,73,76,0.25);
+    box-shadow: 0 2px 10px 1px rgba(57,73,76,0.4), 0 1px 2px rgba(57,73,76,0.25);
+    /* clear: initial; */
+    margin: 15px 0;
+    width: 22%;
+
+}
+.password_change_info h2:after{
+    content: '';
+    background: black;
+    width: 150px;
+    padding-top: 5px;
+    margin:  25px auto;
+    height: 2px;
+    display: block;
+}

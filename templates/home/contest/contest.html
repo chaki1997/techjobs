@@ -1,0 +1,89 @@
+{% extends 'header/header_footer_out.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+
+    <link rel="stylesheet" href="{% static 'home/contest/css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+
+
+    <!-- end header -->
+
+    <!-- start banner -->
+
+    <section class="About_banner">
+
+    </section>
+
+    <!-- end banner -->
+    <!-- start prelog  1-->
+    <section id="prelog_main">
+        <div class="container">
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 about_main">
+            <h2>You’re ALMOST <span>There! </span></h2>
+            <p>You’re just one step away from entering our contest to win $1,000 by answering one simple question:
+                <span style="font-weight: bold;">
+                    What is your dream job, and what do you hope to achieve by it?
+                </span>
+            </p>
+            <p>Now, we just need you to <a href="{% url 'users:register' %}" style="text-decoration:underline;"> sign up</a> to our site to enter your answer.</p>
+            <p> <span style="color: #33518f; font-size: 18px; font-weight: 500;"> Remember:</span> daydreaming has never been so profitable!
+             </p>
+             <div class="sign_up_main">
+             <span>
+                    To sign up, just click here 
+                    <br>
+                    <button class="sign_up_button">
+                        <a href="{% url 'users:register' %}">Sign Up</a>
+                    </button>
+             </span>
+             </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- end prelog  1-->
+
+    <!-- start carousel -->
+
+    <!--  start footer -->
+
+
+    <!-- end footers -->
+    <script>
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

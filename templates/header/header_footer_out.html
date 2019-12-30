@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <meta name="description" content="100% free for job seekers to find full time and freelance work. The one job site you will ever need to find quality vacancies. A hub for employers and recruiters to track and hire global talent.">
+    <meta name="keywords" content="Job">
+    <!--about-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--header-->
+    <link rel="stylesheet" href="{% static 'header_footer/logout/css/style.css' %}">
+    <!--home-->
+
+</head>
+<body>
+        <!--  start header -->
+        <header>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4 col-sm-10 col-10 logo">
+
+                        <a href="{% url 'home:index' %}"><img src="{% static 'header_footer/logout/images/logo.png' %}" alt=""></a>
+                    </div>
+
+                    <div class="col-lg-8 col-md-12 nav_left">
+                        <ul class="nav_left_ul">
+                            <li>
+                                <a href="{% url 'profile_wizard:joblist' 'all' %}">
+                                        <i class="fa" aria-hidden="true"></i>Find Jobs</i>
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'profile_wizard:freelancer_list' 'all' %}">
+                                        <i class="fa" aria-hidden="true"></i>Find Job Seekers</i>
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'home:about'  %}">
+                                        <i class="fa" aria-hidden="true"></i>About Us</i>
+                                    </a>
+                            </li>
+                            <li class="log_in" ><i class="fas fa-sign-in-alt"></i>
+                                    <a href="{% url 'users:login' %}" style="font-size: 14px;">
+                                            Log In
+                                        </a>
+                            </li>
+                            <li class="sign_up" ><i class="fa fa-user" aria-hidden="true"></i>
+                                    <a href="{% url 'users:register' %}" style="font-size: 14px;">
+
+                                        Sign Up
+                                        </a>
+                            </li>
+                            <!-- <li><i class="fa fa-user" aria-hidden="true"></i>
+                                    <a href="{% url 'users:register' %}">
+
+                                        Contact Us
+                                        </a>
+                            </li> -->
+                            
+                        </ul>
+                    </div>
+                    <div id="hamburger">
+
+                            <span class="bar"></span>
+
+                            <span class="bar"></span>
+
+                            <span class="bar"></span>
+
+                          </div>
+                </div>
+
+
+            </div>
+        </header>
+
+
+        <!-- end header -->
+{% block content %}
+    {% endblock %}
+      <!-- script -->
+        <!--start footer-->
+        <footer>
+            <div class="container">
+                <div class="row footer_head">
+            
+            
+               <div class="logo_footer  col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <img src='{% static "home/images/logo.png" %}' alt="">
+                            </div>
+            
+            
+            </div>
+            <div class="footer_nav">
+                <div class="row">
+            
+            
+                <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                 
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:about' %}">About Us</a>
+                        </li>
+                       
+                        <li>
+                            <a href="{% url 'home:contact' %}">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                    
+                    <ul>
+                       <li>
+                            <a href="{% url 'home:terms' %}">Terms</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'home:privacy' %}">Pivacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social col-md-4">
+                        <div class="social_head">
+                            <h2>Follow Us</h2>
+                            <ul class="social_ul" style="display:flex; justify-content: center;">
+                                <li>
+                                    <a href="https://www.facebook.com/techjobs.one/">
+                                            <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCbLW_RTS4sqFW1avthebTeQ/featured?view_as=subscriber">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="developed">
+                        <p>Powered by <a href="https://webdeveloper.app" target="_blank">webdeveloper.app</a></p>
+                    </div>
+            </div>
+            </div>
+            </div>
+            </footer>
+        <!--end footer-->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="{% static 'header_footer/logout/js/main.js' %}"> </script>
+      <!-- clicked -->
+     <script>
+         $(document).ready(function(){
+      $('.header-user-menu-down').hide();
+      $('.header-user-menu').click(function(){
+          $('.header-user-menu-down').toggle(200);
+      })
+  })
+  
+      $('#hamburger').click( function() {
+              
+              $(this).toggleClass('animate');
+              $('.nav_left').toggleClass('active');
+              $('.nav_left_profile').toggleClass('active');
+              
+              
+              });
+     </script>
+</body>
+</html>

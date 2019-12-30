@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+</head>
+<form action="{% url 'users:logout'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+			</form>
+<body>
+    <!-- start section create -->
+    <div class="create_head">
+        <div class="container">
+            
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <div class="main_sign_info">
+                
+                    <div class="education">
+                    <h2 class="education">Education  </h2> 
+                     
+                     <h3>Tell us about your education history.</h3>
+                     <p id="in_there"></p>
+                    </div>
+                    
+                    </div>
+<!-- Modal Section -->
+<form  action="{% url  'profile_wizard:profile_wizard' step  %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+	<div id="show" style="display:block;" class="education_info">
+       <div id="show" style="display:block">
+           <div class="row"></div>
+        <div class="education_info_input col-md-12">
+                <div class="row">
+        <div class="education_info_input_header col-md-6">
+            <label for="" class="control-label">School</label>
+         <input type="hidden"  name="school" id="input_school" place value="">
+            {{ form.school }}
+
+        </div>
+
+           <div class="education_info_input_section col-md-6">
+                <label for="">Date  ateented </label>
+                <div class="row">
+                <div class="col-md-6">
+                    {{ form.started }}
+
+            </div>
+            <div class="col-md-6 ">
+                {{ form.ended }}
+
+            </div>
+            </div>
+            </div>
+
+            <div class="education_info_input_Degree col-md-6">
+                    <label for="" class="control-label">Degree</label>
+                 <input type="hidden"  name="input_degree" id="input_degree" value="">
+                {{ form.degree }}
+
+                </div>
+                <div class="education_info_input_Area_of_study col-md-6">
+                        <label for="" class="control-label">Area of study</label>
+                     <input type="hidden"  name="Area_of_study" id="Area_of_study" value="">
+                    {{ form.area_of_study }}
+
+                    </div>
+                    <div class="education_info_input_Description col-md-12">
+                            <label for="" class="control-label">Description (Optional)</label>
+
+                        {{ form.Description }}
+                        {{ form.repeat }}
+                        </div>
+                        <div class="education_info_footer col-md-12">
+
+                            <button class="btn btn-secondary button_Back" value="{{ wizard.steps.prev }}">Back</button>
+                            <button type="submit" value="SUBMIT" class="btn btn-primary button_reset">Submit</button>
+                            <button onclick="check()" type="submit" value="SUBMIT" class="btn btn-primary button_save">Save and Add more</button>
+                       </div>
+                 </div>
+            </div>
+
+        </div>
+       </div>
+
+
+    </div>
+
+</div>
+
+    </form>
+
+    </div>
+    <script>
+    function check(){
+        document.getElementById("checkbox").checked = true;
+    }
+
+</script>
+   <script>
+    function show() {
+        if(document.getElementById('show').style.display=='block') {
+          document.getElementById('show').style.display='none';
+            document.getElementById('show1').style.display='block';
+
+        }
+        else
+        {
+            document.getElementById('show').style.display='block';
+            document.getElementById('show1').style.display='none'
+        }
+    }
+</script>

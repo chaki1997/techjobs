@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="stylesheet" href={% static "user/css/style.css" %}>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+            function validatePassword(password) {
+
+                // Do not show anything when the length of password is zero.
+                if (password.length === 0) {
+                    document.getElementById("msg").innerHTML = "";
+                    return;
+                }
+                // Create an array and push all possible values that you want in password
+                var matchedCase = new Array();
+                matchedCase.push("[$@$!%*#?&]"); // Special Charector
+                matchedCase.push("[A-Z]");      // Uppercase Alpabates
+                matchedCase.push("[0-9]");      // Numbers
+                matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+                // Check the conditions
+                var ctr = 0;
+                for (var i = 0; i < matchedCase.length; i++) {
+                    if (new RegExp(matchedCase[i]).test(password)) {
+                        ctr++;
+                    }
+                }
+                // Display it
+                var color = "";
+                var strength = "";
+                switch (ctr) {
+                    case 0:
+                    case 1:
+                    case 2:
+                        strength = "Very Weak";
+                        color = "red";
+                        break;
+                    case 3:
+                        strength = "Medium";
+                        color = "orange";
+                        break;
+                    case 4:
+                        strength = "Strong";
+                        color = "green";
+                        break;
+                }
+                document.getElementById("msg").innerHTML = strength;
+                document.getElementById("msg").style.color = color;
+            }
+        </script>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12"><div class="row">
+                        <div class=" col-md-3 logo">
+
+                               <a href={% url 'home:index'  %} > <img src={% static  "images/logo.png"%} alt=""></a>
+                            </div>
+                            <div class="col-md-8 sing_in_header">
+                                <p>Already have an account?<a href="index.html"> Log In </a></p>
+                            </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="sign_up">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="login_form login_form_user">
+                        <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="{% url  'users:register'  %}" method="post">
+					    {% csrf_token %}
+                        <div class="login_form_header">
+                        <h2>Get Your Free account</h2>
+                        <div class="user_form first">
+                                {{ form.subject.errors }}
+                            {{ form.first_name }}
+                                {{ form.subject.errors }}
+                            {{ form.last_name }}
+                                {{ form.subject.errors }}
+                            {{ form.email }}
+                            <div><span id="msg"></span></div>
+                            <span id="msg"></span>
+                                 <button type="button" class="user_sign_up">Sign Up</button>
+                        </div>
+                        </div>
+                        <div class="login_form_header_hiden">
+
+                        <div class="user_form second">
+                            {{ form.subject.errors }}
+                            {{ form.username }}
+                            
+                                {{ form.subject.errors }}
+                            {{ form.password1 }}
+                                {{ form.subject.errors }}
+                            {{ form.password2 }}
+                            <div class="content_sign" style="margin-top: 50px;">
+                                    <div class="radio_block">              
+                                            
+                                                 <form action="" class="">
+                                                     <div class="content_sign_input">
+                                                     {{form.status}}
+                                                 </div>
+
+                                                </form>
+                                                 
+                                                 </div>
+                                                
+                                                 
+                                
+                            </div>
+
+                                 <button type="submit" class="user_sign_up">Sign Up</button>
+                        
+                        </div>
+                            </form>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+<!-- end Form -->
+    <!-- <section id="vendors">
+        <div class="container">
+            <div class="vendor_main">
+                <h4 style="text-align: center;">Trusted by 5M+ businesses</h4>
+            <div class="vendor_images"></div>
+        </div>
+    </div>
+    </section> -->
+
+    <!-- end vendor -->
+
+    <footer id="footer_sign_up">
+        <div class="footer_sign_up_main">
+            <p>© 2015 - 2019 techjobs® Global Inc.</p>
+            <ul>
+                <li>
+                    <a href="#">Terms of Service</a>
+                </li>
+                <li>
+                    <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#">Accessibility</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script>
+    $("#id_username").change(function () {
+      console.log( $(this).val() );
+    });
+  </script>
+    <script>
+        $('.user_sign_up').click(function(){
+  $(".first").fadeOut(function(){
+    $(".second").fadeIn();
+  });
+});
+        $('.Back_button').click(function(){
+  $(".login_form_password").fadeOut(function(){
+    $(".login_form").fadeIn();
+  });
+});
+$(document).on('click', '.radio_none_item',function(){
+        $(this).toggleClass('active').siblings().removeClass('active');
+        
+        
+    } );
+    </script>
+   
+    
+   
+</body>
+</html>

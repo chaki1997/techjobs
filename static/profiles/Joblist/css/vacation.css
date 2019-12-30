@@ -1,0 +1,536 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+a{
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease!important;
+    color: black!important;
+}
+ul{
+    list-style-type: none!important;
+}
+li{
+    text-decoration: none;
+}
+a:hover{
+    list-style-type: none!important;
+    text-decoration: none!important;
+}
+i{
+    color: #3f9bd7;
+    vertical-align: middle;
+
+}
+p{
+    font-family: Helvetica,Arial,sans-serif;
+    /* font-size: 13px!important; */
+    color: #656565 !important;
+}
+h2{
+
+    line-height: 20px!important;
+
+    font-weight: 300!important;
+}
+h3{
+    line-height: 24px;
+    font-size: 18px!important;
+    font-weight: 500;
+    color: #222;
+
+
+}
+h4{
+    color: #33518f;
+    font-size: 16px!important;
+    margin-top: 15px!important;
+}
+input{
+
+    height: 40px;
+padding-left: 35px;
+}
+
+a{
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease!important;
+    color: black!important;
+}
+a:hover{
+    text-decoration: none!important;
+    color: #33518f!important;
+}
+input:hover{
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid #00837c;
+}
+a{
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease!important;
+    color: black!important;
+}
+ul{
+    list-style-type: none!important;
+}
+li{
+    text-decoration: none;
+}
+a:hover{
+    list-style-type: none!important;
+    text-decoration: none!important;
+}
+
+.scrolled{
+    background:#fff;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    height: 150px;
+    background: #33518F;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5);
+}
+
+
+
+
+/*  end header */
+
+
+/* start vacation banner */
+
+#banner{
+   background: #33518F;
+    height: 200px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.jobs_banner_header{
+   text-align: center;
+}
+.jobs_banner_header h1{
+    color: #fff;
+}
+.jobs_banner_content_search{
+    margin-top: 15%;
+}
+.jobs_banner_content_search form{
+   width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.jobs_banner_content_search form select, .jobs_banner_content_search form input{
+
+    height: 60px;
+    padding-left: 40px !important;
+
+}
+.jobs_banner_content_search form select{
+    border-radius: 50px 0 0 50px;
+   width: 190px;
+   border: none;
+
+}
+.jobs_banner_content_search form .search_input input{
+    border: none;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+     width: 450px;
+}
+.jobs_banner_content_search .search_location input{
+    border: none;
+
+
+     width: 190px;
+
+}
+.search_button button{
+    background:#33518f;
+    height: 60px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    width: 90px;
+}
+/* end vacation banner */
+
+
+/* start job main  */
+
+.left_jobs_content{
+    position: relative;
+    background-color: #fff;
+    margin: 35px 0;
+    padding: 30px;
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+
+}
+.left_jobs_content_title{
+   padding-right: 15px;;
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+.left_jobs_content_title h4{
+    font-size: 20px!important;
+    text-align: center;
+
+}
+.Save_description h4 {
+    text-align: left;
+}
+.left_jobs_content_title img{
+    width: 100%;;
+}
+.vacantion_description_title h3{
+    font-size: 41px!important;
+    text-align: center;
+    font-weight: 400;
+    color: #33518f;
+}
+.vacation_description_title_time {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.vacation_description_title_time p{
+    font-size: 14px;;
+    font-weight: bold;
+    color: #33518F!important;
+    margin-bottom: 0!important;
+}
+.vacation_description_title_time span {
+    padding-left: 10px;
+    font-weight: 500;
+    color: #33518f;
+}
+.vacation_description_title_time2{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+}
+.vacation_description_title_time2 span{
+    font-weight: 500;
+    padding-left: 10px;
+}
+.vacation_description_title_time i{
+font-size: 18px;;
+font-weight: 900;
+
+}
+div#some_jobs {
+    width: 90%;
+    margin: auto;
+}
+.some_jobs{
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+}
+.vacation_description_title_time2 i{
+    font-size: 18px;;
+font-weight: 900;
+color: #33518f;
+}
+.vacation_description_main ul li{
+    list-style-type: disc;
+}
+.vacation_description_main ul {
+    padding-left: 20px;
+}
+.read_more.col-md-3 {
+    z-index: 999;
+    position: relative;
+    top: 60px;
+    left: 40px;
+}
+.Save_description_member {
+    width: 200px;
+    padding: 11px 11px;
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    border: solid 2px transparent;
+    -webkit-font-smoothing: antialiased;
+   margin: auto;
+    background: #33518f;
+    font-weight: 500;
+    text-align: center;
+
+    cursor: pointer;
+    white-space: nowrap;
+    background-image: none;
+    -webkit-transition: all .15s;
+    -o-transition: all .15s;
+    transition: all .15s;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+}
+.Save_description_member a{
+    color: #fff!important;
+
+}
+.vacation_content:hover {
+    border-left: 1px solid #33518F;
+    border-right: 1px solid #33518F;
+    border-bottom: 1px solid #33518F;
+}
+
+
+/* right vacations */
+.vacation_content{
+    position: relative;
+    background-color: #fff;
+    margin: 35px 0;
+    padding: 30px;
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+    -webkit-box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    -webkit-transition: ease-in-out .3s;
+    -o-transition: ease-in-out .3s;
+    transition: ease-in-out .3s;
+
+}
+
+.vacation_img img{
+    text-align: center;
+    border-radius: 50%;
+    width: 100%;
+}
+.vacation_img{
+text-align: center;
+}
+.vacation_content_icon {
+    text-align: center;
+}
+.save_freelancers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.vacation_header_title{
+    vertical-align: top;
+}
+.vacation_header_title a {
+    color: #00B4CC!important;
+    font-size: 27px;
+
+}
+.save_freelancers span{
+    padding-left: 8px;
+    vertical-align: top;
+}
+.apply_jobs i{
+    margin-left: 10px;
+}
+
+.vacation_count{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.vacation_content{
+    border-top: 5px solid #618ce4;
+}
+.search_button button{
+    background:#33518f;
+    height: 60px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    width: 90px;
+    color: #fff;
+}
+
+.progress{
+    height: 4px!important;
+}
+.country_freelancers{
+    text-align: center;
+}
+.country_freelancers p span{
+    font-weight: 600;
+    font-size: 16px;
+    color: #33518f;
+}
+.freelancers_information ul {
+    margin-left: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
+.freelancers_information ul li{
+
+    list-style-type: disc!important;
+}
+
+.freelancers_information {
+    padding-top: 15px;
+}
+.freelacner_information p{
+    overflow: hidden;
+    height: 150px;;
+}
+.company_description p{
+    word-break: break-all;
+    overflow: hidden;
+    height: 245px;
+}
+.article-text {
+    display: block;
+   
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: max-height 1.5s;
+    -o-transition: max-height 1.5s;
+    transition: max-height 1.5s;
+  }
+  .article-text p{
+    word-break: break-all;
+    margin: 0 0 30px;
+    line-height: 21px;
+    font-size: 14px!important;
+  }
+
+  .btn.read-less {
+    display: none;
+  }
+
+
+  .article-text::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white));
+    background: -o-linear-gradient(top, transparent, white);
+    background: linear-gradient(to bottom, transparent, white);
+  }
+
+  .article-text.visible {
+    max-height: 100%;
+  }
+
+  .article-text.visible::before {
+    display: block;
+  }
+/* right vacations */
+/* end job main  */
+
+
+/* footer */
+/* start footer */
+
+@media screen and (max-width:768px){
+    .col_fourth {
+        font-size: 15px;
+        padding-left: 0px;
+    }
+    ul.social_ul li {
+        padding-left: 0px;
+    }
+}
+/* end footer */
+/*  end footer */
+@media screen and (max-width:967px){
+
+    .jobs_banner_content_search {
+        display: none;
+        margin-top: 15%;
+    }
+    .jobs_banner_header{
+        display: none;
+    }
+    .left_jobs_content_description {
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width:468px){
+    .vacation_description_title_time {
+        display: grid;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+        margin-top: 0px;
+    }
+    .vacation_description_title_time i{
+        margin: 15px 0 0 0 ;
+    }
+    .vacation_description_title_time2 {
+        display: grid;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+
+    }
+    .vacation_description_title_time2 i {
+    margin: 15px 0 0 0 ;
+
+    }
+}
+@media screen and (max-width:768px){
+    .jobs_banner_content_search{
+        display: none;;
+    }
+    .jobs_main{
+        padding: 0!important; 
+    padding-left: 0!important;
+    padding-right: 0!important;
+    }
+   
+        .col-md-3.read_more {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            position: ABSOLUTE;
+            bottom: 4%;
+            left: 0!important;
+            
+        }
+    
+    
+}
+/* end footer */
+/*  end footer */

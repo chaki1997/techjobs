@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+        <!--  start header -->
+        <header>
+                <div class="container">
+                    <div class="row">
+        
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-10 logo">
+        
+                            <a href="#index.html"><img src="images/logo.png" alt=""></a>
+                        </div>
+                        <div class=" nav_left">
+                            <nav class="nav_left">
+                                <ul>
+                                    <li><a href="">Find Jobs </a></li>
+                                    <li><a href="">My Jobs</a></li>
+                                    <li><a href="">About Us</a></li>
+                                    
+                                </ul>
+                            </nav>
+        
+                        </div>
+                        <div class=" nav_left_profile">
+                             <div class=" bell"><i class="far fa-bell"></i></div>
+                             <div></div>
+                           
+                            <div class="header-user-menu">
+                                    
+                                <img src="images/2.jpg" alt="User Image" />
+        
+                                <ul class="header-user-menu-down">
+                                    <li class="avatar_user">
+                                        
+                                          <div class="user_info">
+                                            <span class="user_name" class="">
+                                                name surname
+                                                
+                                            </span>
+                                            <p class="user_type">
+                                                    Freelancer
+                                                    </p>
+                                                </div>
+                                            
+                                    </li>
+                                    <li class="menu_settings">
+                                        <a href="#">Settings<i class="fas fa-cogs"></i></a>
+                                    </li>
+                                    
+                                    <li class="logout">
+                                        <a href="#">Logout <i class="fas fa-sign-out-alt"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+        
+        
+        
+                        </div>
+                        <div id="hamburger">
+        
+                            <span class="bar"></span>
+        
+                            <span class="bar"></span>
+        
+                            <span class="bar"></span>
+        
+                        </div>
+                    </div>
+        
+        
+                </div>
+            </header>
+        
+            <!-- end header -->
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="right_main_getting_start">
+                        <div class="right_main_getting_header">
+                            <h2>Post a job</h2>
+
+                        </div>
+                        <div class="right_main_getting_content">
+                            <h4>who you are? freelancer or agency?</h4>
+                            <div class="create_job">
+                                <div class="radio_block">
+
+
+                                    <div class="row">
+                                        <div class="radio_none_item details_radio_button pay_hour  col-md-4 ">
+                                            <div class="radio_none_content">
+                                                <span><i class="fas fa-stopwatch"></i></span>
+                                                <h4>Freelance</h4>
+                                                <p>Popular for ongoing projects</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="radio_none_item details_radio_button fixed_price col-md-4"
+                                            checked="checked">
+                                            <div class="radio_none_content">
+                                                <span><i class="fas fa-hand-holding-usd"></i></span>
+                                                <h4>Full Time</h4>
+                                                <p>Popular for one-time projects</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="freelancer_block">
+                                    <div class="row">
+                                        <div class="pay_hour_none post_title active col-md-12">
+                                            <h4>Title</h4>
+                                            <div class="row">
+                                                <input type="text" value="" class="title" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="pay_hour_none post_description active col-md-12">
+                                            <h4>Description</h4>
+                                            <div class="row">
+                                                <textarea name="tescription" id="" cols="100" rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="pay_hour_none post_description active col-md-12">
+                                            <h4>Category</h4>
+                                            <div class="row">
+                                                <form class="radio_select">
+                                                    <div class="multiselect">
+                                                        <div class="selectBox" onclick="showCheckboxes()">
+                                                            <select>
+                                                                <option>Select an option</option>
+                                                            </select>
+                                                            <div class="overSelect"></div>
+                                                        </div>
+                                                        <div id="checkboxes">
+                                                            <label for="one">
+                                                                <input type="checkbox" id="one" />from industries
+                                                                list</label>
+                                                            <label for="two">
+                                                                <input type="checkbox" id="two" />Multiple</label>
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="pay_hour_none post_description active col-md-12">
+                                            <h4>Do you have a specific budget?</h4>
+                                            <div class=" ">
+                                                <i class="fa fa-usd"></i> <input type="text" class="input_price"
+                                                    placeholder="0">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                <div class="full_block">
+                                
+                              
+                                    
+
+                               
+                                <div class="row">
+                                    <div class="fix_hour_none location active col-md-12">
+                                        <h4>Location</h4>
+                                        <div class="input_right">
+
+                                            <select name="" id="">
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Georgia">Georgia</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="right_main_getting_footer">
+                    <a href="budget.html" class="cancel">Cancel</a>
+                    <a href="review.html" class="Continue">Continue</a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- <input type="radio" name='thing' value='valuable' data-id="bank" />
+    <input type="radio" name='thing' value='valuable' data-id="school" />
+    <hr />
+    <div id="bank" class="none">Bank</div>
+    <div id="school" class="none">School</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(':radio').change(function (event) {
+    var id = $(this).data('id');
+    $('#' + id).addClass('none').siblings().removeClass('none');
+});
+</script>
+     -->
+  <!--  start footer -->
+
+  <footer>
+        <div class="container">
+            <div class="row footer_head">
+                <div class="logo_footer col-md-3 col-sm-12 col-12">
+                    <img src='images/logo.png' alt="">
+                </div>
+                <div class="col-md-5 counter">
+                    <div class="col_fourth">
+
+                        <h2 class="timer count-title count-number" data-to="300" data-speed="1500"></h2>
+                        <p class="count-text ">Jobs Added</p>
+                    </div>
+
+                    <div class="col_fourth">
+
+                        <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+                        <p class="count-text ">Jobs Posted</p>
+                    </div>
+
+                    <div class=" col_fourth">
+
+                        <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+                        <p class="count-text ">Companies</p>
+                    </div>
+
+                    <div class="col_fourth end">
+
+                        <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+                        <p class="count-text ">Freelancer</p>
+                    </div>
+                </div>
+                <div class="social col-md-4">
+                    <div class="social_head">
+                        <h3>Follow Us</h3>
+                        <ul class="social_ul">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_nav">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                        <h2>Company</h2>
+                        <ul>
+                            <li>
+                                <a href="">About Us</a>
+                            </li>
+                            <li>
+                                <a href="">Investor Relations</a>
+                            </li>
+                            <li>
+                                <a href="">Careers</a>
+                            </li>
+                            <li>
+                                <a href="">Press</a>
+                            </li>
+                            <li>
+                                <a href="">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                        <h2>RESOURCES</h2>
+                        <ul>
+                            <li>
+                                <a href="">Privacy Policy </a>
+                            </li>
+                            <li>
+                                <a href="">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="">Hiring Resources</a>
+                            </li>
+                            <li>
+                                <a href="">TechJobs Blog</a>
+                            </li>
+                            <li>
+                                <a href="">Customer Stories</a>
+                            </li>
+                            <li>
+                                <a href="">=Business Resources</a>
+                            </li>
+                            <li>
+                                <a href="">Payroll Services</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer_nav_info">
+                        <h2>Newsletter</h2>
+                        <p>Subscribe to CareerUp Pacific newsletter to get
+                            the latest jobs posted, candidates ,and other latest news stay updated.</p>
+                        <div class="input_footer">
+                            <input type="text" placeholder="Enter Your Email Adress">
+                            <a href="#">
+                                <i class="fa fa-paper-plane-o"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footers -->
+
+
+
+   
+    <!-- script -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"> </script>
+    <!-- clicked -->
+   <script>
+       $(document).ready(function(){
+    $('.header-user-menu-down').hide();
+    $('.header-user-menu').click(function(){
+        $('.header-user-menu-down').toggle(200);
+    })
+})
+
+    $('#hamburger').click( function() {
+            
+            $(this).toggleClass('animate');
+            $('.nav_left').toggleClass('active');
+            $('.nav_left_profile').toggleClass('active');
+            
+            
+            });
+   </script>
+   
+
+</body>
+
+</html>

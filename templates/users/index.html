@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="stylesheet" href='{% static "user/css/style.css"%}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" col-md-3 logo">
+                        <a href="{% url 'home:index'  %}" ><img href="kjkj" src="{% static 'images/logo.png'%}" alt=""></a>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="log_in">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="login_form">
+                        <div class="login_form_header">
+                        <h2>Log in and get to work</h2>
+                        <div class="user_form">
+
+                                <form class="" action="{% url  'users:login'  %}" method="post" style="display:inline-grid;">
+                                {% csrf_token %}
+                                        {{ login_form.subject.errors }}
+        
+                                            {{ login_form.username }}
+                                         <button type="button" class="Continue_button">Continue</button>
+                                    <span id="msg"></span>
+                                    {{ msg }}
+        
+                                </div>
+                        </div>
+                        <div class="login_form_footer">
+                            <p>New On TechJobs?</p>
+                            <a href="{% url 'users:register' %}" class="Sign_up">Sign up</a>
+                        </div>
+                    </div>
+                    <div class="login_form_password">
+                        <div class="login_form_header">
+                        <h2>Log in and get to work</h2>
+
+                        <div class="user_form">
+                                 
+                            {{ login_form.subject.errors }}
+                            
+                            {{ login_form.password1 }}
+                            <button type="submit" class="Continue_button">Continue</button>
+                                 <a href="" class="Back_button">Back</button>
+                            
+                        </div></form>
+                        </div>
+                        <div class="login_form_footer">
+                            <p>New On TechJobs?</p>
+                            <a href="sign_up.html" class="Sign_up">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+     <footer>
+            <div class="container">
+                <div class="row footer_head">
+            
+                    
+               <div class="logo_footer col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <img src='{% static "home/images/logo.png" %}' alt="">
+                            </div>
+            
+            
+            </div>
+            <div class="footer_nav">
+                <div class="row">
+                        
+                         
+                <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                    <h2>Company</h2>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:about' %}">About Us</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile_wizard:freelancer_list' 'freelancer' %}">Freelancers</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile_wizard:joblist' 'all' %}">Find Jobs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                    <h2>RESOURCES</h2>
+                    <ul>
+                       <li>
+                            <a href="{% url 'home:terms' %}">Terms</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'home:privacy' %}">Pivacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social col-md-4">
+                        <div class="social_head">
+                            <h2>Follow Us</h2>
+                            <ul class="social_ul">
+                                <li>
+                                    <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                            <i class="fa fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+            </div>
+            </div>
+            </div>
+            </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='{% static "user/js/validator.js" %}'></script>
+
+<script src='{% static "user/js/main.js" %}'></script>
+</body>
+</html>

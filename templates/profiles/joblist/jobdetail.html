@@ -1,0 +1,338 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'profiles/joblist/css/vacation.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+
+    <!--  start header -->
+
+    
+        <!-- end header -->
+
+
+    <!-- banner -->
+    <section id="banner">
+        <div class="container">
+                <div class="container">
+                       
+                    </div>
+        </div>
+    </section>
+    <!-- end banner -->
+
+    <!-- start section jobs -->
+    <div id="main_jobs">
+        <div class="container">
+            
+            <div class="left_jobs">
+                <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <div class="left_jobs_content">
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="left_jobs_content_title">
+                                    <h4>Utoweb.com</h4>
+                                    <span>Website</span>
+                                    <img src="../images/logo1-768x365.png" alt="">
+                                    <hr>
+                                    <div class="company_description">
+
+<p>
+                                        UTOWEB – is a team of professional web developers with 15 years experience. We
+                                        create web sites.
+</p>
+                                    </div>
+                                    <hr>
+                                    <li class="main_left_li">
+                                            {% if apply %}
+                                                    <a href="{% url 'jobapply:applyform' id %}">Apply To Job <i class="fas fa-chevron-circle-down"></i></i></a>
+                                            {% else %}
+                                            {{'You Are apllied on this job'}}
+                                            {% endif %}
+                                        </li>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="left_jobs_content_description">
+                                     <div class="vacantion_description_title">
+                                        <ul>
+                                            <li>
+                                                <h3>{{profile.job_title}}</h3>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <div class="vacation_description_title_time">
+                                                    <div class="date_time">
+                                                        <p>Date Posted</p>
+                                                     <span>Sep 23rd 2019</span>
+                                                     </div>
+                                                     <div class="status_job">
+                                                         <p>Category</p>
+                                                    <span>Developers </span>
+                                                        </i>
+                                                </div>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <div class="vacation_description_title_time">
+                                                    <div class="status_free">
+                                                        <p>Work Format</p>
+                                                    <span>{{profile.Status}}</span>
+                                                    </div>
+                                                    <div class="location_fre">
+                                                        <p>Location</p>
+                                                   <span>{{profile.country}} </span>
+                                                </div>
+                                                <div class="budjet_free">
+                                                    <p>Approximate Salary</p>
+                                                    <span>{{profile.budjet}}</span>
+                                                </div>
+                                                </div>
+                                            </li>
+                                            <hr>
+                                        </ul>
+                                    </div>
+                                    <div class="article-text">
+                                        <h4>{{profile.category}}</h4>
+                                        <p>{{profile.prof_description}}
+
+
+                                            <!--We need Web developers /Web Designers whom can work on our new projects-->
+                                            <!--presentative web page!-->
+
+                                            <!--Also, He/She has to manage all IT issues and Web designs – Have to manage,-->
+                                            <!--coordinate the IT Team.-->
+
+                                            <!--The objective of team’s works will to design and manage a professional web-->
+                                            <!--of our developer company and to manage it.-->
+                                        </p>
+                                       
+                                    </div>
+                                     <!-- <button class="btn read-more" type="button">Read More...</button>
+                                <button class="btn read-less" type="button">Read Less...</button> -->
+                                </div></div>
+                            
+                    </div>
+                </div>
+                <!-- <div id="some_jobs">
+<h3 style="text-align: center;"><a href=""> See other vacantion</a></h3>
+                <div class="row some_jobs">
+                    
+                        <div class="vacation_content col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+
+
+
+                                <div class="col-md-12">
+                                    <div class="row ">
+
+                                        <div class="col-md-12 vacation_img">
+
+                                            <a href="../index.html"><img
+                                                    src="../images/logo1-768x365.png"
+                                                    alt=""></a>
+                                           
+                                            
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="vacation_content_icon">
+                                                <div class="vacation_content_header">
+                                                    <div class="vacantion_header_left">
+                                                        
+                                                        <h3 class="vacation_header_title">
+                                                            <a href="../index.html"> Utoweb.Com </a>
+                                                        </h3>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="vacation_header_descrition">
+                                                    <h4> <a href="../index.html">Web Studio </a></h4>
+                                                </div>
+
+                                                <div class="vacation_timezone">
+
+                                                    <div class="price_vacantion">
+                                                        <p>Price is <span>2000$</span></p>
+                                                    </div>
+                                                    <div class="country_freelancers">
+                                                        <p>Country:<span>Georgia</span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="save_freelancers">
+                                            <div class="Save_description_member">
+                                                   
+                                                
+                                            <h4> <a href="../index.html">Read More</a> </h4>
+</div>
+                                            
+                                        </div>
+
+
+                                </div>
+                                
+                            </div>
+                        <div class="vacation_content col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+
+
+
+                                <div class="col-md-12">
+                                    <div class="row">
+
+                                        <div class="col-md-12 vacation_img">
+
+                                            <a href="../index.html"><img
+                                                    src="../images/logo1-768x365.png"
+                                                    alt=""></a>
+                                           
+                                            
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="vacation_content_icon">
+                                                <div class="vacation_content_header">
+                                                    <div class="vacantion_header_left">
+                                                        
+                                                        <h3 class="vacation_header_title">
+                                                            <a href="../index.html"> Utoweb.Com </a>
+                                                        </h3>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="vacation_header_descrition">
+                                                    <h4> <a href="../index.html">Web Studio </a></h4>
+                                                </div>
+
+                                                <div class="vacation_timezone">
+
+                                                    <div class="price_vacantion">
+                                                        <p>Price is <span>2000$</span></p>
+                                                    </div>
+                                                    <div class="country_freelancers">
+                                                        <p>Country:<span>Georgia</span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="save_freelancers">
+                                            <div class="Save_description_member">
+                                                   
+                                                
+                                            <h4> <a href="../index.html">Read More</a> </h4>
+</div>
+                                            
+                                        </div>
+
+
+                                </div>
+                                
+                            </div>
+                        <div class="vacation_content col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+
+
+
+                                <div class="col-md-12">
+                                    <div class="row">
+
+                                        <div class="col-md-12 vacation_img">
+
+                                            <a href="../index.html"><img
+                                                    src="../images/logo1-768x365.png"
+                                                    alt=""></a>
+                                           
+                                            
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="vacation_content_icon">
+                                                <div class="vacation_content_header">
+                                                    <div class="vacantion_header_left">
+                                                        
+                                                        <h3 class="vacation_header_title">
+                                                            <a href="../index.html"> Utoweb.Com </a>
+                                                        </h3>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="vacation_header_descrition">
+                                                    <h4> <a href="../index.html">Web Studio </a></h4>
+                                                </div>
+
+                                                <div class="vacation_timezone">
+
+                                                    <div class="price_vacantion">
+                                                        <p>Price is <span>2000$</span></p>
+                                                    </div>
+                                                    <div class="country_freelancers">
+                                                        <p>Country:<span>Georgia</span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="save_freelancers">
+                                            <div class="Save_description_member">
+                                                   
+                                                
+                                            <h4> <a href="../index.html">Read More</a> </h4>
+</div>
+                                            
+                                        </div>
+
+
+                                </div>
+                                
+                            </div>
+                            </div>
+                            </div> -->
+                            </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>!function(t){t.fn.countTo=function(e){return e=e||{},t(this).each(function(){var n=t.extend({},t.fn.countTo.defaults,{from:t(this).data("from"),to:t(this).data("to"),speed:t(this).data("speed"),refreshInterval:t(this).data("refresh-interval"),decimals:t(this).data("decimals")},e),o=Math.ceil(n.speed/n.refreshInterval),a=(n.to-n.from)/o,r=this,i=t(this),l=0,s=n.from,c=i.data("countTo")||{};function f(t){var e=n.formatter.call(r,t,n);i.html(e)}i.data("countTo",c),c.interval&&clearInterval(c.interval),c.interval=setInterval(function(){l++,f(s+=a),"function"==typeof n.onUpdate&&n.onUpdate.call(r,s);l>=o&&(i.removeData("countTo"),clearInterval(c.interval),s=n.to,"function"==typeof n.onComplete&&n.onComplete.call(r,s))},n.refreshInterval),f(s)})},t.fn.countTo.defaults={from:0,to:0,speed:1e3,refreshInterval:100,decimals:0,formatter:function(t,e){return t.toFixed(e.decimals)},onUpdate:null,onComplete:null}}(jQuery),jQuery(function(t){t(".count-number").data("countToOptions",{formatter:function(t,e){return t.toFixed(e.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g,",")}}),t(".timer").each(function(e){var n=t(this);e=t.extend({},e||{},n.data("countToOptions")||{}),n.countTo(e)})}),$(".btn.read-more").click(function(){$(this).siblings(".article-text").addClass("visible"),$(this).siblings(".btn.read-less").show(),$(this).hide()}),$(".btn.read-less").click(function(){$(this).siblings(".article-text").removeClass("visible"),$(this).siblings(".btn.read-more").show(),$(this).hide()}),$(document).ready(function(){$(".agle_down").click(function(){$(".jobs_progress_info_first").toggle("1000"),icon=$(this).find("i"),icon.toggleClass("fa fa-angle-down fa fa-angle-up")})}),function(t){t.fn.countTo=function(e){return e=e||{},t(this).each(function(){var n=t.extend({},t.fn.countTo.defaults,{from:t(this).data("from"),to:t(this).data("to"),speed:t(this).data("speed"),refreshInterval:t(this).data("refresh-interval"),decimals:t(this).data("decimals")},e),o=Math.ceil(n.speed/n.refreshInterval),a=(n.to-n.from)/o,r=this,i=t(this),l=0,s=n.from,c=i.data("countTo")||{};function f(t){var e=n.formatter.call(r,t,n);i.html(e)}i.data("countTo",c),c.interval&&clearInterval(c.interval),c.interval=setInterval(function(){l++,f(s+=a),"function"==typeof n.onUpdate&&n.onUpdate.call(r,s);l>=o&&(i.removeData("countTo"),clearInterval(c.interval),s=n.to,"function"==typeof n.onComplete&&n.onComplete.call(r,s))},n.refreshInterval),f(s)})},t.fn.countTo.defaults={from:0,to:0,speed:1e3,refreshInterval:100,decimals:0,formatter:function(t,e){return t.toFixed(e.decimals)},onUpdate:null,onComplete:null}}(jQuery),jQuery(function(t){t(".count-number").data("countToOptions",{formatter:function(t,e){return t.toFixed(e.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g,",")}}),t(".timer").each(function(e){var n=t(this);e=t.extend({},e||{},n.data("countToOptions")||{}),n.countTo(e)})});</script>
+    <!-- end section jobs -->
+    <!--end section content -->
+      <!--  start footer -->
+     {% endblock %}
+
+            <!-- end footers -->
+            
+           
+          

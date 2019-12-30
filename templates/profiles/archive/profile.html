@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+
+
+{% load static %}
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{%  static "profiles/path/to/font-awesome/css/font-awesome.min.css"%}'>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+<header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 logo">
+                    <a href="#index.html"><img src="{% static 'home/images/logo.png'%}"alt=""></a>
+                </div>
+                <div class="col-md-3 search">
+                    <div class="wrap">
+
+                         </div>
+
+            </div>
+                <div class="col-md-5 nav_left">
+                    <ul class="nav_left_ul">
+                        <li>
+
+                        </li>
+                        <li>
+                                <a href="app/login">
+
+                                    </a>
+                        </li>
+                        <li>
+
+                        </li>
+                        <li class="post_job">
+                             <form action="{% url 'users:logout'  %}" method="post">
+                            {% csrf_token %}
+                            <a href="#">Logout</a>
+                            <input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+     {% block body_block %}
+{% endblock %}
+    </header>
+    <!-- start section create -->
+    <div class="create_head">
+
+        <div class="container">
+
+
+           
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <div class="main_sign_info">
+                    <div class="col-md-12 main_sign_info_header"> <h1>Create your profile</h1>
+                        <p>If your profile is 
+                             it will become the public profile you’ll use to market your freelance business to clients (you can edit it after approval).
+                             for inspiration? <a href="">Check out these tips. </a></p>
+                    </div>
+                </div>
+                <div class="col-md-12 tell_us">
+                    <div class="tell_us_header">
+                    <h2>tell us more about you</h2>
+                    <h3>Please upload a professional portrait that clearly shows your face <i class="fa fa-question-circle some"></i> </h3>
+                    </div>
+                    <div class="avatar col-md-5">
+                        <img src='{%  static  "images/Layer-11.png" %}' alt="">
+                        <a href="#" class="avatar_add">
+                                <button class="Add_Photo"><i class="fa fa-plus-circle">Add a photo Now</i></button></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-12 prof_title">
+                    <h3>Add a professional title </h3>
+                    <span>Try to choose a title that will help you stand out <i class="fa fa-question-circle some"></i>.</span>
+                    <input class="C#_developer" type="text" placeholder="Example: Desktop C# Developer">
+                    <h3>Write a professional overview </h3>
+                    <span>Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile.</span>
+                    <textarea name="textarea" id="text_area" cols="100" rows="10" placeholder="Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile"></textarea>
+                    <div class="education">
+                    <h3 class="education">Education  </h3> 
+                     <a href=""><span class="add_span">+</span></a>
+                     <p>Tell us about your education history.</p>
+                    </div>
+                    <div class="education">
+                    <h3 class="education">Employment history  </h3> 
+                     <a href=""><span class="add_span">+</span></a>
+                     <p>Include previous positions and the number of years you've worked, as well as relevant projects.</p>
+                    </div>
+                    <div class="education">
+                    <h3 class="education">What is your English proficiency?  </h3> 
+                    <select class="select_profiction">
+                            <option value="" selected disabled hidden>Select your profesionality</option>
+                            <option value="volvo">Basic: I write in this language decently</option>
+                            <option value="saab">Conversational: I write and speak this language well</option>
+                            <option value="opel">Fluent: I write and speak this language almost perfectly</option>
+                            <option value="audi">Native or Bilingual: I write and speak this language perfectly, including colloquialisms</option>
+                          </select>
+                          <h3 style="margin-top: 15px;">Category/industry</h3>
+                        <select class="select_profiction">
+                                <option value="" selected disabled hidden>Please Select</option>
+                                <option value="volvo">More than 30 hrs/week</option>
+                                <option value="saab">Less than 30 hrs/week</option>
+                                <option value="opel">As needed - open to offers</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="hour_rate">
+                    <h2>Set your Hourly Rate</h2>
+                    <p>The Upwork Service Fee is 20% when you begin a contract with a new client. Once you bill over $500 with your client, the fee will be 10%.</p>
+                    <div class="hour_rate_info">
+                        <div class="row">
+                        <div class="col-lg-6  col-md-6">
+                            <h3>Hourly Rate</h3>
+                            <p>Total amount the client will see</p>
+                        </div>
+                        <div class="col-lg-6  col-md-6 input_right">
+                                <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                        </div>
+                    </div>
+                    </div>
+                    <div class="hour_rate_info">
+                        <div class="row">
+                        <div class="col-lg-6  col-md-6">
+                            <h3>20% Upwork Service Fee</h3>
+                           
+                        </div>
+                        <div class="col-lg-6  col-md-6 input_right">
+                                <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                        </div>
+                    </div>
+                    </div>
+                    <div class="hour_rate_info">
+                        <div class="row">
+                        <div class="col-lg-6  col-md-6 hour_rate_info_left">
+                            <h3>You'll Receive</h3>
+                            <p>The estimated amount you'll receive after 
+                                    service fees <i class="fa fa-question-circle some"></i> <p class="show_p">Depending on hours billed, amount shown may vary slightly due to rounding. Learn more</p>
+                                    </p>
+                                
+                                      
+                             
+                        </div>
+                        <div class="col-lg-6  col-md-6 input_right">
+                                <i class="fa fa-usd"></i> <input type="text" class="input_price" placeholder="0.00"> /hr
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="add_location col-md-12">
+                        <h2>Add your availability and location</h2>
+                    <div class="add_location_info">
+                        <h3>How many hours do you have available for work each week?</h3>
+                        <select class="select_profiction">
+                                <option value="" selected disabled hidden>Please Select</option>
+                                <option value="volvo">More than 30 hrs/week</option>
+                                <option value="saab">Less than 30 hrs/week</option>
+                                <option value="opel">As needed - open to offers</option>
+                          </select>
+                        
+                          
+                          <p>We take your privacy seriously. Only your city and country will be shared with clients. <a href=""> Learn more </a></p>
+                          <div class="add_location_address">
+                          <h3>Adress</h3>
+                          <input type="text" name="address_1"><br>
+                          <input type="text" name="adress_2">
+                          
+                          <h3 style="padding-top:30px">City</h3>
+                          <input type="text" name="city" placeholder="start typing your city "><br>
+                          
+                          <h3  style="padding-top:30px">Postal Code</h3>
+                          <input class="postal_input" type="text" name="Postal Code">
+                         
+                         
+                          <h3  style="padding-top:30px">Country</h3>
+                          <input class="select_input_1" type="text" name="Country" placeholder="Country" disabled>
+                          
+                          <h3  style="padding-top:30px">Phone Number</h3>
+                         <select class="Country_code">
+                             <option value="" selected disabled hidden> Ge +995</option>
+                             <option value=""> Afganistan +93</option>
+                             <option value=""> Algaria +217</option>
+                         </select> 
+                         <input class="select_input" type="text" name="Phone Number" placeholder="Phone Number">
+                          
+                          </div>
+                      </div>
+                </div>
+            <div class="col-md-12">
+                <div class="Review_app">
+                    <p>See what your profile will look like to prospective clients if your application to join is approved.</p>
+                    <div class="Review_input">
+                        <button class="Review App active"><h3>Review Application</h3></button>
+                        <button class="Review App"><h3>Create a Client Account Instead</h3></button>
+                        <button class="Review App"><h3>Delete Account</h3></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--  end section create -->
+
+
+</body>
+

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+     <link rel="stylesheet" href='{% static "profiles/wizard_all/preview/css/owl.carousel.css" %}'>
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/preview/css/owl.theme.default.css" %}'>
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/preview/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/fontawesome.min.css">
+ 
+</head>
+<body>
+<form action="{% url 'users:logout'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+			</form>
+    <section id="Profile_main">
+        <div class="container">
+            <div class="main_container">
+            <div class="row">
+                <!-- start avatar -->
+                <div class="col-lg-9 col-md-8 col-xs-12 left_side">
+                    <div class="left_size_header row">
+                        <div class="col-md-8">
+                            <div class="left_side_bar_img">
+                           <img  class="avatar_img" src="{% static 'profiles/wizard_all/preview/images/c1YB5KAVE0a10XQhKyWjwx6BMJ-v8bedpD9c5W100C1PUV8zzmrzVtakWThFTIKKLF.jfif' %}"></img>
+                            <div class="left_side_avatar info">
+                                <h2>Gian Nie T. <i class="fa fa-check"></i></h2>
+                                <address><i class="fa fa-location-arrow"><span style="font-weight: bold; color: black"> Alor Star, Malaysia</span>- 4:22 pm local time</i></address>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-3">
+                                <p>93%</p>
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                    <span class="sr-only">70% Complete</span>
+                                   
+                                  </div> 
+                                  
+                                </div><small class="" style="text-align:center; color:black">
+                                            Job Success</small>
+                        </div>
+                    </div>
+                   
+                    <div class="left_size_info">
+                           
+                            
+                                    <div class="article">
+                                       
+                                        <div class="article-text">
+                                            <h3>Admin Assistant</h3>
+                                            <p>
+                                            I am now a multitask freelancer such as admin assistant, translator and 
+                                            copywriter which available 24 hours a day, 7 days a week. I am able to performs variety of Internet research functions and uses word processing, spreadsheet and presentation software. Duties also include fielding telephone calls, filing and data entry.
+                                            <br>
+I have an education with Bachelor Degree of International Business (Hons). I have completed thousands of varied 
+tasks and I have immense skills set. I am hardworking, meticulous and efficient. I will provide exemplary work with quick turnaround times. I am able to deliver high quality project on time efficiency.
+
+I am from Malaysia, a native Mandarin Chinese speaker and a fluent English and Malay speaker. I am happy to provide accurate, professional translation services from English to Chinese, English to Malay or Malay to Chinese and vice versa. I am a professional, kind individual who will give your project the priority and attention that it deserves.
+
+I have more than 2 years experience in translating documents from<br> English to Chinese and vice versa. I also have copywriter skills and able to be a freelance virtual assistant which performs variety of Internet research functions and uses word processing, spreadsheet and presentation software. Duties may also include fielding telephone calls, filing and data entry. .
+
+I can do research about clients with their competitors and the target audience. I also can produce original, clear and credible ideas/messages/scripts, and presenting these to clients and colleagues. I am also able to input information quickly and accurately from a variety of sources into a computer database. It may take customer orders and enter them into a tracking system.
+<br>
+Feel free to contact me if you're interested in my services. I am negotiated on price and always up for a challenge. I am eager to help and look forward to serving you. I am prepared to work on a flexible basis which may include occasional overtime and weekend work. less</p>
+                                       
+                                        </div>
+                                        <button class="btn read-more" type="button">Read More...</button>
+                                        <button class="btn read-less" type="button">Read Less...</button>
+                                    </div>
+                               
+                         <div class="pricerange">
+                             <ul>
+                                 <li>
+                                    <h3>$10.00</h3>
+                                    <p>Hourly rate</p>
+                                 </li>
+                                 <li>
+                                    <h3>$8k+</h3>
+                                    <p>Total earned</p>
+                                 </li>
+                                 <li>
+                                    <h3>8</h3>
+                                    <p>Jobs</p>
+                                 </li>
+                                 <li>
+                                    <h3>2,126</h3>
+                                    <p>Hours worked</p>
+                                 </li>
+                             </ul>
+                         </div>         
+                    </div>
+                </div>
+               
+                <div class=""></div>
+                <!-- end Work History -->
+                <div class="col-lg-3 col-md-2 col-xs-12 right_side">
+                        <div class="right_side_main">
+                            <div class="left_side_bar_item">
+                                <a href="" class="Post_jobs active">
+                                    Post a Job To Invite
+                                </a>
+                                <a href="" class="Post_jobs">
+                                    Hire Now
+                                </a>
+                                <a href="" class="Post_jobs">
+                                        <i class="fa fa-heart"></i>  Post a Job To Invite
+                                </a>
+                                <div class="Flag_inappropriate">
+                                <a class="flag_a" href=""><i class="fa fa-flag"></i>  Flag as inappropriate</a>
+                            </div>
+                            </div>
+                            
+                        </div>
+                </div>
+                <!-- end left side -->
+                 <!-- end avatar -->
+
+                 <div class="col-lg-9 col-md-8 col-xs-12 left_side_work">
+                    <div class="left_side_work_header">
+                            <h2 class="left_side_work_header_left">Work history and feedback</h2>
+                            <select name="" id="left_side_work_header_right">
+                                <option value="" selected disabled hidden><a href="">News Feed</a></option>
+                                <option style="border-left: 1px solid red;" value=""><a href="">Highest rated</a></option>
+                                <option style="border-left: 1px solid red;" value=""><a href="">Lowest rated</a></option>
+                                <option style="border-left: 1px solid red;" value=""><a href="">Largest projects</a></option>
+                            </select>
+                    </div>
+                    <div class="jobs_progress">
+                          <!-- start Work History -->
+                <form class="fa fa-user" action="{% url  'profile_wizard:profile_wizard'  %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+                    {{ form.language_compatancy }}
+                    <input type="submit" value="SUBMIT"/>
+                    </form>
+                        <span href="" class="agle_down"><i class="fa fa-angle-down"> 4 jobs in progress</i></span>
+                      
+                        <div class="jobs_progress_info_first">
+                         <div class="jobs_progress_info_first_va">
+                            <h4>VA / Admin / bookkeeping</h4>
+                            <p>Mar 2019 - Present</p>
+                            <span>Job in progress</span>
+                            </div>
+                         <div class="jobs_progress_info_first_cos">
+                            <p style="font-weight: bold;  font-size: 15px!important;
+                            ">$499.99</h3>
+                            <p>$8.00 / hr</p>
+                            <span>$8.00 / hr</span>
+                        </div>
+                        
+                        </div>
+                        <div class="jobs_progress_info_first">
+                         <div class="jobs_progress_info_first_va">
+                            <h4>VA / Admin / bookkeeping</h4>
+                            <p>Mar 2019 - Present</p>
+                            <span>Job in progress</span>
+                            </div>
+                         <div class="jobs_progress_info_first_cos">
+                            <p style="font-weight: bold;  font-size: 15px!important;
+                            ">$499.99</h3>
+                            <p>$8.00 / hr</p>
+                            <span>$8.00 / hr</span>
+                        </div>
+                        
+                        </div>
+                        <div class="jobs_progress_info_first">
+                         <div class="jobs_progress_info_first_va">
+                            <h4>VA / Admin / bookkeeping</h4>
+                            <p>Mar 2019 - Present</p>
+                            <span>Job in progress</span>
+                            </div>
+                         <div class="jobs_progress_info_first_cos">
+                            <p style="font-weight: bold;  font-size: 15px!important;
+                            ">$499.99</h3>
+                            <p>$8.00 / hr</p>
+                            <span>$8.00 / hr</span>
+                        </div>
+                        
+                        </div>
+
+                        <div class="jobs_progress_info_second">
+                                <div class="jobs_progress_info_first_va">
+                                   <h4>VA / Admin / bookkeeping</h4>
+                                   <p>Mar 2019 - Present</p>
+                                   <span>Job in progress</span>
+                                   </div>
+                                <div class="jobs_progress_info_first_cos">
+                                   <p style="font-weight: bold;  font-size: 15px!important;
+                                   ">$499.99</h3>
+                                   <p>$8.00 / hr</p>
+                                   <span>$8.00 / hr</span>
+                               </div>
+                               
+                               </div>
+                    </div>
+                    </div>
+                <!-- end Work History -->
+
+                <!-- start skills -->
+                <div class="col-lg-9 col-md-8 col-xs-12 left_side_skills">
+                    <div class="left_side_work_header">
+                            <h2 class="left_side_work_header_left">Skills</h2>
+                           
+                    </div>
+
+                    <div class="left_side_skills_info">
+                        <span class="tag_skills_info"> 
+                            Administrative Support </span>
+                        <span class="tag_skills_info">
+                            Virtual Assistent</span>
+                        <span class="tag_skills_info">
+                            English</span>
+                        <span class="tag_skills_info">
+                            Chines</span>
+                        <span class="tag_skills_info">
+                            CopyWriting</span>
+                        <span class="tag_skills_info">
+                            Copyending</span>
+                        <span class="tag_skills_info">
+                            Customer Service</span>
+                        <span class="tag_skills_info">
+                            Cistomer Support</span>
+                            <span class="tag_skills_info">
+                                Customer Retention</span>
+                    </div>
+                    </div>
+                <!-- end skills -->
+                <!-- start Employment history -->
+                <div class="col-lg-9 col-md-8 col-xs-12 left_side_employment">
+                    <div class="left_side_work_header">
+                            <h2 class="left_side_work_header_left">Employment history</h2>
+                           
+                    </div>
+
+                    <div class="left_side_employement_info">
+                        <h3>Marketing Assistant | Kawaguchi Manufacturing Sdn Bhd</h3>
+                        <p>January 2016 - April 2016</p>
+                        <span>Worked as a marketing coordinator.</span>
+                        <br>
+                        <span>Gain experience and knowledge during Intern.</span>
+                    </div>
+
+                   </div>
+                <!-- end Employment history -->
+                <!-- start education -->
+                <div class="col-lg-9 col-md-8 col-xs-12 left_side_employment">
+                    <div class="left_side_work_header">
+                            <h2 class="left_side_work_header_left">Education</h2>
+                           
+                    </div>
+
+                    <div class="left_side_employement_info">
+                        <h3>Bachelor of Business Administration (B.B.A.), International Business (Hons) | Universiti Tunku Abdul Rahman (UTAR)</h3>
+                        <p>2013 - 2016</p>
+                        <span>Successful graduate within 3 years of study without delay.</span>
+                        
+                    </div>
+                    </div>
+                <!-- end education -->
+                <!-- start education -->
+                <div class="col-lg-9 col-md-8 col-xs-12 left_side_others">
+                    <div class="left_side_work_header">
+                            <h2 class="left_side_work_header_left">Other experiences</h2>
+                           
+                    </div>
+
+                    <div class="left_side_other_info">
+                        <h3>Sales</h3>
+                        
+                        <span>I am working as a sales assistant which help to market spare part of vehicle in a physical store.
+                            I am able to get the effective and efficient jobs</span>
+                        
+                    </div>
+                    </div>
+                <!-- end education -->
+
+                <!-- slider -->
+                <div class="col-lg-9 col-md-8 col-xs-12 left_side_others">
+                    <div class="left_side_work_header">
+                            <h2 class="left_side_work_header_left">Other experiences</h2>
+                           
+                    </div>
+
+                    <!-- slider start -->
+                    <div class="wrapper">
+                        <div class="testimonial-carousel section-padding owl-carousel">
+                            <div class="single-testi">
+                                <div class="img-area">
+                                    <img src="images/474102_8e7ef93dd3dc4434964243f598eb4756.jpg" alt="">
+                                </div>
+                                <div class="img-text">
+                                        <h2>davit bochorishvili</h2>
+                                        <h3>Customer</h3>
+                                    <p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </p>
+                                    <hr>
+                                    <p>very proffesional and sakj very proffesional and sakj very proffesional 
+                                        and sakj very proffesional and sakj very proffesional and sakj</p>
+                                </div>
+                            </div>
+                            <div class="single-testi">
+                                    <div class="img-area">
+                                        <img src="images/474102_8e7ef93dd3dc4434964243f598eb4756.jpg" alt="">
+                                    </div>
+                                    <div class="img-text">
+                                            <h2>davit bochorishvili</h2>
+                                            <h3>Customer</h3>
+                                        <p>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </p>
+                                        <hr>
+                                        <p>very proffesional and sakj very proffesional and sakj very proffesional 
+                                            and sakj very proffesional and sakj very proffesional and sakj</p>
+                                    </div>
+                                </div>
+                                <div class="single-testi">
+                                        <div class="img-area">
+                                            <img src="images/474102_8e7ef93dd3dc4434964243f598eb4756.jpg" alt="">
+                                        </div>
+                                        <div class="img-text">
+                                                <h2>davit bochorishvili</h2>
+                                                <h3>Customer</h3>
+                                            <p>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </p>
+                                            <hr>
+                                            <p>very proffesional and sakj very proffesional and sakj very proffesional 
+                                                and sakj very proffesional and sakj very proffesional and sakj</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-testi">
+                                            <div class="img-area">
+                                                <img src="images/474102_8e7ef93dd3dc4434964243f598eb4756.jpg" alt="">
+                                            </div>
+                                            <div class="img-text">
+                                                <h2>davit bochorishvili</h2>
+                                                <h3>Customer</h3>
+                                                <p>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </p>
+                                                <hr>
+                                                <p>very proffesional and sakj very proffesional and sakj very proffesional 
+                                                    and sakj very proffesional and sakj very proffesional and sakj</p>
+                                            </div>
+                                        </div>
+                        </div>
+                    </div>
+                    <!-- slider start -->
+                    </div>
+                <!-- end slider -->
+            
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- end main section -->
+
+    <!-- start footer -->
+    <footer>
+        <div class="container">
+            <div class="row footer_head">
+            <div class="logo_footer col-md-3">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="col-md-5 counter">
+            <div class="col_fourth">
+              
+              <h2 class="timer count-title count-number" data-to="300" data-speed="1500"></h2>
+               <p class="count-text ">Jobs Added</p>
+            </div>
+        
+            <div class="col_fourth">
+             
+              <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+              <p class="count-text ">Jobs Posted</p>
+            </div>
+        
+            <div class=" col_fourth">
+              
+              <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+              <p class="count-text ">Companies</p>
+            </div>
+        
+            <div class="col_fourth end">
+              
+              <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+              <p class="count-text ">Freelancer</p>
+            </div>
+        </div>
+        <div class="social col-md-4">
+            <div class="social_head">
+                <h3>Follow Us</h3>
+                <ul class="social_ul">
+                    <li>
+                        <a href="#">
+                                <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div class="footer_nav">
+            <div class="row">
+            <div class="col-md-4 footer_nav_info">
+                <h2>Company</h2>
+                <ul>
+                    <li>
+                        <a href="">About Us</a>
+                    </li>
+                    <li>
+                        <a href="">Investor Relations</a>
+                    </li>
+                    <li>
+                        <a href="">Careers</a>
+                    </li>
+                    <li>
+                        <a href="">Press</a>
+                    </li>
+                    <li>
+                        <a href="">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer_nav_info">
+                <h2>RESOURCES</h2>
+                <ul>
+                    <li>
+                        <a href="">Customer Support</a>
+                    </li>
+                    <li>
+                        <a href="">Hiring Headquarters</a>
+                    </li>
+                    <li>
+                        <a href="">Hiring Resources</a>
+                    </li>
+                    <li>
+                        <a href="">Upwork Blog</a>
+                    </li>
+                    <li>
+                        <a href="">Customer Stories</a>
+                    </li>
+                    <li>
+                        <a href="">=Business Resources</a>
+                    </li>
+                    <li>
+                        <a href="">Payroll Services</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 footer_nav_info">
+                <h2>Newsletter</h2>
+                <p>Subscribe to CareerUp Pacific newsletter to get
+                        the latest jobs posted, candidates ,and other latest news stay updated.</p>
+                <div class="input_footer">
+                    <input type="text" placeholder="Enter Your Email Adress">
+                    <a href="#">
+                        <i class="fa fa-paper-plane-o"></i>
+                    </a>
+                </div>
+                    </div>
+
+        </div>
+        </div>
+        </div>
+        </footer>
+
+    <!-- end footer -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <!-- strat count -->
+
+   <script>
+        
+    (function ($) {
+    $.fn.countTo = function (options) {
+    options = options || {};
+    
+    return $(this).each(function () {
+        // set options for current element
+        var settings = $.extend({}, $.fn.countTo.defaults, {
+            from:            $(this).data('from'),
+            to:              $(this).data('to'),
+            speed:           $(this).data('speed'),
+            refreshInterval: $(this).data('refresh-interval'),
+            decimals:        $(this).data('decimals')
+        }, options);
+        
+        // how many times to update the value, and how much to increment the value on each update
+        var loops = Math.ceil(settings.speed / settings.refreshInterval),
+            increment = (settings.to - settings.from) / loops;
+        
+        // references & variables that will change with each update
+        var self = this,
+            $self = $(this),
+            loopCount = 0,
+            value = settings.from,
+            data = $self.data('countTo') || {};
+        
+        $self.data('countTo', data);
+        
+        // if an existing interval can be found, clear it first
+        if (data.interval) {
+            clearInterval(data.interval);
+        }
+        data.interval = setInterval(updateTimer, settings.refreshInterval);
+        
+        // initialize the element with the starting value
+        render(value);
+        
+        function updateTimer() {
+            value += increment;
+            loopCount++;
+            
+            render(value);
+            
+            if (typeof(settings.onUpdate) == 'function') {
+                settings.onUpdate.call(self, value);
+            }
+            
+            if (loopCount >= loops) {
+                // remove the interval
+                $self.removeData('countTo');
+                clearInterval(data.interval);
+                value = settings.to;
+                
+                if (typeof(settings.onComplete) == 'function') {
+                    settings.onComplete.call(self, value);
+                }
+            }
+        }
+        
+        function render(value) {
+            var formattedValue = settings.formatter.call(self, value, settings);
+            $self.html(formattedValue);
+        }
+    });
+};
+
+$.fn.countTo.defaults = {
+    from: 0,               // the number the element should start at
+    to: 0,                 // the number the element should end at
+    speed: 1000,           // how long it should take to count between the target numbers
+    refreshInterval: 100,  // how often the element should be updated
+    decimals: 0,           // the number of decimal places to show
+    formatter: formatter,  // handler for formatting the value before rendering
+    onUpdate: null,        // callback method for every time the element is updated
+    onComplete: null       // callback method for when the element finishes updating
+};
+
+function formatter(value, settings) {
+    return value.toFixed(settings.decimals);
+}
+}(jQuery));
+
+jQuery(function ($) {
+// custom formatting example
+$('.count-number').data('countToOptions', {
+formatter: function (value, options) {
+  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+}
+});
+
+// start all the timers
+$('.timer').each(count);  
+
+function count(options) {
+var $this = $(this);
+options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+$this.countTo(options);
+}
+});        
+</script>
+   <!--  end count -->
+   
+   <script>
+      $('.btn.read-more').click( function() {
+  $(this).siblings('.article-text').addClass('visible');
+  $(this).siblings('.btn.read-less').show();
+  $(this).hide();
+} );
+
+$('.btn.read-less').click( function() {
+  $(this).siblings('.article-text').removeClass('visible');
+  $(this).siblings('.btn.read-more').show();
+  $(this).hide();
+} );
+    </script>
+    <script>
+            $(document).ready(function(){
+                $('.agle_down').click(function(){
+  $('.jobs_progress_info_first').toggle('1000');
+  icon = $(this).find("i");
+  icon.toggleClass("fa fa-angle-down fa fa-angle-up")
+})
+            });
+            </script>
+            <script src="{% static 'profiles/wizard_all/preview/js/jquery.min.js' %}"></script>
+            <script src="{% static 'profiles/wizard_all/preview/js/owl.carousel.js' %}"></script>
+           
+            <script>
+                $('.testimonial-carousel').owlCarousel({
+    stagePadding: 20,
+    loop:true,
+    margin:40,
+    autoplay:false,
+    nav:true,
+        
+    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+    responsive:{
+        200:{
+            items:1
+        }
+        // },
+        // 800:{
+        //     items:2
+        // },
+        // 1000:{
+            
+        // }
+    }
+})
+            </script>
+</body>
+</html>

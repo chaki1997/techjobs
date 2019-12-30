@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+
+<head>
+
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="shortcut icon" href="{% static 'home/images/Untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/Untitled-1.png'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{%  static "profiles/path/to/font-awesome/css/font-awesome.min.css"%}'>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+    <link rel="stylesheet" type="text/css" href={% static 'profiles/css/style.css'%}>
+
+</head>
+<body>
+ <header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 logo">
+                    <a href="#index.html"><img src="{% static 'home/images/logo.png'%}"alt=""></a>
+                </div>
+                <div class="col-md-3 search">
+                    <div class="wrap">
+
+                         </div>
+
+            </div>
+                <div class="col-md-5 nav_left">
+                    <ul class="nav_left_ul">
+                        <li>
+
+                        </li>
+                        <li>
+                                <a href="app/login">
+
+                                    </a>
+                        </li>
+                        <li>
+
+                        </li>
+                        <li class="post_job">
+                             <form action="{% url 'users:logout'  %}" method="post">
+                            {% csrf_token %}
+                            <a href="#">Logout</a>
+                            <input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+     {% block body_block %}
+{% endblock %}
+    </header>
+
+</body>
+</html>
+

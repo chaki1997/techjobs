@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UpWork</title>
+    <link rel="stylesheet" href='{% static "profiles/wizard_all/css/style.css" %}'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+</head>
+<body>
+<form action="{% url 'users:logout'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Logout"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"></input>
+			</form>
+    <!-- start section create -->
+    <div class="create_head">
+        <div class="container">
+            
+
+            <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                <form  action="{% url  'profile_wizard:profile_wizard' step  %}" method="post"> {% csrf_token %}
+                        {{ wizard.management_form }}
+                <div class="main_sign_info">
+                
+               <div class="employement">
+              <h2 class="employment">Employment history  </h2> 
+                 
+                                
+                 <h3>Include previous positions and the number of years you've worked, as well as relevant projects.</h3>
+                                
+                   </div>
+                   <div class="employment_info">
+                        
+                        <div class="row">
+                        <div class="employment_info_input col-md-12">
+                         <div class="row">       
+                        <div class="employment_info_input_header col-md-6">  
+                            <label for="" class="control-label">Company</label>
+
+                            {{ form.company }}
+                            
+                        </div>
+
+                           <div class="employment_info_input_section col-md-6">
+                                <label for="">Location </label> 
+                                <div class="row">
+                                <div class="col-md-6">
+
+                                    {{ form.location }}
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                            </div>
+                            </div>
+                            <div class="employment_info_input_Degree col-md-6">  
+                                    <label for="" class="control-label">Title</label>
+
+                                {{ form.title }}
+                                    
+                                </div>
+                                
+                                <div class=" col-md-6" id="employment_info_input_Role">  
+                                        <label for="" class="control-label">Role</label>
+                                    {{ form.role }}
+
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                <div class="eemployment_info_input_Period col-md-6">  
+                                        <label for="" class="control-label">Period</label>
+                                        
+
+                                    {{ form.period_sterted }}
+                                        </div>
+                                    
+                                <div class="eemployment_info_input_Period col-md-6">  
+                                        <label for="" class="control-label">through</label>
+                                        <div class="raw">
+
+                                            {{ form.period_ended }}
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="employment_radio">
+                                        <div class="row">
+
+                                            {{ form.is_current }}<p>I currently work here </p>
+                                            {{ form.repeat }}
+
+                                    </div>
+                                </div>
+                                    <div class="employment_info_input_Description">  
+                                            <label for="" class="control-label">Description (Optional)</label>
+
+                                        {{ form.description }}
+                                            
+                                        </div>
+                                        <div class="employment_info_footer col-md-12">
+               
+                                            <button class="btn btn-secondary button_Back" value="{{ wizard.steps.prev }}">Back</button>
+                                            <button type="submit" value="SUBMIT" class="btn btn-primary button_reset">Submit</button>
+                                            <button onclick="check()" type="submit" value="SUBMIT" class="btn btn-primary button_save">Save and Add more</button>
+
+                                        </div>
+                                </div>
+                        </div>
+
+    </form>
+
+
+                        </div>
+                       
+                </div>
+                        
+                    </div> 
+                    
+             </div>
+
+             </div>
+             </body>
+             </html>
+             
+<!-- Modal Section -->
+
+<script>
+    function check(){
+        document.getElementById("checkbox").checked = true;
+    }
+
+</script>

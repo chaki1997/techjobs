@@ -1,0 +1,244 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">{% block content %}
+<head>
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Techjobs</title>
+    <link rel="stylesheet" href="{% static 'profiles/postjob/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
+<link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
+
+<script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
+<script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+  
+</head>
+<body>
+    
+
+
+        <!--  start header -->
+       
+            <!-- end header -->
+    <section id="getting_start">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+            <form  action="{% url  'profile_wizard:postjob'   %}" method="post" > {% csrf_token %}
+                    <div class="right_main_getting_start">
+                        <div class="right_main_getting_header">
+                            <h2>Post a job</h2>
+
+                        </div>
+                        <div class="right_main_getting_content">
+                            
+                            <div class="create_job">
+                                <div class="radio_block">
+
+
+                                    <div class="row">
+                                        <div class="radio_none_item details_radio_button pay_hour  col-md-4 " id="tag1" onclick="addJobStatus(id)">
+                                            <div class="radio_none_content">
+                                                <span><i class="fas fa-stopwatch"></i></span>
+                                                <h4>Freelance</h4>
+                                                
+
+                                            </div>
+                                        </div>
+                                        <div class="radio_none_item details_radio_button fixed_price col-md-4" id="tag2" onclick="addJobStatus(id)"
+                                            checked="checked">
+                                            <div class="radio_none_content">
+                                                <span><i class="fas fa-hand-holding-usd"></i></span>
+                                                <h4>Full Time</h4>
+                                                
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    {{ form.Status }}
+                                    <div class="freelancer_block">
+                                    <div class="row">
+                                        <div class="pay_hour_none post_title active col-md-12">
+                                            <h4>Title</h4>
+                                            <div class="row">
+
+                                                {{ form.job_title}}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="pay_hour_none post_description active col-md-12">
+                                            <h4>Description</h4>
+                                            <div class="row">
+
+                                                {{form.prof_description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="pay_hour_none post_description active col-md-12">
+                                            <h4>Category</h4>
+                                            <div class="row">
+
+                                                {{ form.category}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                        <div class="row">
+                                        <div class="pay_hour_none   post_description active col-md-12">
+                                          
+
+                                            <div class=" deadline" style="    position: relative;
+                                            left: -10px;"> 
+                                             <h4>Deadline</h4>
+                                                {{ form.deadline}}
+                                            </div>
+                                            <h4>Approximate Salary</h4>
+                                            <div class=" ">
+                                                <i class="fa fa-usd"></i> {{ form.budjet}}
+                                            </div>
+                                            <div class="row">
+                                                    <div class="fix_hour_none location active col-md-12">
+                                                           
+                                                                      
+                            
+                                                                   
+                                                        <h4>Location</h4>
+                                                        <div class="input_right">
+                
+                
+                                                            {{ form.country}}
+                                                            <select class="selectpicker countrypicker" data-flag="true" style="margin-left: 5px;;" ></select>
+
+                                                            <script>
+                                                         $('.countrypicker').countrypicker();
+                                                             </script>
+                
+                                                        </div>
+                
+                                                    </div>
+                                                </div>
+                                            <div class="hour_rate_info" style="">
+                                                    <div class="hour_work">
+                                                            
+                    
+                                                        {{ form.availability }}
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6  col-md-6">
+                                                            
+                                                       
+                                                        
+                                                        <div class="col-lg-6  col-md-6 input_right">
+                                                            <h6>15% TechJobs Service Fee</h6>
+                                                            <input type="text" id="discount" placeholder="" disabled style="color: grey;"/>
+                                                            <br/>
+                                                            <h6>Cost</h6>
+                                                            <input type="text" id="new-price" placeholder="" />
+                                                           
+                                                         
+                                                        </div>
+                                                    </div>
+                                                
+                                          
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                  
+<div class="right_main_getting_footer">
+                    <a href="budget.html" class="cancel">Cancel</a>
+                    <button  class="Continue" type="submit">Submit</button>
+
+                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+            </div>
+            </form>
+        </div>
+        </div>
+
+        </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $disco = $('#discount'),
+                $price = $('#price'),
+                $newPrice = $('#new-price');
+                $discount=15;
+                var $numprice=0;
+                
+            //    $numprice.val();
+            $price.on('keypress', function(e)
+                        {
+               
+        }).on('keyup', function(e) {
+                console.log('keyup');
+            $disco.val(Math.round($price.val()*0.15));
+            $numprice=parseInt($price.val());
+                console.log(typeof($numprice));
+                console.log($numprice);
+            
+            $newPrice.val(Math.round($disco.val())+$numprice);
+            });
+            $newPrice.on('keypress', function(e)
+                        {
+               
+        }).on('keyup', function(e) {
+                console.log('keyup');
+            $disco.val(Math.round(($newPrice.val()*15)/115));
+            // $numprice=parseInt($price.val());
+            //     console.log(typeof($numprice));
+            //     console.log($numprice);
+            
+            $price.val(Math.round($newPrice.val()-$disco.val()));
+            });
+            
+        });
+                        </script>
+    <!-- <script>
+        var expanded = !1; function showCheckboxes() { var e = document.getElementById("checkboxes"); expanded ? (e.style.display = "none", expanded = !1) : (e.style.display = "block", expanded = !0) } function showCheckboxes2() { var e = document.getElementById("checkboxes2"); expanded ? (e.style.display = "none", expanded = !1) : (e.style.display = "block", expanded = !0) } !function (e) { e.fn.countTo = function (t) { return t = t || {}, e(this).each(function () { var n = e.extend({}, e.fn.countTo.defaults, { from: e(this).data("from"), to: e(this).data("to"), speed: e(this).data("speed"), refreshInterval: e(this).data("refresh-interval"), decimals: e(this).data("decimals") }, t), o = Math.ceil(n.speed / n.refreshInterval), a = (n.to - n.from) / o, i = this, c = e(this), r = 0, d = n.from, l = c.data("countTo") || {}; function s(e) { var t = n.formatter.call(i, e, n); c.html(t) } c.data("countTo", l), l.interval && clearInterval(l.interval), l.interval = setInterval(function () { r++ , s(d += a), "function" == typeof n.onUpdate && n.onUpdate.call(i, d); r >= o && (c.removeData("countTo"), clearInterval(l.interval), d = n.to, "function" == typeof n.onComplete && n.onComplete.call(i, d)) }, n.refreshInterval), s(d) }) }, e.fn.countTo.defaults = { from: 0, to: 0, speed: 1e3, refreshInterval: 100, decimals: 0, formatter: function (e, t) { return e.toFixed(t.decimals) }, onUpdate: null, onComplete: null } }(jQuery), jQuery(function (e) { e(".count-number").data("countToOptions", { formatter: function (e, t) { return e.toFixed(t.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ",") } }), e(".timer").each(function (t) { var n = e(this); t = e.extend({}, t || {}, n.data("countToOptions") || {}), n.countTo(t) }) }), $(document).on("click", ".radio_none_item", function () { $(this).addClass("active").siblings().removeClass("active") }), $(document).ready(function () { $(".fix_hour_none").hide(), $(".pay_hour_none").hide(), $(".pay_hour").click(function () { $(".pay_hour_none").show(), $(".fix_hour_none").hide() }), $(".fixed_price").click(function () { $(".pay_hour_none, .location").show(), $("").hide() }) });
+$(".fixed_price").click(function () {$(".freelancer_block input").each(function() {
+    this.value = "";
+   
+})})
+$(".pay_hour ").click(function () {$(".freelancer_block input").each(function() {
+    this.value = "";
+   
+})})
+    </script> -->
+    <script src="{% static 'profiles/postjob/js/main.js' %}"></script>
+     <script src="{% static 'profiles/postjob/js/skillTag.js' %}"></script>
+
+     <!-- <script src="{% static 'profiles/freelancer_wizard/js/main.js' %}"></script> -->
+          {% endblock %}

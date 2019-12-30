@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+{% load i18n postman_tags %}{% load pagination_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechJobs</title>
+    <link rel="shortcut icon" href="{% static 'home/images/untitled-1.png'%}" type="image/png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/images/untitled-1.png'%}" />
+    <link rel="shortcut icon" href='{% static "profiles/freelancerlistview/images/untitled-1.png"%}' type="image/png">
+    <meta name="description" content="100% free for job seekers to find full time and freelance work. The one job site you will ever need to find quality vacancies. A hub for employers and recruiters to track and hire global talent.">
+    <meta name="keywords" content="Job"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/fontawesome.min.css">
+    <!--post job-->
+
+    <!--jobdetail-->
+
+
+    <!--about-->
+
+    <!--header-->
+    <link rel="stylesheet" href="{% static 'header_footer/login/css/style.css' %}">
+    <!--home-->
+
+</head>
+<body>
+    <!--  start header -->
+    <header>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-3 col-3 logo">
+
+                    <a href="{% url 'home:index' %}"><img src="{% static 'header_footer/logout/images/logo.png' %}" alt=""></a>
+                </div>
+                <div class=" col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 nav_left">
+                    <nav class="nav_left">
+                        <ul>
+
+                            {% if user.status|capfirst == 'Job Seeker' %}
+                            <li><a href="{% url 'profile_wizard:joblist' 'all' %}">Find Jobs </a></li>
+                            {% endif %}
+                            {% if user.status|capfirst == 'Employer' %}
+                            <li><a href="{% url 'profile_wizard:freelancer_list' 'all' %}">Find Job Seekers </a></li>
+
+
+                            {% endif %}
+                            <!--<li><a href="">My Jobs</a></li>-->
+                            <li><a href="{% url 'home:about' %}">About Us</a></li>
+
+
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class=" nav_left_profile">
+                      
+
+
+                    <div class="header-user-menu">
+
+                        <img src="{% static 'images/images.png' %}" />
+
+                        <ul class="header-user-menu-down">
+                            <li class="avatar_user">
+
+                                  <div class="user_info">
+                                    <span class="user_name" class="">
+                                         {{user.first_name|title}} {{user.last_name|title}}
+
+                                    </span>
+                                    <p class="user_type">
+                                            {{user.status|title}}
+                                            </p>
+                                        </div>
+
+                            </li>
+                            <li class="menu_settings">
+                                <a href="{% url 'profile_wizard:settings' %}">My Account<i class="fas fa-cogs"></i></a>
+
+                            </li>
+                            <li class="menu_settings">
+
+                                {% if user.status|capfirst == 'Employer' %}
+                                    {% if is_company == True %}
+                                <a href="{% url 'profile_wizard:employer_review' company_id %}">Company Information<i class="fas fa-cogs"></i></a>
+                                    {% else %}
+                                <a href="{% url 'profile_wizard:company_create'  %}">Create Company<i class="fas fa-cogs"></i></a>
+                                    {% endif %}
+
+                                {% endif %}
+                            </li>
+                            <li class="menu_settings">
+
+                                {% if user.status|capfirst == 'Employer' %}
+
+                                <a href="{% url 'jobapply:mycontracts' 'er' %}">My Contracts{{user.status|capfirst}}<i class="fas fa-cogs"></i></a>
+
+                                {% endif %}
+                                {% if user.status|capfirst == 'Job Seeker'%}
+                                <a href="{% url 'jobapply:mycontracts' 'ee' %}">My Contracts{{user.status|capfirst}}<i class="fas fa-cogs"></i></a>
+                                {% endif %}
+                            </li>
+                            <li class="menu_settings">
+                                {% postman_unread as unread_count %}
+                                <a href="{% url 'postman:inbox' %}">Inbox ({{unread_count}})<i class="fas fa-user-edit"></i>
+
+                            </li>
+                            <li class="menu_settings">
+                                {% if user.is_superuser == True %}
+                                <a href="{% url 'paypal_subscription:contracts' %}">Pay Contracts<i class="fas fa-user-edit"></i>
+                                {% endif %}
+
+                            </li>
+                            <li class="menu_settings">
+                                {% if user.status|capfirst == 'Job Seeker' %}
+
+
+                                    {% if profile_ee %}
+                                    <a href="{% url 'profile_wizard:update' profile_ee  %}">Update Your Resume<i class="fas fa-user-edit"></i></a>
+                                    {% else %}
+                                    <a href="{% url 'profile_wizard:profile_wizard' 'starter'  %}">Create Your Resume<i class="fas fa-user-edit"></i></a>
+                                    {% endif %}
+                                {% endif %}
+                                {% if user.status|capfirst == 'Employer'  %}
+                                <a href="{% url 'profile_wizard:postjob'   %}">Post A Job<i class="fas fa-user-edit"></i></a>
+                                {% endif %}
+
+
+                            </li>
+                            <li class="menu_settings">
+                                {% if user.status|capfirst == 'Employer' %}
+                                <a href="{% url 'profile_wizard:myjobs' %}">My Jobs <i class="fas fa-user-edit"></i> </a>
+                                {% endif %}
+
+                            </li>
+
+
+                            <li class="logout">
+
+                                <a href="{% url 'users:logout' %}">Logout <i class="fas fa-sign-out-alt"></i> </a>
+
+
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <div id="hamburger">
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- end header -->
+{% block content %}
+    {% endblock %}
+            <!--start footer-->
+            <footer>
+                <div class="container">
+                    <div class="row footer_head">
+
+
+                   <div class="logo_footer  col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <img src='{% static "home/images/logo.png" %}' alt="">
+                                </div>
+
+
+                </div>
+                <div class="footer_nav">
+                    <div class="row">
+
+
+                    <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                        
+                        <ul>
+                            <li>
+                                <a href="{% url 'home:about' %}">About Us</a>
+                            </li>
+                           
+                            <li>
+                                <a href="{% url 'home:contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-6 footer_nav_info">
+                        
+                        <ul>
+                           <li>
+                                <a href="{% url 'home:terms' %}">Terms</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'home:privacy' %}">Pivacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social col-md-4">
+                            <div class="social_head">
+                                <h2>Follow Us</h2>
+                                <ul class="social_ul" style="display:flex; justify-content: center;">
+                                    <li>
+                                        <a href="https://www.facebook.com/techjobs.one/">
+                                                <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/channel/UCbLW_RTS4sqFW1avthebTeQ/featured?view_as=subscriber">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="developed">
+                            <p>Powered by <a href="https://webdeveloper.app" target="_blank">webdeveloper.app</a></p>
+                        </div>
+                </div>
+                </div>
+                </div>
+                </footer>
+        <!--end footer-->
+      <!-- script -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      
+     <!--<script>-->
+         <!--$(document).ready(function(){-->
+      <!--$('.header-user-menu-down').hide();-->
+      <!--$('.header-user-menu').click(function(){-->
+          <!--$('.header-user-menu-down').toggle(200);-->
+      <!--})-->
+  <!--})-->
+
+      <!--$('#hamburger').click( function() {-->
+
+              <!--$(this).toggleClass('animate');-->
+              <!--$('.nav_left').toggleClass('active');-->
+              <!--$('.nav_left_profile').toggleClass('active');-->
+
+
+              <!--});-->
+     <!--</script>-->
+</body>
+<!--joblist-->
+
+<script src="{% static 'profiles/joblist/js/main.js' %}"></script>
+<!--job post-->
+<!--<script src="{% static 'user/js/skillTag.js' %}"></script>-->
+<!--<script src="{% static 'profiles/postjob/js/main.js' %}"> </script>-->
+
+</html>

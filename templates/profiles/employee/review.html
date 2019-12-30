@@ -1,0 +1,762 @@
+{% extends 'header/header_footer_in.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>UpWork</title>
+        <link rel="stylesheet" href="{% static 'profiles/employee/css/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+        <!--  start header -->
+
+
+        <!-- end header -->
+
+        <!-- start by education -->
+        <section id="getting_start">
+                <div class="main_review">
+                        <div class="container">
+                          
+
+                                        <div class="right_create_head col-lg-12 col-md-12 col-sm-12">
+
+                                                
+
+                                                <div class="create_head">
+                                                        <form  action="" method="post" >
+                                                               
+                                                                 {% csrf_token %}
+                                                                {{ education.management_form }}
+                                                                {{ employment.management_form }}
+                                                        <div class="container">
+
+
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                         <h2>Update Your Profile</h2>
+                                                                        <div id="review_edit">
+                                                                                <div>
+                                                                                        <label for="edit_title">
+                                                                                                <h3>Professional title
+                                                                                                </h3>
+                                                                                        </label> <br>
+                                                                                        <!--<input id="edit_title"-->
+                                                                                                <!--value="dass "></input>-->
+                                                                                        {{form.prof_title}}
+                                                                                </div>
+                                                                                <div>
+                                                                                        <label for="edit_prof">
+                                                                                                <h3>Write a professional
+                                                                                                        overview</h3>
+                                                                                        </label> <br>
+                                                                                        <!--<input id="edit_prof"-->
+                                                                                                <!--value=" "></input>-->
+                                                                                        {{form.prof_overview}}
+                                                                                </div>
+                                                                                <div>
+                                                                                        <label for="edit_prof">
+                                                                                                <h3>Status</h3>
+                                                                                        </label> <br>
+                                                                                        <!--<input id="edit_prof"-->
+                                                                                                <!--value=" "></input>-->
+                                                                                        {{form.status}}
+                                                                                </div>
+                                                                        </div>
+
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+
+
+
+                                                <!-- end by education -->
+                                                <!-- start section create -->
+                                                <div class="create_head">
+                                                        {% for form,data in paralel %}
+                                                        <div class="container">
+
+
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                        <div class="main_sign_info">
+
+                                                                                <div class="education">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="education_left col-md-10">
+                                                                                                        <h2
+                                                                                                                class="education">
+                                                                                                                Education
+                                                                                                        </h2>
+
+                                                                                                        <p>Tell us about
+                                                                                                                your
+                                                                                                                education
+                                                                                                                history.
+                                                                                                        </p>
+
+                                                                                                </div>
+                                                                                               
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!-- Modal Section -->
+
+                                                                        <div class="education_info">
+
+                                                                                <div class="row">
+                                                                                        <div
+                                                                                                class="education_info_input col-md-12">
+                                                                                                <div class="row" style="
+                                                                                                display: flex;
+                                                                                                width: 70%;
+                                                                                                justify-content: space-between;
+                                                                                            ">
+                                                                                                        
+                                                                                                        <div
+                                                                                                                id="education_edit">
+                                                                                                                <div>
+                                                                                                                        <label
+                                                                                                                                for="school1">School:</label>
+                                                                                                                        <br>
+                                                                                                                        <!--<input id="school1"-->
+                                                                                                                                <!--value="Antwerp International Business School "></input>-->
+                                                                                                                        {{form.school}}
+                                                                                                                        {{form.school.errors}}
+                                                                                                                        
+
+
+                                                                                                                        <label
+                                                                                                                                for="school2"></label>
+                                                                                                                        
+                                                                                                                        
+                                                                                                                </div>
+                                                                                                        </div>
+
+                                                                                                        
+                                                                                                        <div
+                                                                                                                id="education_date_edit">
+                                                                                                                <label
+                                                                                                                        for="educaton_date1">Date
+                                                                                                                        attended</label>
+                                                                                                                <br>
+                                                                                                                <div
+                                                                                                                        class="education_date_info">
+                                                                                                                        <legend>for
+                                                                                                                        </legend>
+                                                                                                                        <!--<select name=""-->
+                                                                                                                                <!--id="education_date1">-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="1197">-->
+                                                                                                                                        <!--1197-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="1198">-->
+                                                                                                                                        <!--1198-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="1999">-->
+                                                                                                                                        <!--1999-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2000">-->
+                                                                                                                                        <!--2000-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2001">-->
+                                                                                                                                        <!--2001-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2202">-->
+                                                                                                                                        <!--2202-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2203">-->
+                                                                                                                                        <!--2203-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2004">-->
+                                                                                                                                        <!--2004-->
+                                                                                                                                <!--</option>-->
+                                                                                                                        <!--</select>-->
+                                                                                                                        {{form.started}}
+                                                                                                                        <legend
+                                                                                                                                for="educaton_date2">to</legend>
+                                                                                                                        <br>
+                                                                                                                        <!--<select name=""-->
+                                                                                                                                <!--id="educaton_date2">-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="1197">-->
+                                                                                                                                        <!--1197-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="1198">-->
+                                                                                                                                        <!--1198-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="1999">-->
+                                                                                                                                        <!--1999-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2000">-->
+                                                                                                                                        <!--2000-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2001">-->
+                                                                                                                                        <!--2001-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2202">-->
+                                                                                                                                        <!--2202-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2203">-->
+                                                                                                                                        <!--2203-->
+                                                                                                                                <!--</option>-->
+                                                                                                                                <!--<option-->
+                                                                                                                                        <!--value="2004">-->
+                                                                                                                                        <!--2004-->
+                                                                                                                                <!--</option>-->
+                                                                                                                        <!--</select>-->
+                                                                                                                        {{form.ended}}
+                                                                                                                </div>
+
+                                                                                                        </div>
+
+
+
+                                                                                                        
+                                                                                                                <!-- end education -->
+                                                                                                             
+                                                                                                                <!-- start description -->
+                                                                                                                
+                                                                                                                      
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                id="edit_degree_main">
+                                                                                                                <div class="row" style="display:flex; width:70%; justify-content:space-between">
+                                                                                                                        <div class="col-md-6">
+                                                                                                                <div
+                                                                                                                        class="edit_degree_first">
+                                                                                                                        <label
+                                                                                                                                for="edit_degree">Degree</label>
+
+                                                                                                                        <!--<input id="edit_degree"-->
+                                                                                                                                <!--value="Instituut van-->
+                                                                                                                        <!--de-->
+                                                                                                                        <!--Heilige-->
+                                                                                                                        <!--Familie"></input>-->
+                                                                                                                        {{form.degree}}
+                                                                                                                        {{form.degree.errors}}
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                                <div
+                                                                                                                        class="edit_degree_area">
+                                                                                                                        <label
+                                                                                                                                for="edit_value">Area
+                                                                                                                                of
+                                                                                                                                study</label>
+
+                                                                                                                        <!--<input id="edit_value"-->
+                                                                                                                                <!--value="Aerial archaeology"></input>-->
+                                                                                                                        {{form.area_of_study}}
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="edit_degree_description">
+                                                                                                                        <label
+                                                                                                                                for="edu_description">Description
+                                                                                                                                (Optional)</label>
+
+                                                                                                                        <!--<textarea-->
+                                                                                                                                <!--id="edu_description"-->
+                                                                                                                                <!--cols="90"-->
+                                                                                                                                <!--row="80"-->
+                                                                                                                                <!--value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum">dasdas</textarea>-->
+                                                                                                                        {{form.Description}}
+
+                                                                                                                        <div style="visibility:hidden;">
+                                                                                                                        {% for field in form.hidden_fields %}
+                                                                                                                        {{field}}
+                                                                                                                        {% endfor %}
+                                                                                                                                {{form.hidden_fields}}
+                                                                                                                        </div>
+
+
+                                                                                                                </div>
+                                                                                                                </div>
+                                                                                                        </div>
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+
+                                                        </div>
+                                                        {% endfor %}
+
+                                                        <!-- end education answer -->
+
+
+                                                        <!-- start employement answer -->
+                                                        <div class="create_head">
+                                                        {% for form,data in paralel_emp %}
+                                                                <div class="container">
+
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+
+                                                                                        <div class="education">
+                                                                                                <div class="row">
+                                                                                                        <div
+                                                                                                                class="education_left col-md-10">
+                                                                                                                <h2
+                                                                                                                        class="education">
+                                                                                                                        Employment
+                                                                                                                </h2>
+
+                                                                                                                <p>Tell us
+                                                                                                                        about
+                                                                                                                        your
+                                                                                                                        education
+                                                                                                                        history.
+                                                                                                                </p>
+
+                                                                                                        </div>
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                
+                                                                                <div id="employment_edit">
+                                                                                        <div id="employement_location" class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                <div
+                                                                                                        class="edit_employement_company_location">
+                                                                                                        <label
+                                                                                                                for="edit_employement_company">Company</label>
+
+                                                                                                        <!--<input id="edit_employement_company"-->
+                                                                                                                <!--value="Company name"></input>-->
+                                                                                                        {{form.company}}
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="edit_employement_company_location">
+                                                                                                        <label
+                                                                                                                for="edit_employement_location">Location</label>
+                                                                                                        <!--<input id="edit_employement_location"-->
+                                                                                                                <!--value="Company name"></input>-->
+                                                                                                        {{form.location}}
+
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                <div
+                                                                                                        class="edit_employement_title">
+                                                                                                        <label
+                                                                                                                for="edit_employement_title">title</label>
+                                                                                                        <!--<input id="edit_employement_title"-->
+                                                                                                                <!--value="dasda"></input>-->
+                                                                                                                <div class="title_input">
+                                                                                                        {{form.title}} {{form.title}}
+                                                                                                </div>
+
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="edit_employement_role">
+                                                                                                        <label
+                                                                                                                for="edit_employement_role">Role</label>
+                                                                                                        <!--<input id="edit_employement_role"-->
+                                                                                                                <!--value="dasda"></input>-->
+                                                                                                        {{form.role}}
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                                <div
+                                                                                                        class="edit_employement_from1">
+                                                                                                        <label
+                                                                                                                for="edit_employement_from1">From</label>
+                                                                                                                <div class="employement_details" style="display: flex; justify-content: space-between;">
+                                                                                                        {{form.period_sterted}}
+                                                                                                        {{form.period_sterted}}
+                                                                                                </div>
+
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="edit_employement_from2">
+                                                                                                        <label
+                                                                                                                for="edit_employement_from1"></label>
+                                                                                                        {{form.is_current}}
+
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6" >
+                                                                                                <div
+                                                                                                        class="edit_employement_form_2">
+                                                                                                        <label
+                                                                                                                for="edit_employement_form_2">From</label>
+                                                                                                                <div class="employement_details" style="display: flex; justify-content: space-between;">
+                                                                                                        {{form.period_ended}}
+                                                                                                        {{form.period_ended}}
+                                                                                                                </div>
+
+                                                                                                </div>
+                                                                                                <div
+                                                                                                        class="edit_employement_form_3">
+                                                                                                        <label
+                                                                                                                for="edit_employement_form_3"></label>
+
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-12">
+                                                                                                <div
+                                                                                                        class="edit_employement_description">
+                                                                                                        <label
+                                                                                                                for="edit_employement_description">Description</label><br>
+                                                                                                        {{form.description}}
+
+                                                                                                </div>
+                                                                                                </div>
+
+                                                                                        </div>
+                                                                                </div>
+                                                                                
+                                                                        </div>
+
+                                                                </div>
+                                                        {% endfor %}
+
+
+                                                        </div>
+                                                </div>
+
+                                                        <div class="create_head">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="col-md-10 tell_us_proficiency">
+                                                                                                        <h2>What is your
+                                                                                                                English
+                                                                                                                proficiency?
+                                                                                                        </h2>
+                                                                                                        
+                                                                                                </div>
+                                                                                                <div id="edit_tell_us_profecienty">
+                                                                                                                <div
+                                                                                                                class="edit_tell_us_header_d"> 
+                                                                                                                <label
+                                                                                                                        for="edit_tell_us_header_d">Languages</label> <br>
+                                                                                                                <!--<select name=""-->
+                                                                                                                        <!--id="edit_tell_us_header_d">-->
+                                                                                                                        <!--<option-->
+                                                                                                                                <!--value="Basic: I write in this language decently">-->
+                                                                                                                                <!--Basic: I write in this language decently-->
+                                                                                                                        <!--</option>-->
+                                                                                                                        <!---->
+                                                                                                                        <!--<option-->
+                                                                                                                                <!--value="Conversational: I write and speak this language well">-->
+                                                                                                                                <!--Conversational: I write and speak this language well-->
+                                                                                                                        <!--</option>-->
+                                                                                                                        <!--<option-->
+                                                                                                                                <!--value="Fluent: I write and speak this language almost perfectly">-->
+                                                                                                                                <!--Fluent: I write and speak this language almost perfectly-->
+                                                                                                                        <!--</option>-->
+                                                                                                                        <!--<option-->
+                                                                                                                                <!--value="Native: I write and speak this language perfectly, including colloquialisms">-->
+                                                                                                                                <!--Native: I write and speak this language perfectly, including colloquialisms-->
+                                                                                                                        <!--</option>-->
+                                                                                                                        <!---->
+                                                                                                                <!--</select>-->
+                                                                                                                        {{form.language_compatancy}}
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                class="edit_tell_us_header_c">
+                                                                                                                <label
+                                                                                                                        for="edit_tell_us_header_c">Other Skills</label> <br>
+
+                                                                                                                        {{form.category_industry}}
+        
+                                                                                                        </div>
+                                                                                                        </div>
+                                                                                                
+                                                                                                
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+<!--                                                      
+                                                        <div class="create_head">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="col-md-10 tell_us">
+                                                                                                        <h2>Set your
+                                                                                                                Hourly
+                                                                                                                Rate
+                                                                                                        </h2>
+                                                                                                        <div
+                                                                                                                class="row">
+                                                                                                                <div
+                                                                                                                        class="tell_us_header col-md-6">
+
+                                                                                                                        <h3>Hourly
+                                                                                                                                Rate
+                                                                                                                        </h3>
+                                                                                                                        <p>{{object.payment}}
+                                                                                                                        </p>
+                                                                                                                        <p>{{form.payment}}
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="tell_us_header col-md-6">
+
+                                                                                                                        <h3>Avalibility
+                                                                                                                        </h3>
+                                                                                                                        <p>{{form.availability}}
+                                                                                                                        </p>
+
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>20% Upwork
+                                                                                                                                Service
+                                                                                                                                Fee
+                                                                                                                        </h3>
+                                                                                                                        <p>8$
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                        class="col-md-6">
+                                                                                                                        <h3>You'll
+                                                                                                                                Receive
+                                                                                                                        </h3>
+                                                                                                                        <p>32$
+                                                                                                                        </p>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                        </div> -->
+
+                                                        <!--start location -->
+                                                        <div class="create_head">
+                                                                <div class="container">
+
+
+                                                                        <div
+                                                                                class="col-md-12 col-sm-12 col-xs-12 main_sign">
+                                                                                <div class="main_sign_info">
+                                                                                        <div class="row">
+                                                                                                <div
+                                                                                                        class="col-md-12 location_main">
+                                                                                                                <div
+                                                                                                                        class="row">
+                                                                                                                <div
+                                                                                                                        class="tell_us_header col-md-10">
+                                                                                                                        <h3>Add your
+                                                                                                                                availability
+                                                                                                                                and
+                                                                                                                                location
+                                                                                                                        </h3>
+
+                                                                                                                </div>
+                                                                                                               
+                                                                                                                
+
+                                                                                                               
+
+                                                                                                <div class="location_edit">
+
+                                                                                               <div class="location_adress_half">
+                                                                                                
+                                                                                                <div class="">
+                                                                                                <label
+                                                                                                        for="edit_location_address_var">Address</label>
+                                                                                                <!--<input id="edit_location_address_var"-->
+                                                                                                        <!--value="Tskaltubo"></input>-->
+                                                                                                        {{form.address_1}}
+                                                                                                </div>
+                                                                                                         <div class="">
+                                                                                                <label
+                                                                                                        for="edit_location_address_var">Address</label>
+                                                                                                <!--<input id="edit_location_address_var"-->
+                                                                                                        <!--value="Tskaltubo"></input>-->
+                                                                                                                 {{form.address_2}}
+                                                                                                </div>
+                                                                                                        <div class="">
+                                                                                                <label
+                                                                                                        for="edit_location_address_var">Zip Code</label>
+                                                                                                <!--<input id="edit_location_address_var"-->
+                                                                                                        <!--value="Tskaltubo"></input>-->
+                                                                                                                 {{form.zip_code}}
+                                                                                                </div>
+                                                                                               </div>
+                                                                                               <div class="location_adress_half2">
+                                                                                                <div class="">
+                                                                                                <label
+                                                                                                        for="edit_location_city_var">City</label>
+                                                                                                <!--<input id="edit_location_city_var"-->
+                                                                                                        <!--value="Tskaltubo"></input>-->
+                                                                                                        {{form.city}}
+                                                                                                </div>
+                                                                                                <div class="">
+                                                                                                <label
+                                                                                                        for="edit_location_country_var">Country</label>
+                                                                                                <!--<input id="edit_location_country_var"-->
+                                                                                                        <!--value="Tskaltubo"></input>-->
+                                                                                                        {{form.country}}
+                                                                                                </div>
+                                                                                                <div class="">
+                                                                                                <label
+                                                                                                        for="edit_location_phone_var">Phone</label>
+                                                                                                <!--<input id="edit_location_phone_var"-->
+                                                                                                        <!--value="+995651523"></input>-->
+                                                                                                </div>
+                                                                                               </div>
+
+                                                                                        </div>
+                                                                                        </div>
+                                                                                                </div>
+                                                                                        <div
+                                                                                                class="employment_info_footerr col-md-12">
+
+
+                                                                                                <input type="submit"
+                                                                                                        class="submit_save">
+                                                                                                        </input>
+                                                                                                        
+                                                                                        <button type="button" id="save_button">Update</button></div>
+
+                                                                                        </form>
+                                                                                
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                </div>
+        </section>
+
+
+        <script>
+                        $('#edit_button_review').on("click", () => {
+                                $('.tell_us').css('display', 'none');
+                                $('#review_edit').css('display', 'block');
+                                $('.education_info_input_header').css('display', 'none');
+                                $('#education_edit').css('display', 'block');
+                                $('.education_info_input_section').css('display', 'none');
+                                $('#education_date_edit').css('display', 'block');
+                                $('.educaton_info_degree').css('display', 'none');
+                                $('#edit_degree_main').css('display', 'block');
+                                $('.employment_info').css('display', 'none');
+                                $('#employment_edit').css('display', 'block');
+                                $('.tell_us_proficiency').css('display', 'none');
+                                $('#edit_tell_us_profecienty').css('display', 'block');
+                                $('.location_main').css('display', 'none');
+                                $('#edit_location_main').css('display', 'block');
+
+                                $('#edit_button_review').css('display', 'none');
+                                $('#save_button').css('display', 'block');
+
+
+                        })
+
+                        $('#save_button').on("click", () => {
+
+                                $('#title_var').text($('#edit_title').val());
+                                $('#prof_var').text($('#edit_prof').val());
+                                $('#school_var1').text($('#school1').val());
+                                $('#school_var2').text($('#school2').val());
+                                $('#education_date_var').text($('#education_date1').val());
+                                $('#educaton_date_var2').text($('#educaton_date2').val());
+                                $('#employement_company_var').text($('#edit_employement_company').val());
+                                $('#employement_location_var').text($('#edit_employement_location').val());
+                                $('#employement_title_var').text($('#edit_employement_title').val());
+                                $('#employment_role_var').text($('#edit_employement_role').val());
+                                $('#employement_form_var1').text($('#edit_employement_from1').val());
+                                $('#employement_form_var2').text($('#edit_employement_from1').val());
+                                $('#employement_form_2_var').text($('#edit_employement_form_2').val());
+                                $('#employement_form_3_var').text($('#edit_employement_form_3').val());
+                                $('#employement_description_var').text($('#edit_employement_description').val());
+                                $('#tell_us_header1_var').text($('#edit_tell_us_header_d').val());
+                                $('#tell_us_header2_var').text($('#edit_tell_us_header_c').val());
+                                $('#location_address_var').text($('#edit_location_address_var').val());
+                                $('#location_city_var').text($('#edit_location_city_var').val());
+                                $('#location_country_var').text($('#edit_location_country_var').val());
+                                $('#location_phone_var').text($('#edit_location_phone_var').val());
+
+
+                                $('#degree_var').text($('#edit_degree').val());
+                                $('#area_var').text($('#edit_value').val());
+                                $('#edu_desc_var').text($('#edu_description').val());
+
+
+
+                                $('.tell_us').css('display', 'block');
+                                $('#review_edit').css('display', 'none');
+                                $('.education_info_input_header').css('display', 'block');
+                                $('#education_edit').css('display', 'none');
+                                $('.education_info_input_section').css('display', 'block');
+                                $('#education_date_edit').css('display', 'none');
+                                $('.educaton_info_degree').css('display', 'block');
+                                $('#edit_degree_main').css('display', 'none');
+                                $('#employment_edit').css('display', 'none');
+                                $('.employment_info').css('display', 'block');
+                                $('.tell_us_proficiency').css('display', 'block');
+                                $('#edit_tell_us_profecienty').css('display', 'none');
+                                $('#edit_button_review').css('display', 'block');
+                                $('.location_main').css('display', 'block');
+                                $('#edit_location_main').css('display', 'none');
+                                $('#save_button').css('display', 'none');
+
+                        })
+                </script>
+
+        <script src="js/main.js"></script>
+</body>
+
+</html>
+{% endblock %}
